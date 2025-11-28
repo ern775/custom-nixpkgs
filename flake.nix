@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    jdownloader = {
+      url = "https://installer.jdownloader.org/JDownloader.jar";
+      flake = false;
+    };
   };
   outputs =
     {
