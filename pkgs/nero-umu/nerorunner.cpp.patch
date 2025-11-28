@@ -1,0 +1,11 @@
+--- a/src/nerorunner.cpp	2025-09-13 15:36:14.603247774 +0300
++++ b/src/nerorunner.cpp	2025-09-28 15:58:13.082962276 +0300
+@@ -823,7 +823,7 @@
+                     emit StatusUpdate(NeroRunner::RunnerStarting);
+                 else if(stdout.contains("steamrt3 is up to date"))
+                     emit StatusUpdate(NeroRunner::RunnerUpdated);
+-                else if(stdout.startsWith("Proton: Executable") || stdout.contains("SteamAPI_Init"))
++                else if(stdout.startsWith("Proton: Executable") || stdout.contains("SteamAPI_Init") || stdout.contains("All checks successful"))
+                     emit StatusUpdate(NeroRunner::RunnerProtonStarted);
+             }
+         } else {

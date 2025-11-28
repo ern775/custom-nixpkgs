@@ -1,0 +1,15 @@
+--- a/src/neroprefixsettings.cpp	2025-09-13 15:34:32.425578887 +0300
++++ b/src/neroprefixsettings.cpp	2025-09-29 06:46:34.927864766 +0300
+@@ -114,12 +114,6 @@
+         else SetComboBoxItemEnabled(ui->setScalingBox, NeroConstant::ScalingGamescopeWindowed, false);
+     }
+ 
+-    // Wayland requires base version to be Proton 10+
+-    if(!ui->prefixRunner->currentText().startsWith("GE-Proton10") && !ui->prefixRunner->currentText().startsWith("Proton 10")) {
+-        ui->toggleWayland->setEnabled(false);
+-        ui->toggleWaylandHDR->setEnabled(false);
+-    }
+-
+     resValidator = new QIntValidator(0, 32767);
+     ui->fsrCustomH->setValidator(resValidator);
+     ui->fsrCustomW->setValidator(resValidator);
