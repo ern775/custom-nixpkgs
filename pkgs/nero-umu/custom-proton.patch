@@ -1,0 +1,30 @@
+diff --git a/src/neroprefixsettings.cpp b/src/neroprefixsettings.cpp
+index 6d82ed3..a696429 100644
+--- a/src/neroprefixsettings.cpp
++++ b/src/neroprefixsettings.cpp
+@@ -116,12 +116,6 @@ NeroPrefixSettingsWindow::NeroPrefixSettingsWindow(QWidget *parent, const QStrin
+         else SetComboBoxItemEnabled(ui->setScalingBox, NeroConstant::ScalingGamescopeWindowed, false);
+     }
+ 
+-    // Wayland requires base version to be Proton 10+
+-    if(!ui->prefixRunner->currentText().startsWith("GE-Proton10") && !ui->prefixRunner->currentText().startsWith("Proton 10")) {
+-        ui->toggleWayland->setEnabled(false);
+-        ui->toggleWaylandHDR->setEnabled(false);
+-    }
+-
+     resValidator = new QIntValidator(0, 32767);
+     ui->fsrCustomH->setValidator(resValidator);
+     ui->fsrCustomW->setValidator(resValidator);
+diff --git a/src/nerorunner.cpp b/src/nerorunner.cpp
+index c61eb0d..b3cb879 100644
+--- a/src/nerorunner.cpp
++++ b/src/nerorunner.cpp
+@@ -841,7 +841,7 @@ void NeroRunner::WaitLoop(QProcess &runner, QFile &log)
+                     emit StatusUpdate(NeroRunner::RunnerStarting);
+                 else if(stdout.contains("steamrt3 is up to date"))
+                     emit StatusUpdate(NeroRunner::RunnerUpdated);
+-                else if(stdout.startsWith("Proton: Executable") || stdout.contains("SteamAPI_Init"))
++                else if(stdout.startsWith("Proton: Executable") || stdout.contains("SteamAPI_Init") || stdout.contains("All checks successful"))
+                     emit StatusUpdate(NeroRunner::RunnerProtonStarted);
+             }
+         } else {

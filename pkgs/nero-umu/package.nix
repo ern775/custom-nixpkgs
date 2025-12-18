@@ -11,20 +11,19 @@
   icoutils,
   umu-launcher,
   winetricks,
-  curl,
   mangohud,
   gamescope,
   gamemode,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "nero-umu";
-  version = "1.1.4";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
-    owner = "ern775";
+    owner = "SeongGino";
     repo = "Nero-umu";
-    rev = "282655dd05264e6bc02c073aaed5578d223a1990";
-    hash = "sha256-GxysOjT56k+d/dGs1gm+hq7RUqXWxlQLk1yCHo2Iwkw=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-dwM9ZRgNBLA16faO68pSnNsfWC4Naom6QRg1RYwXxLA=";
   };
 
   #Replace quazip git submodule with pre-packaged quazip
@@ -32,6 +31,10 @@ stdenv.mkDerivation (finalAttrs: {
     rmdir source/lib/quazip/
     ln -s ${qt6Packages.quazip.src} source/lib/quazip
   '';
+
+  patches = [
+    ./custom-proton.patch
+  ];
 
   nativeBuildInputs = [
     cmake
@@ -51,7 +54,6 @@ stdenv.mkDerivation (finalAttrs: {
     icoextract
     icoutils
     winetricks
-    curl
     umu-launcher
     mangohud
     gamescope
