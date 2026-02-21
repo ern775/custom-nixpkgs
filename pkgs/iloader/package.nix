@@ -12,11 +12,11 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "iloader";
-  version = "1.1.6";
+  version = "2.0.5";
 
   src = fetchurl {
     url = "https://github.com/nab138/iloader/releases/download/v${finalAttrs.version}/iloader-linux-amd64.deb";
-    hash = "sha256-Jd4Jb1rrYccVGUtqKLXe2uK7WZBxTkkYWjIPGOe1VMc=";
+    hash = "sha256-GXA3PcgBgaYmqaQJuC2oc3esA0zvltxcgVDJFsnymrQ=";
   };
 
   unpackCmd = "dpkg -x $curSrc source";
