@@ -1,7 +1,7 @@
 {
+  source,
   lib,
   stdenv,
-  fetchurl,
   dpkg,
   autoPatchelfHook,
   glib,
@@ -12,12 +12,8 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "iloader";
-  version = "1.1.6";
 
-  src = fetchurl {
-    url = "https://github.com/nab138/iloader/releases/download/v${finalAttrs.version}/iloader-linux-amd64.deb";
-    hash = "sha256-Jd4Jb1rrYccVGUtqKLXe2uK7WZBxTkkYWjIPGOe1VMc=";
-  };
+  inherit (source) version src;
 
   unpackCmd = "dpkg -x $curSrc source";
 
@@ -46,7 +42,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "User friendly sideloader";
     homepage = "https://github.com/nab138/iloader";
-    license = with lib.licenses; [ mit ];
+    license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ ern775 ];
     platforms = [ "x86_64-linux" ];
     mainProgram = "iloader";

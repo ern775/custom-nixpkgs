@@ -1,43 +1,40 @@
 {
-  pkgs,
+  source,
+  lib,
+  stdenv,
+  makeDesktopItem,
+  writeShellApplication,
   fetchurl,
   makeWrapper,
   jre,
-  inputs
 }:
-with pkgs;
-stdenv.mkDerivation rec {
-  # name of our derivation
-  name = "jdownloader2";
+stdenv.mkDerivation (finalAttrs: {
+  pname = "jdownloader2";
   dontUnpack = true;
 
-  # sources that will be used for our derivation.
-  src = inputs.jdownloader;
-
-  meta.mainProgram = "jdownloader2";
+  inherit (source) version src;
 
   nativeBuildInputs = [ makeWrapper ];
 
   desktopFile = makeDesktopItem {
-    name = name;
+    name = finalAttrs.pname;
     desktopName = "JDownloader";
     comment = "JDownloader download manager";
     categories = [
       "Network"
       "FileTransfer"
-      "Graphics"
       "Utility"
     ];
     icon = fetchurl {
-      url = "https://aur.archlinux.org/cgit/aur.git/plain/jdownloader256.png?h=jdownloader2";
-      hash = "sha256-bHoo7HLIYn6b8GpY1/a/7QdWMqZ0PhyAh9wPoGUmFQQ=";
+      url = "https://jdownloader.org/_media/knowledge/wiki/jdownloader.png";
+      hash = "sha256-Prq5kufdBP/LbDD+4afitD81N8srIhJLMDJdJb/9rCk=";
     };
-    exec = "${startScript}/bin/${name} %f";
+    exec = "${finalAttrs.startScript}/bin/${finalAttrs.pname} %f";
     terminal = false;
   };
 
   startScript = writeShellApplication {
-    name = name;
+    name = finalAttrs.pname;
     text = ''
       function isRoot() {
       	if [ "$(id -u)" -eq "0" ]; then
@@ -63,8 +60,8 @@ stdenv.mkDerivation rec {
       function downloadJDownloader() {
       	changePath
       	if [ ! -f "JDownloader.jar" ]; then
-          #ln -fs ${src} JDownloader.jar
-          cp ${src} JDownloader.jar
+          #ln -fs ${finalAttrs.src} JDownloader.jar
+          cp ${finalAttrs.src} JDownloader.jar
       	fi
         chmod 777 JDownloader.jar
       }
@@ -78,16 +75,23 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/share/java/jdownloader2
-    install ${src} $out/share/java/jdownloader2/JDownloader.jar
+    install ${finalAttrs.src} $out/share/java/jdownloader2/JDownloader.jar
     mkdir -p $out/bin
 
-    install ${startScript}/bin/${name} $out/bin/jdownloader2
+    install ${finalAttrs.startScript}/bin/${finalAttrs.pname} $out/bin/jdownloader2
 
     chmod 777 $out/share/java/jdownloader2/JDownloader.jar
     chmod +x $out/bin/jdownloader2
 
     mkdir -p $out/share/applications
-    install ${desktopFile}/share/applications/${name}.desktop $out/share/applications/${name}.desktop
+    install ${finalAttrs.desktopFile}/share/applications/${finalAttrs.pname}.desktop $out/share/applications/${finalAttrs.pname}.desktop
   '';
 
-} 
+  meta = {
+    description = "Download Manager";
+    homepage = "https://jdownloader.org/";
+    maintainers = with lib.maintainers; [ ern775 ];
+    platforms = [ "x86_64-linux" ];
+    mainProgram = "jdownloader2";
+  };
+})

@@ -1,34 +1,26 @@
 {
   description = "nixon pkgs";
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    jdownloader = {
-      url = "https://installer.jdownloader.org/JDownloader.jar";
-      flake = false;
-    };
   };
   outputs =
     {
       self,
       nixpkgs,
       ...
-    }@inputs:
+    }:
     let
-      forAllSystems = nixpkgs.lib.genAttrs [
-        "aarch64-linux"
-        "x86_64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
+      forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
     {
-      packages = forAllSystems (
+      legacyPackages = forAllSystems (
         system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        ((import ./packages-overlay.nix { inherit inputs pkgs; }).packages)
+        import ./default.nix {
+          pkgs = import nixpkgs { inherit system; };
+        }
+      );
+      packages = forAllSystems (
+        system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system}
       );
     };
 }

@@ -1,0 +1,230 @@
+{
+    "acer-predator-turbo-and-rgb-keyboard-linux-module": {
+        "cargoLock": null,
+        "date": "2026-01-27",
+        "extract": null,
+        "name": "acer-predator-turbo-and-rgb-keyboard-linux-module",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "JafarAkhondali",
+            "repo": "acer-predator-turbo-and-rgb-keyboard-linux-module",
+            "rev": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d",
+            "sha256": "sha256-1yZVnN/Sru8qRNf1MN1Jt8PcjxYl8MOYxAFvpgZWj4E=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d"
+    },
+    "acer-predator-turbo-rgb": {
+        "cargoLock": null,
+        "date": "2026-01-27",
+        "extract": null,
+        "name": "acer-predator-turbo-rgb",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "JafarAkhondali",
+            "repo": "acer-predator-turbo-and-rgb-keyboard-linux-module",
+            "rev": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d",
+            "sha256": "sha256-1yZVnN/Sru8qRNf1MN1Jt8PcjxYl8MOYxAFvpgZWj4E=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d"
+    },
+    "dopamine": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "dopamine",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-Cb3Kwqf4PQW+bQonsPdACzp7gpVTm0DpR8wOcQ1qZFE=",
+            "type": "url",
+            "url": "https://github.com/digimezzo/dopamine/releases/download/v3.0.2/Dopamine-3.0.2.AppImage"
+        },
+        "version": "3.0.2"
+    },
+    "excalibur-wmi": {
+        "cargoLock": null,
+        "date": "2026-02-13",
+        "extract": null,
+        "name": "excalibur-wmi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "betelqeyza",
+            "repo": "excalibur-wmi",
+            "rev": "99bd638f167a0f72f3a3a7a60fe3a252dd388402",
+            "sha256": "sha256-qfwJn6JEe2GFaSluaS0sK69O8nh2SoQH+XvBDMElKec=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "99bd638f167a0f72f3a3a7a60fe3a252dd388402"
+    },
+    "hp-omen-wmi": {
+        "cargoLock": null,
+        "date": "2024-05-04",
+        "extract": null,
+        "name": "hp-omen-wmi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ranisalt",
+            "repo": "hp-omen-linux-module",
+            "rev": "a2d79368bf981a3f241a36941aaa4a7fe657d924",
+            "sha256": "sha256-fjxVezZ+hWsCA5iz9lOIXl3NHpCoDkoYWXa4qzs1Z6g=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "a2d79368bf981a3f241a36941aaa4a7fe657d924"
+    },
+    "hp-wmi-fan-and-backlight-control": {
+        "cargoLock": null,
+        "date": "2026-02-06",
+        "extract": null,
+        "name": "hp-wmi-fan-and-backlight-control",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "TUXOV",
+            "repo": "hp-wmi-fan-and-backlight-control",
+            "rev": "180ec684038dac2d1138371089bafe7d6844122f",
+            "sha256": "sha256-hFO5CphW6gv4EpRN3P0yXXNMROTf0tnzR5QPWQ5eEtw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "180ec684038dac2d1138371089bafe7d6844122f"
+    },
+    "iloader": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "iloader",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-GXA3PcgBgaYmqaQJuC2oc3esA0zvltxcgVDJFsnymrQ=",
+            "type": "url",
+            "url": "https://github.com/nab138/iloader/releases/download/v2.0.5/iloader-linux-amd64.deb"
+        },
+        "version": "v2.0.5"
+    },
+    "jdownloader2": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "jdownloader2",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=",
+            "type": "url",
+            "url": "https://installer.jdownloader.org/JDownloader.jar"
+        },
+        "version": "22 Feb 2026 03:16:32 GMT"
+    },
+    "nero-umu": {
+        "cargoLock": null,
+        "date": "2025-12-25",
+        "extract": null,
+        "name": "nero-umu",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "SeongGino",
+            "repo": "Nero-umu",
+            "rev": "3b225cd2bbc7bcac7b58491cbd9d139646bbe872",
+            "sha256": "sha256-+rnWgZHBJhu90t+RSQee9bhLiUjhSAs4n8FNbhQvfiM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3b225cd2bbc7bcac7b58491cbd9d139646bbe872"
+    },
+    "omenrgb": {
+        "cargoLock": null,
+        "date": "2025-03-01",
+        "extract": null,
+        "name": "omenrgb",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "lemogne",
+            "repo": "omenrgb",
+            "rev": "5b68bc0a299df8926a03cded868766cc95ba644f",
+            "sha256": "sha256-lIr0Er4kt4UKeqg8smroBZ7ToOywP8C80+eIgGs3tWg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "5b68bc0a299df8926a03cded868766cc95ba644f"
+    },
+    "proton-cachyos-x86_64-v3": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos-x86_64-v3",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-76iQrZKa2ysCDKV4jysWqthaiKMfjGWQR7r6IwilktI=",
+            "type": "url",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v3.tar.xz"
+        },
+        "version": "cachyos-10.0-20260207-slr"
+    },
+    "victus-control": {
+        "cargoLock": null,
+        "date": "2025-12-12",
+        "extract": null,
+        "name": "victus-control",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Vilez0",
+            "repo": "victus-control",
+            "rev": "3cf7d22921a24adb7fe6e806c912679ef81f8c77",
+            "sha256": "sha256-vpRbDA8gfCDx9NJX4EVqPWa49RAU73ZpHu4Y14C6CvQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3cf7d22921a24adb7fe6e806c912679ef81f8c77"
+    }
+}

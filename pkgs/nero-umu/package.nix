@@ -1,7 +1,7 @@
 {
+  source,
   lib,
   stdenv,
-  fetchFromGitHub,
   cmake,
   pkg-config,
   qt6,
@@ -17,14 +17,9 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "nero-umu";
-  version = "1.2.0";
 
-  src = fetchFromGitHub {
-    owner = "SeongGino";
-    repo = "Nero-umu";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-dwM9ZRgNBLA16faO68pSnNsfWC4Naom6QRg1RYwXxLA=";
-  };
+  inherit (source) date src;
+  version = "1-unstable-${finalAttrs.date}";
 
   #Replace quazip git submodule with pre-packaged quazip
   postUnpack = ''

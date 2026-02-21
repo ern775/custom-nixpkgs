@@ -1,7 +1,7 @@
 {
+  source,
   stdenv,
   lib,
-  fetchFromGitHub,
   meson,
   ninja,
   pkg-config,
@@ -13,14 +13,9 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "victus-control";
-  version = "0-unstable-2025-10-28";
 
-  src = fetchFromGitHub {
-    owner = "Vilez0";
-    repo = "victus-control";
-    rev = "e6c645785aa207c02e29bb7b4373fd71a749d6c6";
-    hash = "sha256-O0RcY9pPKXASBt74gwukm7YKrYaavWCf8VRrsmFLfDM=";
-  };
+  inherit (source) date src;
+  version = "0-unstable-${finalAttrs.date}";
 
   nativeBuildInputs = [
     meson

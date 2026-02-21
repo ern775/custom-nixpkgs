@@ -1,20 +1,15 @@
 {
+  source,
   stdenv,
   lib,
-  fetchFromGitHub,
   kernel,
   kernelModuleMakeFlags,
 }:
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "hp-omen-wmi";
-  version = "rebase-6.15";
 
-  src = fetchFromGitHub {
-    owner = "ranisalt";
-    repo = "hp-omen-linux-module";
-    rev = "${version}";
-    hash = "sha256-IOXHzcCB0n1InMjeIu3XYEJ4bhbHS3NIlS8/+4XIwkQ=";
-  };
+  inherit (source) date src;
+  version = "0-unstable-${finalAttrs.date}";
 
   setSourceRoot = ''
     export sourceRoot=$(pwd)/source/src
@@ -44,4 +39,4 @@ stdenv.mkDerivation rec {
     maintainers = with maintainers; [ ern775 ];
     platforms = platforms.linux;
   };
-}
+})

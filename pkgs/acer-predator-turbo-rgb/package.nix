@@ -1,20 +1,15 @@
 {
+  source,
   stdenv,
   lib,
-  fetchFromGitHub,
   kernel,
   kernelModuleMakeFlags,
 }:
-stdenv.mkDerivation {
+stdenv.mkDerivation (finalAttrs: {
   pname = "acer-predator-turbo-rgb";
-  version = "main";
 
-  src = fetchFromGitHub {
-    owner = "JafarAkhondali";
-    repo = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-    rev = "343c715669ef52ccecdb65473e7318f612b6b6c2";
-    hash = "sha256-RKqe3kHZ32Pv+6skP4x+sB+c4dlyES0Bu2C73LvkgqQ=";
-  };
+  inherit (source) date src;
+  version = "0-unstable-${finalAttrs.date}";
 
   setSourceRoot = ''
     export sourceRoot=$(pwd)/source
@@ -50,4 +45,4 @@ stdenv.mkDerivation {
     maintainers = [ Ern775 ];
     platforms = platforms.linux;
   };
-}
+})

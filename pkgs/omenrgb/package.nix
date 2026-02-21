@@ -1,23 +1,18 @@
 {
+  source,
   lib,
   stdenv,
-  fetchFromGitHub,
   gcc,
   wxGTK32,
   coreutils,
   wrapGAppsHook3,
 }:
 
-stdenv.mkDerivation {
+stdenv.mkDerivation (finalAttrs: {
   pname = "omenrgb";
-  version = "master";
 
-  src = fetchFromGitHub {
-    owner = "lemogne";
-    repo = "omenrgb";
-    rev = "5b68bc0a299df8926a03cded868766cc95ba644f";
-    hash = "sha256-lIr0Er4kt4UKeqg8smroBZ7ToOywP8C80+eIgGs3tWg=";
-  };
+  inherit (source) date src;
+  version = "0-unstable-${finalAttrs.date}";
 
   postPatch = ''
     substituteInPlace ./backlight.rules \
@@ -59,4 +54,4 @@ stdenv.mkDerivation {
     mainProgram = "omenrgb";
     platforms = platforms.all;
   };
-}
+})

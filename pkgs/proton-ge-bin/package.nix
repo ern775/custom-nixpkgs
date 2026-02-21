@@ -1,7 +1,7 @@
 {
+  source,
   lib,
   stdenvNoCC,
-  fetchzip,
   writeScript,
   # Can be overridden to alter the display name in steam
   # This could be useful if multiple versions should be installed together
@@ -9,13 +9,8 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "proton-ge-bin";
-  version = "GE-Proton10-8";
 
-  src = fetchzip {
-    url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/${finalAttrs.version}/${finalAttrs.version}.tar.gz";
-    hash = "sha256-cbmOQYWEP/uB2ZoMAbtbeXbOJjxZui0n2U+Tr/OLKjA=";
-  };
-
+  inherit (source) version src;
   dontUnpack = true;
   dontConfigure = true;
   dontBuild = true;

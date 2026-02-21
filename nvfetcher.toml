@@ -1,0 +1,51 @@
+# nvfetcher.toml - all sources managed declaratively
+# Run: nvfetcher -o _sources
+
+[acer-predator-turbo-and-rgb-keyboard-linux-module]
+src.git = "https://github.com/JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
+fetch.github = "JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
+
+[acer-predator-turbo-rgb]
+src.git = "https://github.com/JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
+fetch.github = "JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
+
+[excalibur-wmi]
+src.git = "https://github.com/betelqeyza/excalibur-wmi"
+fetch.github = "betelqeyza/excalibur-wmi"
+
+[hp-omen-wmi]
+src.git = "https://github.com/ranisalt/hp-omen-linux-module"
+fetch.github = "ranisalt/hp-omen-linux-module"
+
+[hp-wmi-fan-and-backlight-control]
+src.git = "https://github.com/TUXOV/hp-wmi-fan-and-backlight-control"
+fetch.github = "TUXOV/hp-wmi-fan-and-backlight-control"
+
+[nero-umu]
+src.git = "https://github.com/SeongGino/Nero-umu"
+fetch.github = "SeongGino/Nero-umu"
+
+[omenrgb]
+src.git = "https://github.com/lemogne/omenrgb"
+fetch.github = "lemogne/omenrgb"
+
+[victus-control]
+src.git = "https://github.com/Vilez0/victus-control"
+fetch.github = "Vilez0/victus-control"
+
+[iloader]
+src.github = "nab138/iloader"
+fetch.url = "https://github.com/nab138/iloader/releases/download/$ver/iloader-linux-amd64.deb"
+
+[dopamine]
+src.github = "digimezzo/dopamine"
+src.prefix = "v"
+fetch.url = "https://github.com/digimezzo/dopamine/releases/download/v$ver/Dopamine-$ver.AppImage"
+
+[proton-cachyos-x86_64-v3]
+src.github = "CachyOS/proton-cachyos"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
+
+[jdownloader2]
+src.cmd = "curl -sI https://installer.jdownloader.org/JDownloader.jar | grep -w date: | sed 's/^.*, //'"
+fetch.url = "https://installer.jdownloader.org/JDownloader.jar"
