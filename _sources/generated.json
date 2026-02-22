@@ -128,11 +128,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-GXA3PcgBgaYmqaQJuC2oc3esA0zvltxcgVDJFsnymrQ=",
+            "sha256": "sha256-8lhf0oFmkWwy4Wrm1Z6X4iJECcULius+3ZUgNbRkyLw=",
             "type": "url",
-            "url": "https://github.com/nab138/iloader/releases/download/v2.0.5/iloader-linux-amd64.deb"
+            "url": "https://github.com/nab138/iloader/releases/download/v2.0.6/iloader-linux-amd64.deb"
         },
-        "version": "v2.0.5"
+        "version": "v2.0.6"
     },
     "jdownloader2": {
         "cargoLock": null,
@@ -147,7 +147,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "22 Feb 2026 03:16:32 GMT"
+        "version": "22 Feb 2026 16:31:53 GMT"
     },
     "nero-umu": {
         "cargoLock": null,

@@ -76,15 +76,15 @@
   };
   iloader = {
     pname = "iloader";
-    version = "v2.0.5";
+    version = "v2.0.6";
     src = fetchurl {
-      url = "https://github.com/nab138/iloader/releases/download/v2.0.5/iloader-linux-amd64.deb";
-      sha256 = "sha256-GXA3PcgBgaYmqaQJuC2oc3esA0zvltxcgVDJFsnymrQ=";
+      url = "https://github.com/nab138/iloader/releases/download/v2.0.6/iloader-linux-amd64.deb";
+      sha256 = "sha256-8lhf0oFmkWwy4Wrm1Z6X4iJECcULius+3ZUgNbRkyLw=";
     };
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "22 Feb 2026 03:16:32 GMT";
+    version = "22 Feb 2026 16:31:53 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
