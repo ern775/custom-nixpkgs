@@ -12,7 +12,7 @@
 }:
 let
   nvSources = pkgs.callPackage ./_sources/generated.nix { };
-  mkProton =
+  mkCachyProton =
     sourceKey: variantName:
     pkgs.callPackage ./pkgs/proton-cachyos/package.nix {
       source = nvSources.${sourceKey};
@@ -32,11 +32,16 @@ in
   };
   nero-umu = pkgs.callPackage ./pkgs/nero-umu/package.nix { source = nvSources.nero-umu; };
   omenrgb = pkgs.callPackage ./pkgs/omenrgb/package.nix { source = nvSources.omenrgb; };
-  proton-cachyos = mkProton "proton-cachyos-x86_64-v3" "x86_64-v3";
+  proton-cachyos = mkCachyProton "proton-cachyos-x86_64-v3" "x86_64-v3";
   proton-ge-bin = pkgs.callPackage ./pkgs/proton-ge-bin/package.nix {
     source = nvSources.proton-ge-bin;
   };
   victus-control = pkgs.callPackage ./pkgs/victus-control/package.nix {
     source = nvSources.victus-control;
   };
+  seanime = pkgs.callPackage ./pkgs/seanime/package.nix { source = nvSources.seanime; };
+  seanime-denshi = pkgs.callPackage ./pkgs/seanime-denshi/package.nix {
+    source = nvSources.seanime-denshi;
+  };
+  seanime-denshi-for-nixpkgs = pkgs.callPackage ./pkgs/seanime-denshi/package-for-nixpkgs.nix { };
 }
