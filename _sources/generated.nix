@@ -84,7 +84,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "22 Feb 2026 16:31:53 GMT";
+    version = "27 Feb 2026 15:45:01 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -92,15 +92,15 @@
   };
   nero-umu = {
     pname = "nero-umu";
-    version = "3b225cd2bbc7bcac7b58491cbd9d139646bbe872";
+    version = "6246d8d2d01426c55311d5e02bd55b34d5818524";
     src = fetchFromGitHub {
       owner = "SeongGino";
       repo = "Nero-umu";
-      rev = "3b225cd2bbc7bcac7b58491cbd9d139646bbe872";
+      rev = "6246d8d2d01426c55311d5e02bd55b34d5818524";
       fetchSubmodules = false;
-      sha256 = "sha256-+rnWgZHBJhu90t+RSQee9bhLiUjhSAs4n8FNbhQvfiM=";
+      sha256 = "sha256-j6JS1r7LrhYBuENpuJQxgW8PPME2XmJveTb57svYdEs=";
     };
-    date = "2025-12-25";
+    date = "2026-02-23";
   };
   omenrgb = {
     pname = "omenrgb";
@@ -120,6 +120,25 @@
     src = fetchurl {
       url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v3.tar.xz";
       sha256 = "sha256-76iQrZKa2ysCDKV4jysWqthaiKMfjGWQR7r6IwilktI=";
+    };
+  };
+  seanime = {
+    pname = "seanime";
+    version = "v3.5.1";
+    src = fetchFromGitHub {
+      owner = "5rahim";
+      repo = "seanime";
+      rev = "v3.5.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-GbV+2+OoGY9jDZqj93qIOHmI9zXsP3GUk8Yhh1kQuo4=";
+    };
+  };
+  seanime-denshi = {
+    pname = "seanime-denshi";
+    version = "3.5.1";
+    src = fetchurl {
+      url = "https://github.com/5rahim/seanime/releases/download/v3.5.1/seanime-denshi-3.5.1_Linux_x86_64.AppImage";
+      sha256 = "sha256-W2UpA9OYTv53cTvhlS/gJsWysywqv+NYzG9W4qv8Ztg=";
     };
   };
   victus-control = {

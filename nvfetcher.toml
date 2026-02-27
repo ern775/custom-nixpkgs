@@ -42,6 +42,15 @@ src.github = "digimezzo/dopamine"
 src.prefix = "v"
 fetch.url = "https://github.com/digimezzo/dopamine/releases/download/v$ver/Dopamine-$ver.AppImage"
 
+[seanime-denshi]
+src.github = "5rahim/seanime"
+src.prefix = "v"
+fetch.url = "https://github.com/5rahim/seanime/releases/download/v$ver/seanime-denshi-$ver_Linux_x86_64.AppImage"
+
+[seanime]
+src.github_tag = "5rahim/seanime"
+fetch.github = "5rahim/seanime"
+
 [proton-cachyos-x86_64-v3]
 src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"

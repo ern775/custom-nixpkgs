@@ -147,11 +147,11 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "22 Feb 2026 16:31:53 GMT"
+        "version": "27 Feb 2026 15:45:01 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
-        "date": "2025-12-25",
+        "date": "2026-02-23",
         "extract": null,
         "name": "nero-umu",
         "passthru": null,
@@ -163,12 +163,12 @@
             "name": null,
             "owner": "SeongGino",
             "repo": "Nero-umu",
-            "rev": "3b225cd2bbc7bcac7b58491cbd9d139646bbe872",
-            "sha256": "sha256-+rnWgZHBJhu90t+RSQee9bhLiUjhSAs4n8FNbhQvfiM=",
+            "rev": "6246d8d2d01426c55311d5e02bd55b34d5818524",
+            "sha256": "sha256-j6JS1r7LrhYBuENpuJQxgW8PPME2XmJveTb57svYdEs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "3b225cd2bbc7bcac7b58491cbd9d139646bbe872"
+        "version": "6246d8d2d01426c55311d5e02bd55b34d5818524"
     },
     "omenrgb": {
         "cargoLock": null,
@@ -205,6 +205,42 @@
             "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v3.tar.xz"
         },
         "version": "cachyos-10.0-20260207-slr"
+    },
+    "seanime": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "seanime",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "5rahim",
+            "repo": "seanime",
+            "rev": "v3.5.1",
+            "sha256": "sha256-GbV+2+OoGY9jDZqj93qIOHmI9zXsP3GUk8Yhh1kQuo4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v3.5.1"
+    },
+    "seanime-denshi": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "seanime-denshi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-W2UpA9OYTv53cTvhlS/gJsWysywqv+NYzG9W4qv8Ztg=",
+            "type": "url",
+            "url": "https://github.com/5rahim/seanime/releases/download/v3.5.1/seanime-denshi-3.5.1_Linux_x86_64.AppImage"
+        },
+        "version": "3.5.1"
     },
     "victus-control": {
         "cargoLock": null,
