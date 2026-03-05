@@ -46,7 +46,7 @@ let
   version = "39.2.7";
   hashes = {
     x86_64-linux = "sha256-nfnY7bgX+aNMZpyNnZV0cBhE6x1jSqS1LtcQgswve3M=";
-    aarch64-darwin = "";
+    aarch64-darwin = "sha256-+2sSKp0xF6TiPL8wNu53/4IYAmfWxLbgtBELqIPTP98=";
   };
 
   meta = {
@@ -190,6 +190,7 @@ let
 
     passthru.dist = finalAttrs.finalPackage + "/Applications";
   };
+
 in
 stdenv.mkDerivation (
   finalAttrs:

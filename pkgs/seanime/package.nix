@@ -1,5 +1,6 @@
 {
   lib,
+  stdenv,
   source,
   buildGo126Module,
   buildNpmPackage,
@@ -41,7 +42,7 @@ let
 
       patches = [ ./default-disable-update-check.patch ];
 
-      npmDepsHash = "sha256-Pelq65U76IvEUIg1VPM4/+2zAOBk2QUositZMZPYjm8=";
+      npmDepsHash = "sha256-fWlK2h0RQF9GnEogXW3bwM01RCCDVij/9S2sn2BA3S4=";
     };
 in
 buildGo126Module (finalAttrs: {
@@ -82,7 +83,7 @@ buildGo126Module (finalAttrs: {
 
     sourceRoot = "${src.name}/seanime-denshi";
 
-    npmDepsHash = "sha256-KVQKo8iXhuOzIb2wpR0RPXiwanP6hCUu4cH1kUOKMnM=";
+    npmDepsHash = "sha256-gq/Tf46uOP1uYonmQqY61TI9MHc2QXrCvxWV0aUu0wY=";
 
     nativeBuildInputs = [
       copyDesktopItems
@@ -117,12 +118,28 @@ buildGo126Module (finalAttrs: {
     buildPhase = ''
       runHook preBuild
 
-      npm exec electron-builder -- \
-        --dir \
-        -c.mac.identity=null \
-        -c.electronDist=${denshi-electron.dist} \
-        -c.electronVersion=${denshi-electron.version} \
-        -c.extraMetadata.version=v${finalAttrs.version}
+      ${
+        if stdenv.hostPlatform.isDarwin then
+          ''
+            cp -r ${denshi-electron.dist}/Electron.app ./
+            find ./Electron.app -name 'Info.plist' -exec chmod +rw {} \;
+
+            npm exec electron-builder -- \
+              --dir \
+              -c.mac.identity=null \
+              -c.electronDist=./ \
+              -c.electronVersion=${denshi-electron.version} \
+              -c.extraMetadata.version=v${finalAttrs.version}
+          ''
+        else
+          ''
+            npm exec electron-builder -- \
+              --dir \
+              -c.electronDist=${denshi-electron.dist} \
+              -c.electronVersion=${denshi-electron.version} \
+              -c.extraMetadata.version=v${finalAttrs.version}
+          ''
+      }
 
       runHook postBuild
     '';
@@ -130,16 +147,29 @@ buildGo126Module (finalAttrs: {
     installPhase = ''
       runHook preInstall
 
-      mkdir -p $out/share/seanime-denshi
-      cp -r dist/linux-unpacked/{locales,resources{,.pak}} $out/share/seanime-denshi
+      ${
+        if stdenv.hostPlatform.isDarwin then
+          ''
+            mkdir -p $out/{Applications,bin}
+            cp -r dist/mac*/"Seanime Denshi.app" $out/Applications
+            makeWrapper "$out/Applications/Seanime Denshi.app/Contents/MacOS/Seanime Denshi" $out/bin/seanime-denshi
+          ''
+        else
+          ''
+            mkdir -p $out/share/seanime-denshi
+            cp -r dist/*-unpacked/{locales,resources{,.pak}} $out/share/seanime-denshi
 
-      makeWrapper ${lib.getExe denshi-electron} $out/bin/seanime-denshi \
-        --add-flags $out/share/seanime-denshi/resources/app.asar \
-        --inherit-argv0
+            # the custom electron used by upstream seems to not respect "auto", therefore we use "wayland"
+            makeWrapper ${lib.getExe denshi-electron} $out/bin/seanime-denshi \
+              --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform=wayland --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}" \
+              --add-flags $out/share/seanime-denshi/resources/app.asar \
+              --inherit-argv0
 
-      for size in 16 18 24 32 48 64 128 256 512 1024; do
-        install -Dm644 "assets/"$size"x"$size".png" "$out/share/icons/hicolor/"$size"x"$size"/apps/seanime-denshi.png"
-      done
+            for size in 16 18 24 32 48 64 128 256 512 1024; do
+              install -Dm644 "assets/"$size"x"$size".png" "$out/share/icons/hicolor/"$size"x"$size"/apps/seanime-denshi.png"
+            done
+          ''
+      }
 
       runHook postInstall
     '';
@@ -158,6 +188,11 @@ buildGo126Module (finalAttrs: {
           "Video"
         ];
       })
+    ];
+
+    meta.platforms = [
+      "x86_64-linux"
+      "aarch64-darwin"
     ];
   };
 
