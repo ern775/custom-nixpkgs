@@ -44,5 +44,4 @@ in
     source = nvSources.seanime-denshi;
   };
   seanime-denshi-for-nixpkgs = pkgs.callPackage ./pkgs/seanime-denshi/package-for-nixpkgs.nix { };
-  seanime-old = pkgs.callPackage ./pkgs/seanime-old/package.nix { };
 }

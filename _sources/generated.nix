@@ -64,15 +64,15 @@
   };
   hp-wmi-fan-and-backlight-control = {
     pname = "hp-wmi-fan-and-backlight-control";
-    version = "180ec684038dac2d1138371089bafe7d6844122f";
+    version = "eee2d0a06d01167c0faddf1d7cf30ad4c0f195fa";
     src = fetchFromGitHub {
       owner = "TUXOV";
       repo = "hp-wmi-fan-and-backlight-control";
-      rev = "180ec684038dac2d1138371089bafe7d6844122f";
+      rev = "eee2d0a06d01167c0faddf1d7cf30ad4c0f195fa";
       fetchSubmodules = false;
-      sha256 = "sha256-hFO5CphW6gv4EpRN3P0yXXNMROTf0tnzR5QPWQ5eEtw=";
+      sha256 = "sha256-t/1cJ2dq6rpM3w4bomrpvMTB8PVyAxkvxPEw8hLsVm0=";
     };
-    date = "2026-02-06";
+    date = "2026-03-05";
   };
   iloader = {
     pname = "iloader";
@@ -84,7 +84,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "27 Feb 2026 15:45:01 GMT";
+    version = "10 Mar 2026 16:17:11 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -116,29 +116,29 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260207-slr";
+    version = "cachyos-10.0-20260228-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-76iQrZKa2ysCDKV4jysWqthaiKMfjGWQR7r6IwilktI=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260228-slr/proton-cachyos-10.0-20260228-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-sVICz5IJ13mbq7djMGxgjKCGvXW2Yt/c6a151QNrD0I=";
     };
   };
   seanime = {
     pname = "seanime";
-    version = "v3.5.1";
+    version = "v3.5.2";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.5.1";
+      rev = "v3.5.2";
       fetchSubmodules = false;
-      sha256 = "sha256-GbV+2+OoGY9jDZqj93qIOHmI9zXsP3GUk8Yhh1kQuo4=";
+      sha256 = "sha256-ejXWQPUROIzu6RlUJIaKaiJfPb59kupQDhqWU83EqP4=";
     };
   };
   seanime-denshi = {
     pname = "seanime-denshi";
-    version = "3.5.1";
+    version = "3.5.2";
     src = fetchurl {
-      url = "https://github.com/5rahim/seanime/releases/download/v3.5.1/seanime-denshi-3.5.1_Linux_x86_64.AppImage";
-      sha256 = "sha256-W2UpA9OYTv53cTvhlS/gJsWysywqv+NYzG9W4qv8Ztg=";
+      url = "https://github.com/5rahim/seanime/releases/download/v3.5.2/seanime-denshi-3.5.2_Linux_x86_64.AppImage";
+      sha256 = "sha256-8erYkDgOE5Ma4X502JEyXpYnfrLagJA0i0ePuRE+N4s=";
     };
   };
   victus-control = {

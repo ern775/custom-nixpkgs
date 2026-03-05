@@ -100,7 +100,7 @@
     },
     "hp-wmi-fan-and-backlight-control": {
         "cargoLock": null,
-        "date": "2026-02-06",
+        "date": "2026-03-05",
         "extract": null,
         "name": "hp-wmi-fan-and-backlight-control",
         "passthru": null,
@@ -112,12 +112,12 @@
             "name": null,
             "owner": "TUXOV",
             "repo": "hp-wmi-fan-and-backlight-control",
-            "rev": "180ec684038dac2d1138371089bafe7d6844122f",
-            "sha256": "sha256-hFO5CphW6gv4EpRN3P0yXXNMROTf0tnzR5QPWQ5eEtw=",
+            "rev": "eee2d0a06d01167c0faddf1d7cf30ad4c0f195fa",
+            "sha256": "sha256-t/1cJ2dq6rpM3w4bomrpvMTB8PVyAxkvxPEw8hLsVm0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "180ec684038dac2d1138371089bafe7d6844122f"
+        "version": "eee2d0a06d01167c0faddf1d7cf30ad4c0f195fa"
     },
     "iloader": {
         "cargoLock": null,
@@ -147,7 +147,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "27 Feb 2026 15:45:01 GMT"
+        "version": "10 Mar 2026 16:17:11 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -200,11 +200,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-76iQrZKa2ysCDKV4jysWqthaiKMfjGWQR7r6IwilktI=",
+            "sha256": "sha256-sVICz5IJ13mbq7djMGxgjKCGvXW2Yt/c6a151QNrD0I=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260228-slr/proton-cachyos-10.0-20260228-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-10.0-20260207-slr"
+        "version": "cachyos-10.0-20260228-slr"
     },
     "seanime": {
         "cargoLock": null,
@@ -220,12 +220,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.5.1",
-            "sha256": "sha256-GbV+2+OoGY9jDZqj93qIOHmI9zXsP3GUk8Yhh1kQuo4=",
+            "rev": "v3.5.2",
+            "sha256": "sha256-ejXWQPUROIzu6RlUJIaKaiJfPb59kupQDhqWU83EqP4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.5.1"
+        "version": "v3.5.2"
     },
     "seanime-denshi": {
         "cargoLock": null,
@@ -236,11 +236,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-W2UpA9OYTv53cTvhlS/gJsWysywqv+NYzG9W4qv8Ztg=",
+            "sha256": "sha256-8erYkDgOE5Ma4X502JEyXpYnfrLagJA0i0ePuRE+N4s=",
             "type": "url",
-            "url": "https://github.com/5rahim/seanime/releases/download/v3.5.1/seanime-denshi-3.5.1_Linux_x86_64.AppImage"
+            "url": "https://github.com/5rahim/seanime/releases/download/v3.5.2/seanime-denshi-3.5.2_Linux_x86_64.AppImage"
         },
-        "version": "3.5.1"
+        "version": "3.5.2"
     },
     "victus-control": {
         "cargoLock": null,

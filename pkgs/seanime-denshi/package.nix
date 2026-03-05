@@ -16,10 +16,6 @@ appimageTools.wrapType2 rec {
       contents = appimageTools.extract { inherit pname version src; };
     in
     ''
-      # the custom electron used by upstream seems to not respect "auto", therefore we use "wayland"
-      wrapProgram $out/bin/${pname} \
-        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform=wayland --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}"
-
       install -Dm644 ${contents}/seanime-denshi.desktop $out/share/applications/seanime-denshi.desktop
       substituteInPlace $out/share/applications/seanime-denshi.desktop \
         --replace-fail 'Exec=AppRun' 'Exec=seanime-denshi'
