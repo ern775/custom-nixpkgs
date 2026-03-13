@@ -44,4 +44,5 @@ in
     source = nvSources.seanime-denshi;
   };
   seanime-denshi-for-nixpkgs = pkgs.callPackage ./pkgs/seanime-denshi/package-for-nixpkgs.nix { };
+  wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
 }
