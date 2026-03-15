@@ -39,6 +39,12 @@ let
     aarch64-linux = x86_64-linux;
     aarch64-darwin = x86_64-darwin;
   };
+  web-config = fetchFromGitHub {
+    owner = "wireapp";
+    repo = "wire-web-config-wire";
+    tag = "v0.34.9-0";
+    hash = "sha256-E9x/tRcMfXw/tjgNBUTefym9/m/Xu9/9CclwSmxpDzU=";
+  };
   electron-dist-zip = stdenvNoCC.mkDerivation {
     pname = "electron-dist-zip";
     version = electron.version;
@@ -60,13 +66,6 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-md7B8NSqT9dmPxrp9zbWifNow+1j2tuTRMOljG1V8WE=";
   };
 
-  web-config = fetchFromGitHub {
-    owner = "wireapp";
-    repo = "wire-web-config-wire";
-    tag = "v0.34.9-0";
-    hash = "sha256-E9x/tRcMfXw/tjgNBUTefym9/m/Xu9/9CclwSmxpDzU=";
-  };
-
   nativeBuildInputs = [
     nodejs
     yarn-berry.yarnBerryConfigHook
@@ -86,7 +85,7 @@ stdenv.mkDerivation (finalAttrs: {
   # we provide web-config externally due to yarn trying to fetch from github on build phase
   postPatch = ''
     substituteInPlace .copyconfigrc.js \
-      --replace-fail 'repositoryUrl,' 'repositoryUrl, externalDir : "${finalAttrs.web-config}",'
+      --replace-fail 'repositoryUrl,' 'repositoryUrl, externalDir : "${web-config}",'
   '';
 
   env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
