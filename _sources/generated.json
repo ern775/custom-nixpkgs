@@ -128,11 +128,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8lhf0oFmkWwy4Wrm1Z6X4iJECcULius+3ZUgNbRkyLw=",
+            "sha256": "sha256-MoC+NVdzMml9t6WzIm0A5GgPrqX1ohAR552XkpQT6iI=",
             "type": "url",
-            "url": "https://github.com/nab138/iloader/releases/download/v2.0.6/iloader-linux-amd64.deb"
+            "url": "https://github.com/nab138/iloader/releases/download/v2.0.9/iloader-linux-amd64.deb"
         },
-        "version": "v2.0.6"
+        "version": "v2.0.9"
     },
     "jdownloader2": {
         "cargoLock": null,
@@ -147,7 +147,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "12 Mar 2026 13:38:00 GMT"
+        "version": "19 Mar 2026 08:14:50 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -200,11 +200,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-sVICz5IJ13mbq7djMGxgjKCGvXW2Yt/c6a151QNrD0I=",
+            "sha256": "sha256-Qb7VdOu+iDIdCdEdhr4GqMqKLeKTf7O6NhDUaM1NmHA=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260228-slr/proton-cachyos-10.0-20260228-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260312-slr/proton-cachyos-10.0-20260312-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-10.0-20260228-slr"
+        "version": "cachyos-10.0-20260312-slr"
     },
     "seanime": {
         "cargoLock": null,

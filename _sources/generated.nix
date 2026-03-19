@@ -76,15 +76,15 @@
   };
   iloader = {
     pname = "iloader";
-    version = "v2.0.6";
+    version = "v2.0.9";
     src = fetchurl {
-      url = "https://github.com/nab138/iloader/releases/download/v2.0.6/iloader-linux-amd64.deb";
-      sha256 = "sha256-8lhf0oFmkWwy4Wrm1Z6X4iJECcULius+3ZUgNbRkyLw=";
+      url = "https://github.com/nab138/iloader/releases/download/v2.0.9/iloader-linux-amd64.deb";
+      sha256 = "sha256-MoC+NVdzMml9t6WzIm0A5GgPrqX1ohAR552XkpQT6iI=";
     };
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "12 Mar 2026 13:38:00 GMT";
+    version = "19 Mar 2026 08:14:50 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -116,10 +116,10 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260228-slr";
+    version = "cachyos-10.0-20260312-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260228-slr/proton-cachyos-10.0-20260228-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-sVICz5IJ13mbq7djMGxgjKCGvXW2Yt/c6a151QNrD0I=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260312-slr/proton-cachyos-10.0-20260312-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-Qb7VdOu+iDIdCdEdhr4GqMqKLeKTf7O6NhDUaM1NmHA=";
     };
   };
   seanime = {
