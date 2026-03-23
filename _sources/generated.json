@@ -147,7 +147,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "19 Mar 2026 08:14:50 GMT"
+        "version": "23 Mar 2026 10:04:21 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -200,11 +200,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Qb7VdOu+iDIdCdEdhr4GqMqKLeKTf7O6NhDUaM1NmHA=",
+            "sha256": "sha256-aTvaTfM6qFef95yLuzO5jgMTaQuQ+R4t0+oQ5IFut/M=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260312-slr/proton-cachyos-10.0-20260312-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260320-slr/proton-cachyos-10.0-20260320-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-10.0-20260312-slr"
+        "version": "cachyos-10.0-20260320-slr"
     },
     "seanime": {
         "cargoLock": null,
