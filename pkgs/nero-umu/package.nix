@@ -29,6 +29,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   patches = [
     ./custom-proton.patch
+    ./main.cpp.patch
   ];
 
   nativeBuildInputs = [

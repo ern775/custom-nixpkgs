@@ -1,0 +1,16 @@
+--- a/src/main.cpp	2026-03-24 16:28:12.935922681 +0300
++++ b/src/main.cpp	2026-03-24 16:28:40.737947717 +0300
+@@ -39,9 +39,11 @@
+ 
+ int main(int argc, char *argv[])
+ {
+-    QApplication a(argc, argv);
+-
++    QCoreApplication::setOrganizationName("Nero");
++    QCoreApplication::setOrganizationDomain("Nero.TOS.xyz");
+     QCoreApplication::setApplicationName("Nero-UMU");
++    
++    QApplication a(argc, argv);
+ 
+     QTranslator translator;
+     const QStringList uiLanguages = QLocale::system().uiLanguages();
