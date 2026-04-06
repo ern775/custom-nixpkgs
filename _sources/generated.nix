@@ -32,10 +32,10 @@
   };
   dopamine = {
     pname = "dopamine";
-    version = "3.0.3";
+    version = "3.0.4";
     src = fetchurl {
-      url = "https://github.com/digimezzo/dopamine/releases/download/v3.0.3/Dopamine-3.0.3.AppImage";
-      sha256 = "sha256-jSES9FJKrA2z6+f376Vc9NtHbRBG215Fc2335Vp/h1A=";
+      url = "https://github.com/digimezzo/dopamine/releases/download/v3.0.4/Dopamine-3.0.4.AppImage";
+      sha256 = "sha256-sm8/ZzSqa1CsQJ7XfQ67yAKX5rR9E8J/Z6v1rLVhNwI=";
     };
   };
   excalibur-wmi = {
@@ -76,15 +76,15 @@
   };
   iloader = {
     pname = "iloader";
-    version = "v2.0.10";
+    version = "v2.2.0";
     src = fetchurl {
-      url = "https://github.com/nab138/iloader/releases/download/v2.0.10/iloader-linux-amd64.deb";
-      sha256 = "sha256-m/1M8IfC3e6mAIZ0z7kKfnTgSsO75YSwdHh2kVJov7s=";
+      url = "https://github.com/nab138/iloader/releases/download/v2.2.0/iloader-linux-amd64.deb";
+      sha256 = "sha256-27A5RRTMe2LHS0cL8iY/rZhzFvRCAbPgDHXRy1YsPFg=";
     };
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "30 Mar 2026 07:34:38 GMT";
+    version = "06 Apr 2026 12:35:20 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -116,10 +116,10 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260324-slr";
+    version = "cachyos-10.0-20260330-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260324-slr/proton-cachyos-10.0-20260324-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-158b49/TPuYD4kRC9YCd/obVjv1JUBpDIsjjeUP/RRw=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260330-slr/proton-cachyos-10.0-20260330-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-xQxG7j1bhWhI2qhTQp+AsJeqVZk9ljXMibYgcVFqybY=";
     };
   };
   seanime = {
