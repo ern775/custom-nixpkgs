@@ -1,50 +1,118 @@
 {
-  source,
   lib,
   stdenv,
-  dpkg,
-  autoPatchelfHook,
+  source,
+
+  rustPlatform,
+  nodejs,
+  cargo-tauri,
+  bun,
+  writableTmpDirAsHomeHook,
+
   glib,
-  gtk3,
-  wrapGAppsHook3,
+  glib-networking,
+  gst_all_1,
+  openssl,
+  pkg-config,
   webkitgtk_4_1,
-  gdk-pixbuf,
+  wrapGAppsHook3,
+  makeWrapper,
 }:
-stdenv.mkDerivation (finalAttrs: {
-  pname = "iloader";
+rustPlatform.buildRustPackage (finalAttrs: {
+  inherit (source) pname version src;
 
-  inherit (source) version src;
+  nodeModules = stdenv.mkDerivation {
+    pname = "${finalAttrs.pname}-node_modules";
+    inherit (finalAttrs) src version;
 
-  unpackCmd = "dpkg -x $curSrc source";
+    nativeBuildInputs = [
+      bun
+      writableTmpDirAsHomeHook
+    ];
+
+    dontConfigure = true;
+    dontFixup = true;
+    dontPatchShebangs = true; # Patch shebangs manually in configurePhase after copying node_modules in the main derivation.
+
+    buildPhase = ''
+      runHook preBuild
+      bun install --frozen-lockfile --allow-scripts --no-progress
+      runHook postBuild
+    '';
+
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out
+      cp -r node_modules $out/node_modules
+      runHook postInstall
+    '';
+
+    outputHash =
+      {
+        aarch64-darwin = "sha256-6CnyAhniJmmxP2CosJBV9n5MQBwO5J/d9OcsI0tYvF0=";
+        aarch64-linux = "sha256-GnepkgExcfzSEhVKN23dgLjw0B+HcvvSXxx7A4pZC8A=";
+        x86_64-darwin = "sha256-oKlPFVZWxhFRzju4ZBSQj96sRsHq1OB4BCGP42zFuxQ=";
+        x86_64-linux = "sha256-bXhS+rJxFq/E8gytR+cXow+Z8Shop3LMMTOER3NG4/w=";
+      }
+      .${stdenv.hostPlatform.system};
+    outputHashAlgo = "sha256";
+    outputHashMode = "recursive";
+  };
+
+  cargoRoot = "src-tauri";
+  buildAndTestSubdir = finalAttrs.cargoRoot;
+  cargoHash = "sha256-Rn+2etmtel9E6kxxHGZCc72vkKuOn/0x9AaM/7lLzyI=";
+
+  doCheck = false;
+
+  patches = [ ./disable-update.patch ];
+
+  postPatch = ''
+    cp -r ${finalAttrs.nodeModules}/node_modules .
+    chmod -R +w node_modules
+    patchShebangs --build node_modules
+  '';
 
   nativeBuildInputs = [
-    dpkg
-    autoPatchelfHook
-    wrapGAppsHook3
-  ];
+    bun
+    cargo-tauri.hook
+    nodejs
+    pkg-config
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isLinux [ wrapGAppsHook3 ]
+  ++ lib.optionals stdenv.hostPlatform.isDarwin [ makeWrapper ];
 
-  buildInputs = [
-    glib
-    gtk3
+  buildInputs = lib.optionals stdenv.hostPlatform.isLinux [
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
     webkitgtk_4_1
-    gdk-pixbuf
+    glib
+    glib-networking
+    openssl
   ];
 
-  installPhase = ''
-    runHook preInstall
+  tauriBuildFlags = [
+    "--config ci.conf.json"
+    "--no-sign"
+  ];
 
+  postInstall = lib.optionalString stdenv.hostPlatform.isDarwin ''
     mkdir -p $out/bin
-    mv usr/share usr/bin $out
-
-    runHook postInstall
+    makeWrapper $out/Applications/iloader.app/Contents/MacOS/iloader $out/bin/iloader
   '';
 
   meta = {
+    changelog = "https://github.com/nab138/iloader/releases/tag/v${finalAttrs.version}";
     description = "User friendly sideloader";
     homepage = "https://github.com/nab138/iloader";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ ern775 ];
-    platforms = [ "x86_64-linux" ];
     mainProgram = "iloader";
+    maintainers = with lib.maintainers; [ ern775 ];
+    platforms = [
+      "aarch64-linux"
+      "x86_64-linux"
+      "aarch64-darwin"
+      "x86_64-darwin"
+    ];
   };
 })

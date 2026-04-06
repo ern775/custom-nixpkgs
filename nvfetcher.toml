@@ -34,8 +34,8 @@ src.git = "https://github.com/Vilez0/victus-control"
 fetch.github = "Vilez0/victus-control"
 
 [iloader]
-src.github = "nab138/iloader"
-fetch.url = "https://github.com/nab138/iloader/releases/download/$ver/iloader-linux-amd64.deb"
+src.github_tag = "nab138/iloader"
+fetch.github = "nab138/iloader"
 
 [dopamine]
 src.github = "digimezzo/dopamine"

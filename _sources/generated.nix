@@ -76,10 +76,13 @@
   };
   iloader = {
     pname = "iloader";
-    version = "v2.2.0";
-    src = fetchurl {
-      url = "https://github.com/nab138/iloader/releases/download/v2.2.0/iloader-linux-amd64.deb";
-      sha256 = "sha256-27A5RRTMe2LHS0cL8iY/rZhzFvRCAbPgDHXRy1YsPFg=";
+    version = "v2.2.3";
+    src = fetchFromGitHub {
+      owner = "nab138";
+      repo = "iloader";
+      rev = "v2.2.3";
+      fetchSubmodules = false;
+      sha256 = "sha256-6Vobx2NLTUyHBz6DhR4FYPH2ThTu0lxKDlb0gM49eYE=";
     };
   };
   jdownloader2 = {

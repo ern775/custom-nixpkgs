@@ -127,12 +127,18 @@
         "passthru": null,
         "pinned": false,
         "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
             "name": null,
-            "sha256": "sha256-27A5RRTMe2LHS0cL8iY/rZhzFvRCAbPgDHXRy1YsPFg=",
-            "type": "url",
-            "url": "https://github.com/nab138/iloader/releases/download/v2.2.0/iloader-linux-amd64.deb"
+            "owner": "nab138",
+            "repo": "iloader",
+            "rev": "v2.2.3",
+            "sha256": "sha256-6Vobx2NLTUyHBz6DhR4FYPH2ThTu0lxKDlb0gM49eYE=",
+            "sparseCheckout": [],
+            "type": "github"
         },
-        "version": "v2.2.0"
+        "version": "v2.2.3"
     },
     "jdownloader2": {
         "cargoLock": null,
