@@ -50,6 +50,18 @@
     };
     date = "2026-02-13";
   };
+  gecit = {
+    pname = "gecit";
+    version = "eeab7d26babae7e1296cb0b102df29aae363d5d5";
+    src = fetchFromGitHub {
+      owner = "boratanrikulu";
+      repo = "gecit";
+      rev = "eeab7d26babae7e1296cb0b102df29aae363d5d5";
+      fetchSubmodules = false;
+      sha256 = "sha256-wvq5K+o0Z9ZGtWQZYPFkxX06TGIqL1DBb5aJkwijHAo=";
+    };
+    date = "2026-04-11";
+  };
   hp-omen-wmi = {
     pname = "hp-omen-wmi";
     version = "a2d79368bf981a3f241a36941aaa4a7fe657d924";
@@ -87,7 +99,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "06 Apr 2026 12:35:20 GMT";
+    version = "10 Apr 2026 12:38:02 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";

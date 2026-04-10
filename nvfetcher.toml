@@ -33,6 +33,10 @@ fetch.github = "lemogne/omenrgb"
 src.git = "https://github.com/Vilez0/victus-control"
 fetch.github = "Vilez0/victus-control"
 
+[gecit]
+src.git = "https://github.com/boratanrikulu/gecit"
+fetch.github = "boratanrikulu/gecit"
+
 [iloader]
 src.github_tag = "nab138/iloader"
 fetch.github = "nab138/iloader"
