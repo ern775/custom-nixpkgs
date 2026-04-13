@@ -42,7 +42,7 @@ let
 
       patches = [ ./default-disable-update-check.patch ];
 
-      npmDepsHash = "sha256-fWlK2h0RQF9GnEogXW3bwM01RCCDVij/9S2sn2BA3S4=";
+      npmDepsHash = "sha256-4ItF0+Bmc+75oeNHjQP4RsbcRWgeG9Wq/27wDiQ4KVM=";
     };
 in
 buildGo126Module (finalAttrs: {
@@ -50,7 +50,7 @@ buildGo126Module (finalAttrs: {
 
   inherit src version;
 
-  vendorHash = "sha256-TN9shH4B7XVDIa541+7MHTNQs1IKPRJW1dn8tmES5jg=";
+  vendorHash = "sha256-9RCVIL+h5L20156BuD8GGbC98QUchB8JCWId8b/Sfy8=";
 
   preBuild = ''
     cp -r ${seanime-web { }}/web .
@@ -83,7 +83,7 @@ buildGo126Module (finalAttrs: {
 
     sourceRoot = "${src.name}/seanime-denshi";
 
-    npmDepsHash = "sha256-gq/Tf46uOP1uYonmQqY61TI9MHc2QXrCvxWV0aUu0wY=";
+    npmDepsHash = "sha256-GVpNynGZtucz7hgVZrvg7D/uwVTzfsY+LiY4xLLxKqk=";
 
     nativeBuildInputs = [
       copyDesktopItems

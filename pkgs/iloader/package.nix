@@ -19,6 +19,7 @@
   makeWrapper,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
+  __structuredAttrs = true;
   inherit (source) pname version src;
 
   nodeModules = stdenv.mkDerivation {
@@ -32,36 +33,38 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
     dontConfigure = true;
     dontFixup = true;
-    dontPatchShebangs = true; # Patch shebangs manually in configurePhase after copying node_modules in the main derivation.
+    dontPatchShebangs = true; # Patch shebangs manually in postPatch after copying node_modules in the main derivation.
 
     buildPhase = ''
       runHook preBuild
-      bun install --frozen-lockfile --allow-scripts --no-progress
+
+      bun install \
+        --cpu="*" \
+        --frozen-lockfile \
+        --ignore-scripts \
+        --no-progress \
+        --os="*"
+
       runHook postBuild
     '';
 
     installPhase = ''
       runHook preInstall
+
       mkdir -p $out
       cp -r node_modules $out/node_modules
+
       runHook postInstall
     '';
 
-    outputHash =
-      {
-        aarch64-darwin = "sha256-6CnyAhniJmmxP2CosJBV9n5MQBwO5J/d9OcsI0tYvF0=";
-        aarch64-linux = "sha256-GnepkgExcfzSEhVKN23dgLjw0B+HcvvSXxx7A4pZC8A=";
-        x86_64-darwin = "sha256-oKlPFVZWxhFRzju4ZBSQj96sRsHq1OB4BCGP42zFuxQ=";
-        x86_64-linux = "sha256-bXhS+rJxFq/E8gytR+cXow+Z8Shop3LMMTOER3NG4/w=";
-      }
-      .${stdenv.hostPlatform.system};
+    outputHash = "sha256-zB0BJrQuoIu7Y67WMfrVRsPPnJ6mhd5srL2M3zW6+1Q=";
     outputHashAlgo = "sha256";
     outputHashMode = "recursive";
   };
 
   cargoRoot = "src-tauri";
   buildAndTestSubdir = finalAttrs.cargoRoot;
-  cargoHash = "sha256-Rn+2etmtel9E6kxxHGZCc72vkKuOn/0x9AaM/7lLzyI=";
+  cargoHash = "sha256-ryXbUBNtMjZcQGivnjqRBxbGsW6UAJbU38rTqzwvH+Y=";
 
   doCheck = false;
 
@@ -92,7 +95,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
   ];
 
   tauriBuildFlags = [
-    "--config ci.conf.json"
+    "--config"
+    "ci.conf.json"
     "--no-sign"
   ];
 

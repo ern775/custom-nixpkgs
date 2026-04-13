@@ -25,7 +25,7 @@ in
   # modules = import ./modules; # NixOS modules
   # overlays = import ./overlays; # nixpkgs overlays
 
-  dopamine = pkgs.callPackage ./pkgs/dopamine/package.nix { source = nvSources.dopamine; };
+  dopamine = pkgs.callPackage ./pkgs/dopamine/package.nix { };
   gecit = pkgs.callPackage ./pkgs/gecit/package.nix { source = nvSources.gecit; };
   iloader = pkgs.callPackage ./pkgs/iloader/package.nix { source = nvSources.iloader; };
   jdownloader2 = pkgs.callPackage ./pkgs/jdownloader2/package.nix {

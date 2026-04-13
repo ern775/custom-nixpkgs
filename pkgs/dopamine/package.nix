@@ -1,44 +1,76 @@
 {
-  source,
   lib,
-  appimageTools,
-  nix-update-script,
-  makeWrapper,
+  stdenv,
+  buildNpmPackage,
+  fetchFromGitHub,
+  electron_39,
 }:
-appimageTools.wrapType2 rec {
+buildNpmPackage (finalAttrs: {
   pname = "dopamine";
+  version = "3.0.4";
 
-  inherit (source) version src;
+  src = fetchFromGitHub {
+    owner = "digimezzo";
+    repo = "dopamine";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-/qgzlbaV0JdKD3UT9Kr5QD3RPMF0ZvO3VIdHokGAFic=";
+  };
 
-  nativeBuildInputs = [ makeWrapper ];
+  # patches = [ ./remove-register-scheme.patch ];
 
-  extraInstallCommands =
-    let
-      contents = appimageTools.extract { inherit pname version src; };
-    in
-    ''
-      wrapProgram $out/bin/${pname} \
-        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime=true}}"
+  env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
+  forceGitDeps = true;
+  npmDepsHash = "sha256-45e2l9/sGywm9UeVhMSWcerrR/JxiZVODxifRuBVYr8=";
 
-      install -Dm644 ${contents}/dopamine.desktop $out/share/applications/dopamine.desktop
-      substituteInPlace $out/share/applications/dopamine.desktop \
-        --replace-fail 'Exec=AppRun' 'Exec=dopamine'
-      cp -r ${contents}/usr/share/icons $out/share
-    '';
+  buildPhase = ''
+    runHook preBuild
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=unstable" ]; };
+    npm run build:prod
+    npm exec electron-builder -- \
+      --dir \
+      -c.electronDist=${electron_39.dist} \
+      -c.electronVersion=${electron_39.version} \
+      -c.extraMetadata.version=v${finalAttrs.version} \
+      --config electron-builder.config.js
+
+    runHook postBuild
+  '';
+
+  installPhase = ''
+    runHook preInstall
+
+    ${
+      if stdenv.hostPlatform.isDarwin then
+        ''
+          mkdir -p $out/{Applications,bin}
+          cp -r dist/mac*/Dopamine.app $out/Applications
+          makeWrapper $out/Applications/Dopamine.app/Contents/MacOS/Dopamine $out/bin/dopamine
+        ''
+      else
+        ''
+          mkdir -p $out/share/dopamine
+          cp -r dist/*-unpacked/* $out/share/dopamine
+
+          makeWrapper ${lib.getExe electron_39} $out/bin/dopamine \
+            --add-flags $out/share/dopamine/resources/app.asar \
+            --inherit-argv0
+
+          for size in 16 24 32 48 64 96 128 256 512; do
+            install -Dm644 "build/icons/"$size"x"$size".png" "$out/share/icons/hicolor/"$size"x"$size"/apps/dopamine.png"
+          done
+        ''
+    }
+
+    runHook postInstall
+  '';
 
   meta = {
-    changelog = "https://github.com/digimezzo/dopamine/blob/${version}/CHANGELOG.md";
-    description = "Audio player that keeps it simple";
+    description = "The audio player that keeps it simple";
     homepage = "https://github.com/digimezzo/dopamine";
+    changelog = "https://github.com/digimezzo/dopamine/blob/${finalAttrs.src.rev}/CHANGELOG.md";
     license = lib.licenses.gpl3Only;
+    maintainers = with lib.maintainers; [ ];
     mainProgram = "dopamine";
-    maintainers = with lib.maintainers; [
-      Guanran928
-      ern775
-    ];
-    platforms = [ "x86_64-linux" ];
-    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+    platforms = lib.platforms.all;
   };
-}
+})
