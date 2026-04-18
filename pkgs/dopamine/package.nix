@@ -4,6 +4,7 @@
   buildNpmPackage,
   fetchFromGitHub,
   electron_39,
+  libgcc,
 }:
 buildNpmPackage (finalAttrs: {
   pname = "dopamine";
@@ -17,6 +18,10 @@ buildNpmPackage (finalAttrs: {
   };
 
   # patches = [ ./remove-register-scheme.patch ];
+  nativeBuildInputs = [ libgcc ];
+  buildInputs = [ libgcc ];
+
+  runtimeDeps = [ libgcc ];
 
   env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
   forceGitDeps = true;
@@ -49,7 +54,7 @@ buildNpmPackage (finalAttrs: {
       else
         ''
           mkdir -p $out/share/dopamine
-          cp -r dist/*-unpacked/* $out/share/dopamine
+          cp -r release/linux-unpacked/{locales,resources{,.pak}} $out/share/dopamine
 
           makeWrapper ${lib.getExe electron_39} $out/bin/dopamine \
             --add-flags $out/share/dopamine/resources/app.asar \

@@ -1,0 +1,26 @@
+diff --git a/backend/src/fan.cpp b/backend/src/fan.cpp
+index f648869..b86553e 100644
+--- a/backend/src/fan.cpp
++++ b/backend/src/fan.cpp
+@@ -142,7 +142,7 @@ std::string get_fan_max_speed(const std::string &fan_num)
+ 			fan_speed.erase(fan_speed.find_last_not_of(" \n\r\t") + 1);
+ 
+ 			if (fan_speed == "0")
+-				fan_speed = "4500"; // default max speed
++				fan_speed = "6000"; // default max speed
+ 
+ 			return fan_speed;
+ 		}
+diff --git a/frontend/src/fan.cpp b/frontend/src/fan.cpp
+index 01b08c1..6fc6a35 100644
+--- a/frontend/src/fan.cpp
++++ b/frontend/src/fan.cpp
+@@ -27,7 +27,7 @@ VictusFanControl::VictusFanControl(std::shared_ptr<VictusSocketClient> client) :
+ 
+ 	fan1_slider_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
+ 	auto resp = std::stoi((socket_client->send_command_async(GET_FAN_MAX_SPEED, "1")).get());
+-	int fan1_max_speed = (resp != 0) ? resp : 4500;
++	int fan1_max_speed = (resp != 0) ? resp : 6000;
+ 	fan1_speed_slider = gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL, 0, fan1_max_speed/100, 1);
+ 	gtk_widget_set_hexpand(fan1_speed_slider, TRUE);
+ 	fan1_label_slider = gtk_label_new("Fan1 Speed: 0 RPM");

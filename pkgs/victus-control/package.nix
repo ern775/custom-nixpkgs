@@ -17,6 +17,8 @@ stdenv.mkDerivation (finalAttrs: {
   inherit (source) date src;
   version = "0-unstable-${finalAttrs.date}";
 
+  patches = [ ./fan-speed.patch ];
+
   nativeBuildInputs = [
     meson
     ninja
