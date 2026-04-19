@@ -2,15 +2,13 @@
   lib,
   stdenv,
   source,
-  buildGoModule,
-  ffmpeg,
-  fetchNpmDeps,
-  nix-update-script,
+  buildGo126Module,
   buildNpmPackage,
-
+  ffmpeg,
   makeDesktopItem,
   copyDesktopItems,
   callPackage,
+
   # we use the same electron as upstream
   denshi-electron ? callPackage ./electron.nix { },
 }:
@@ -24,14 +22,15 @@ let
       installPhase ? ''
         runHook preInstall
 
-        mkdir $out
-        cp -r seanime-web/out $out/web
+        mkdir -p $out
+        cp -r out $out/web
 
         runHook postInstall
       '',
     }:
     buildNpmPackage {
       pname = "seanime-web";
+
       inherit
         src
         version
@@ -39,23 +38,19 @@ let
         installPhase
         ;
 
+      sourceRoot = "${src.name}/seanime-web";
+
       patches = [ ./default-disable-update-check.patch ];
 
-      npmBuildFlags = [
-        "--prefix"
-        "seanime-web"
-      ];
-
-      npmRoot = "seanime-web";
-      npmDeps = fetchNpmDeps {
-        src = "${src}/seanime-web";
-        hash = "sha256-4ItF0+Bmc+75oeNHjQP4RsbcRWgeG9Wq/27wDiQ4KVM=";
-      };
+      npmDepsHash = "sha256-4ItF0+Bmc+75oeNHjQP4RsbcRWgeG9Wq/27wDiQ4KVM=";
     };
 in
-buildGoModule (finalAttrs: {
+buildGo126Module (finalAttrs: {
   pname = "seanime";
+
   inherit src version;
+
+  vendorHash = "sha256-9RCVIL+h5L20156BuD8GGbC98QUchB8JCWId8b/Sfy8=";
 
   preBuild = ''
     cp -r ${seanime-web { }}/web .
@@ -63,8 +58,6 @@ buildGoModule (finalAttrs: {
     # .github scripts redeclare main
     rm -rf .github
   '';
-
-  vendorHash = "sha256-9RCVIL+h5L20156BuD8GGbC98QUchB8JCWId8b/Sfy8=";
 
   subPackages = [ "." ];
 
@@ -75,7 +68,6 @@ buildGoModule (finalAttrs: {
     "-w"
   ];
 
-  # for transcoding
   makeWrapperArgs = [
     "--prefix PATH : ${
       lib.makeBinPath [
@@ -110,8 +102,8 @@ buildGoModule (finalAttrs: {
           installPhase = ''
             runHook preInstall
 
-            mkdir $out
-            cp -r seanime-web/out-denshi $out/web-denshi
+            mkdir -p $out
+            cp -r out-denshi $out/web-denshi
 
             runHook postInstall
           '';
@@ -201,8 +193,6 @@ buildGoModule (finalAttrs: {
       "aarch64-darwin"
     ];
   };
-
-  passthru.updateScript = nix-update-script { };
 
   meta = {
     description = "Open-source media server for anime and manga";
