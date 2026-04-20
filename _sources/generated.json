@@ -79,7 +79,7 @@
     },
     "gecit": {
         "cargoLock": null,
-        "date": "2026-04-11",
+        "date": "2026-04-21",
         "extract": null,
         "name": "gecit",
         "passthru": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "boratanrikulu",
             "repo": "gecit",
-            "rev": "bfecc88f78380174e83c550f7e9e7a52cfdea5ef",
-            "sha256": "sha256-DuWhSWvDcVTMzkXPcKHZ+UVQfQVkL4g/Vqe/Fn05NRk=",
+            "rev": "d9c205bf016519b03fd55ab37a65ec2d84c46254",
+            "sha256": "sha256-IJvMAFNpKuPlBPqFS6PCpSYRzjxNUEpw3YXpZ5t9lG8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "bfecc88f78380174e83c550f7e9e7a52cfdea5ef"
+        "version": "d9c205bf016519b03fd55ab37a65ec2d84c46254"
     },
     "hp-omen-wmi": {
         "cargoLock": null,
@@ -174,7 +174,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "20 Apr 2026 09:29:38 GMT"
+        "version": "21 Apr 2026 13:04:44 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
