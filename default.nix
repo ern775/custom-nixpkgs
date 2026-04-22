@@ -47,4 +47,5 @@ in
   seanime-denshi-for-nixpkgs = pkgs.callPackage ./pkgs/seanime-denshi/package-for-nixpkgs.nix { };
   wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
   visual-paradigm-ce = pkgs.callPackage ./pkgs/visual-paradigm-ce/package.nix { };
+  solidtime-desktop = pkgs.callPackage ./pkgs/solidtime-desktop/package.nix { };
 }
