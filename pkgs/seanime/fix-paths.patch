@@ -5,7 +5,7 @@
          } else {
              // In production, use the resources path
 -            binaryPath = path.join(process.resourcesPath, "binaries", binaryName)
-+            binaryPath = "SEANIME"
++            binaryPath = "SEANIME_BIN"
          }
  
          logStartupEvent("Using binary", `${binaryPath} (${process.arch})`)

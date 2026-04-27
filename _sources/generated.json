@@ -79,7 +79,7 @@
     },
     "gecit": {
         "cargoLock": null,
-        "date": "2026-04-21",
+        "date": "2026-04-27",
         "extract": null,
         "name": "gecit",
         "passthru": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "boratanrikulu",
             "repo": "gecit",
-            "rev": "d9c205bf016519b03fd55ab37a65ec2d84c46254",
-            "sha256": "sha256-IJvMAFNpKuPlBPqFS6PCpSYRzjxNUEpw3YXpZ5t9lG8=",
+            "rev": "31fce3b6c8a8555a4c6589ebfcac9dcbaf576be4",
+            "sha256": "sha256-s62PqcfB23HZlOGxsWcHJ+A7y0U1N3u1b/Tl3dwHHYY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d9c205bf016519b03fd55ab37a65ec2d84c46254"
+        "version": "31fce3b6c8a8555a4c6589ebfcac9dcbaf576be4"
     },
     "hp-omen-wmi": {
         "cargoLock": null,
@@ -154,12 +154,12 @@
             "name": null,
             "owner": "nab138",
             "repo": "iloader",
-            "rev": "v2.2.4",
-            "sha256": "sha256-cKUyxNsnqG1GSD+zMNjIoOkl4+IHRfWLQQo8IDjIS/o=",
+            "rev": "v2.2.5",
+            "sha256": "sha256-cYG6nfY6liM+Ml4qDna+6c4ox4uBNHepKBP8obB/4Uw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.2.4"
+        "version": "v2.2.5"
     },
     "jdownloader2": {
         "cargoLock": null,
@@ -174,7 +174,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "21 Apr 2026 13:04:44 GMT"
+        "version": "29 Apr 2026 12:42:27 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -227,11 +227,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-vJipf1yacr98lu7IkoZCg/563fvCp1x/8Nolyoj23SI=",
+            "sha256": "sha256-Zob6+zSBWHs2GTloOUy33/mLs1m7uy8U1E8u2LHDy7M=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260410-slr/proton-cachyos-10.0-20260410-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260424-slr/proton-cachyos-10.0-20260424-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-10.0-20260410-slr"
+        "version": "cachyos-10.0-20260424-slr"
     },
     "seanime": {
         "cargoLock": null,
@@ -247,27 +247,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.6.1",
-            "sha256": "sha256-utKOewhtuivkp0mtns2ysp+q0nwou7tojZ6VjrPhEMw=",
+            "rev": "v3.7.1",
+            "sha256": "sha256-BDXm5Qh/QJIAJ/je52IZifQeb5C17T8vZ7FrMlhqz54=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.6.1"
-    },
-    "seanime-denshi": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "seanime-denshi",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-hr2T6Lyf1QhYK1fb0Uy3Kj13j/rWfyCti32f335n2nA=",
-            "type": "url",
-            "url": "https://github.com/5rahim/seanime/releases/download/v3.6.1/seanime-denshi-3.6.1_Linux_x86_64.AppImage"
-        },
-        "version": "3.6.1"
+        "version": "v3.7.1"
     },
     "victus-control": {
         "cargoLock": null,

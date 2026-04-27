@@ -6,6 +6,7 @@
   electron_39,
   python3,
   xcodebuild,
+  importNpmLock,
 }:
 buildNpmPackage (finalAttrs: {
   pname = "dopamine";
@@ -18,7 +19,9 @@ buildNpmPackage (finalAttrs: {
     hash = "sha256-/qgzlbaV0JdKD3UT9Kr5QD3RPMF0ZvO3VIdHokGAFic=";
   };
 
-  npmDepsHash = "sha256-7qRKecY/w7s0zd/TpIRku8wfFE8FwEXPTr8Xz6nusic=";
+  npmDeps = importNpmLock { npmRoot = finalAttrs.src; };
+
+  npmConfigHook = importNpmLock.npmConfigHook;
 
   patches = [
     # register-scheme contains install scripts, but has no lockfile
@@ -28,13 +31,10 @@ buildNpmPackage (finalAttrs: {
     ./update-node-addon-api.patch
   ];
 
-  nativeBuildInputs =
-    lib.optionals stdenv.hostPlatform.isDarwin [ xcodebuild ]
-
-    # specifically needed on aarch64 for node-gyp on rebuild
-    ++ lib.optionals stdenv.hostPlatform.isAarch64 [
-      (python3.withPackages (ps: with ps; [ distutils ]))
-    ];
+  nativeBuildInputs = [
+    (python3.withPackages (ps: with ps; [ distutils ]))
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isDarwin [ xcodebuild ];
 
   env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
 

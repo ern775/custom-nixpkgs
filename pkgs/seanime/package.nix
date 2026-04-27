@@ -4,7 +4,7 @@
   source,
   buildGoModule,
   ffmpeg,
-  fetchNpmDeps,
+  importNpmLock,
   nix-update-script,
   buildNpmPackage,
 
@@ -47,10 +47,10 @@ let
       ];
 
       npmRoot = "seanime-web";
-      npmDeps = fetchNpmDeps {
-        src = "${src}/seanime-web";
-        hash = "sha256-4ItF0+Bmc+75oeNHjQP4RsbcRWgeG9Wq/27wDiQ4KVM=";
-      };
+
+      npmDeps = importNpmLock { npmRoot = "${src}/seanime-web"; };
+
+      npmConfigHook = importNpmLock.npmConfigHook;
     };
 in
 buildGoModule (finalAttrs: {
@@ -64,7 +64,7 @@ buildGoModule (finalAttrs: {
     rm -rf .github
   '';
 
-  vendorHash = "sha256-9RCVIL+h5L20156BuD8GGbC98QUchB8JCWId8b/Sfy8=";
+  vendorHash = "sha256-Gd1Il1v2skwCe9QMZFywOOijEwsBOUYo4XLCxngv9NY=";
 
   subPackages = [ "." ];
 
@@ -91,7 +91,9 @@ buildGoModule (finalAttrs: {
 
     sourceRoot = "${src.name}/seanime-denshi";
 
-    npmDepsHash = "sha256-GVpNynGZtucz7hgVZrvg7D/uwVTzfsY+LiY4xLLxKqk=";
+    npmDeps = importNpmLock { npmRoot = "${src}/seanime-denshi"; };
+
+    npmConfigHook = importNpmLock.npmConfigHook;
 
     nativeBuildInputs = [
       copyDesktopItems
@@ -100,7 +102,7 @@ buildGoModule (finalAttrs: {
     patches = [ ./fix-paths.patch ];
 
     postPatch = ''
-      substituteInPlace src/main.js --replace-fail SEANIME ${lib.getExe finalAttrs.finalPackage}
+      substituteInPlace src/main.js --replace-fail SEANIME_BIN ${lib.getExe finalAttrs.finalPackage}
     '';
 
     preBuild = ''
