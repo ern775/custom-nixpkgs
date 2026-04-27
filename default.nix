@@ -41,10 +41,9 @@ in
     source = nvSources.victus-control;
   };
   seanime = pkgs.callPackage ./pkgs/seanime/package.nix { source = nvSources.seanime; };
-  seanime-denshi = pkgs.callPackage ./pkgs/seanime-denshi/package.nix {
-    source = nvSources.seanime-denshi;
-  };
-  seanime-denshi-for-nixpkgs = pkgs.callPackage ./pkgs/seanime-denshi/package-for-nixpkgs.nix { };
+  # seanime-denshi = pkgs.callPackage ./pkgs/seanime-denshi/package.nix {
+  #   source = nvSources.seanime-denshi;
+  # };
   wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
   visual-paradigm-ce = pkgs.callPackage ./pkgs/visual-paradigm-ce/package.nix { };
   solidtime-desktop = pkgs.callPackage ./pkgs/solidtime-desktop/package.nix { };

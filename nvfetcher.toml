@@ -46,10 +46,10 @@ src.github = "digimezzo/dopamine"
 src.prefix = "v"
 fetch.url = "https://github.com/digimezzo/dopamine/releases/download/v$ver/Dopamine-$ver.AppImage"
 
-[seanime-denshi]
-src.github = "5rahim/seanime"
-src.prefix = "v"
-fetch.url = "https://github.com/5rahim/seanime/releases/download/v$ver/seanime-denshi-$ver_Linux_x86_64.AppImage"
+# [seanime-denshi]
+# src.github = "5rahim/seanime"
+# src.prefix = "v"
+# fetch.url = "https://github.com/5rahim/seanime/releases/download/v$ver/seanime-denshi-$ver_Linux_x86_64.AppImage"
 
 [seanime]
 src.github_tag = "5rahim/seanime"
