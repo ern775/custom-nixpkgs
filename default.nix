@@ -37,6 +37,7 @@ in
   proton-ge-bin = pkgs.callPackage ./pkgs/proton-ge-bin/package.nix {
     source = nvSources.proton-ge-bin;
   };
+  dw-proton = pkgs.callPackage ./pkgs/dw-proton/package.nix { source = nvSources.dw-proton; };
   victus-control = pkgs.callPackage ./pkgs/victus-control/package.nix {
     source = nvSources.victus-control;
   };

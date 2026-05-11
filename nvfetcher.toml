@@ -59,6 +59,10 @@ fetch.github = "5rahim/seanime"
 src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 
+[dw-proton]
+src.cmd = "curl -s 'https://dawn.wine/api/v1/repos/dawn-winery/dwproton/releases' | jq -r '.[] | select(.tag_name | startswith(\"dwproton-\")) | .tag_name' | head -n 1"
+fetch.url = "https://dawn.wine/dawn-winery/dwproton/releases/download/$ver/$ver-x86_64.tar.xz"
+
 [jdownloader2]
 src.cmd = "curl -sI https://installer.jdownloader.org/JDownloader.jar | grep -w date: | sed 's/^.*, //'"
 fetch.url = "https://installer.jdownloader.org/JDownloader.jar"

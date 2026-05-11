@@ -56,6 +56,21 @@
         },
         "version": "3.0.4"
     },
+    "dw-proton": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "dw-proton",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-5RjicnGSmlXHL/eEdTY+1aTHpkt2PcLo7FFRYBHPx2s=",
+            "type": "url",
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-1/dwproton-11.0-1-x86_64.tar.xz"
+        },
+        "version": "dwproton-11.0-1"
+    },
     "excalibur-wmi": {
         "cargoLock": null,
         "date": "2026-02-13",
@@ -174,7 +189,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "05 May 2026 16:29:53 GMT"
+        "version": "07 May 2026 14:55:07 GMT"
     },
     "nero-umu": {
         "cargoLock": null,

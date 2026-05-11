@@ -38,6 +38,14 @@
       sha256 = "sha256-sm8/ZzSqa1CsQJ7XfQ67yAKX5rR9E8J/Z6v1rLVhNwI=";
     };
   };
+  dw-proton = {
+    pname = "dw-proton";
+    version = "dwproton-11.0-1";
+    src = fetchurl {
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-1/dwproton-11.0-1-x86_64.tar.xz";
+      sha256 = "sha256-5RjicnGSmlXHL/eEdTY+1aTHpkt2PcLo7FFRYBHPx2s=";
+    };
+  };
   excalibur-wmi = {
     pname = "excalibur-wmi";
     version = "99bd638f167a0f72f3a3a7a60fe3a252dd388402";
@@ -99,7 +107,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "05 May 2026 16:29:53 GMT";
+    version = "07 May 2026 14:55:07 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
