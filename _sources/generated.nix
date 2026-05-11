@@ -70,6 +70,18 @@
     };
     date = "2026-05-04";
   };
+  gobee = {
+    pname = "gobee";
+    version = "1a66b6012aa6996471e831b4e991bbea98d26f5f";
+    src = fetchFromGitHub {
+      owner = "boratanrikulu";
+      repo = "gobee";
+      rev = "1a66b6012aa6996471e831b4e991bbea98d26f5f";
+      fetchSubmodules = false;
+      sha256 = "sha256-p1TZQqji6JWqepdsul9lhOE4HHqt0jT9ug6pbzAJRBw=";
+    };
+    date = "2026-05-04";
+  };
   hp-omen-wmi = {
     pname = "hp-omen-wmi";
     version = "a2d79368bf981a3f241a36941aaa4a7fe657d924";
@@ -107,7 +119,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "07 May 2026 14:55:07 GMT";
+    version = "11 May 2026 13:38:08 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -147,13 +159,13 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.7.1";
+    version = "v3.8.1";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.7.1";
+      rev = "v3.8.1";
       fetchSubmodules = false;
-      sha256 = "sha256-BDXm5Qh/QJIAJ/je52IZifQeb5C17T8vZ7FrMlhqz54=";
+      sha256 = "sha256-/US3SFPGeWqekMmHHXjidVGqGAa4+Xju+X8Z3Ed6NyU=";
     };
   };
   victus-control = {

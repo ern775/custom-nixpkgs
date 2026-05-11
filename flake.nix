@@ -22,6 +22,7 @@
               allowUnfree = true;
             };
           };
+          lib = nixpkgs.lib;
         }
       );
       packages = forAllSystems (

@@ -8,10 +8,12 @@
 
 {
   pkgs ? import <nixpkgs> { },
+  lib,
   ...
 }:
 let
   nvSources = pkgs.callPackage ./_sources/generated.nix { };
+  vendorHashes = lib.importJSON ./pkgs/vendorHashes.json;
   mkCachyProton =
     sourceKey: variantName:
     pkgs.callPackage ./pkgs/proton-cachyos/package.nix {
@@ -19,14 +21,22 @@ let
       variant = variantName;
     };
 in
-{
+rec {
   # The `lib`, `modules`, and `overlays` names are special
   # lib = import ./lib { inherit pkgs; }; # functions
   # modules = import ./modules; # NixOS modules
   # overlays = import ./overlays; # nixpkgs overlays
 
   dopamine = pkgs.callPackage ./pkgs/dopamine/package.nix { };
-  gecit = pkgs.callPackage ./pkgs/gecit/package.nix { source = nvSources.gecit; };
+  gecit = pkgs.callPackage ./pkgs/gecit/package.nix {
+    source = nvSources.gecit;
+    vendorHash = vendorHashes.gecit;
+    gobee = gobee;
+  };
+  gobee = pkgs.callPackage ./pkgs/gobee/package.nix {
+    source = nvSources.gobee;
+    vendorHash = vendorHashes.gobee;
+  };
   iloader = pkgs.callPackage ./pkgs/iloader/package.nix { source = nvSources.iloader; };
   jdownloader2 = pkgs.callPackage ./pkgs/jdownloader2/package.nix {
     source = nvSources.jdownloader2;
@@ -34,14 +44,17 @@ in
   nero-umu = pkgs.callPackage ./pkgs/nero-umu/package.nix { source = nvSources.nero-umu; };
   omenrgb = pkgs.callPackage ./pkgs/omenrgb/package.nix { source = nvSources.omenrgb; };
   proton-cachyos = mkCachyProton "proton-cachyos-x86_64-v3" "x86_64-v3";
-  proton-ge-bin = pkgs.callPackage ./pkgs/proton-ge-bin/package.nix {
-    source = nvSources.proton-ge-bin;
-  };
+  # proton-ge-bin = pkgs.callPackage ./pkgs/proton-ge-bin/package.nix {
+  #   source = nvSources.proton-ge-bin;
+  # };
   dw-proton = pkgs.callPackage ./pkgs/dw-proton/package.nix { source = nvSources.dw-proton; };
   victus-control = pkgs.callPackage ./pkgs/victus-control/package.nix {
     source = nvSources.victus-control;
   };
-  seanime = pkgs.callPackage ./pkgs/seanime/package.nix { source = nvSources.seanime; };
+  seanime = pkgs.callPackage ./pkgs/seanime/package.nix {
+    source = nvSources.seanime;
+    vendorHash = vendorHashes.seanime;
+  };
   # seanime-denshi = pkgs.callPackage ./pkgs/seanime-denshi/package.nix {
   #   source = nvSources.seanime-denshi;
   # };

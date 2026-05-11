@@ -3,7 +3,7 @@
   lib,
   stdenv,
   gcc,
-  wxGTK32,
+  wxwidgets_3_2,
   coreutils,
   wrapGAppsHook3,
 }:
@@ -25,7 +25,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs = [
     gcc
-    wxGTK32
+    wxwidgets_3_2
   ];
 
   buildPhase = ''

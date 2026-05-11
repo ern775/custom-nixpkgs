@@ -37,6 +37,10 @@ fetch.github = "Vilez0/victus-control"
 src.git = "https://github.com/boratanrikulu/gecit"
 fetch.github = "boratanrikulu/gecit"
 
+[gobee]
+src.git = "https://github.com/boratanrikulu/gobee"
+fetch.github = "boratanrikulu/gobee"
+
 [iloader]
 src.github_tag = "nab138/iloader"
 fetch.github = "nab138/iloader"

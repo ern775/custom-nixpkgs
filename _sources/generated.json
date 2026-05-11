@@ -113,6 +113,27 @@
         },
         "version": "6bf56b060e4e2d70f4e7af693aa36d1f7aa33066"
     },
+    "gobee": {
+        "cargoLock": null,
+        "date": "2026-05-04",
+        "extract": null,
+        "name": "gobee",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "boratanrikulu",
+            "repo": "gobee",
+            "rev": "1a66b6012aa6996471e831b4e991bbea98d26f5f",
+            "sha256": "sha256-p1TZQqji6JWqepdsul9lhOE4HHqt0jT9ug6pbzAJRBw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1a66b6012aa6996471e831b4e991bbea98d26f5f"
+    },
     "hp-omen-wmi": {
         "cargoLock": null,
         "date": "2024-05-04",
@@ -189,7 +210,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "07 May 2026 14:55:07 GMT"
+        "version": "11 May 2026 13:38:08 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -262,12 +283,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.7.1",
-            "sha256": "sha256-BDXm5Qh/QJIAJ/je52IZifQeb5C17T8vZ7FrMlhqz54=",
+            "rev": "v3.8.1",
+            "sha256": "sha256-/US3SFPGeWqekMmHHXjidVGqGAa4+Xju+X8Z3Ed6NyU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.7.1"
+        "version": "v3.8.1"
     },
     "victus-control": {
         "cargoLock": null,

@@ -2,6 +2,7 @@
   lib,
   stdenv,
   source,
+  vendorHash,
   buildGoModule,
   ffmpeg,
   importNpmLock,
@@ -55,7 +56,7 @@ let
 in
 buildGoModule (finalAttrs: {
   pname = "seanime";
-  inherit src version;
+  inherit src version vendorHash;
 
   preBuild = ''
     cp -r ${seanime-web { }}/web .
@@ -63,8 +64,6 @@ buildGoModule (finalAttrs: {
     # .github scripts redeclare main
     rm -rf .github
   '';
-
-  vendorHash = "sha256-Gd1Il1v2skwCe9QMZFywOOijEwsBOUYo4XLCxngv9NY=";
 
   subPackages = [ "." ];
 

@@ -2,14 +2,39 @@
   lib,
   buildGoModule,
   source,
+  vendorHash,
+  clang,
+  libbpf,
+  libllvm,
+  gobee,
 }:
-
 buildGoModule (finalAttrs: {
   inherit (source) pname version src;
 
-  vendorHash = "sha256-XnBgNPPfDn5DCuN47gHw7ZssUon6pAxx2HARVF81W+s=";
+  inherit vendorHash;
 
-  ldflags = [ "-s" ];
+  proxyVendor = true;
+
+  nativeBuildInputs = [
+    clang
+    gobee
+    libllvm
+  ];
+
+  buildInputs = [
+    libbpf
+  ];
+
+  hardeningDisable = [
+    "zerocallusedregs"
+    "stackprotector"
+    "stackclashprotection"
+  ];
+
+  preBuild = ''
+    export GOROOT="$(go env GOROOT)"
+    make bpf-translate
+  '';
 
   meta = {
     description = "DPI bypass tool - eBPF on Linux, TUN on macOS/Windows";
