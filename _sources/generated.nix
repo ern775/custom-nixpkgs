@@ -60,15 +60,15 @@
   };
   gecit = {
     pname = "gecit";
-    version = "6bf56b060e4e2d70f4e7af693aa36d1f7aa33066";
+    version = "c35311483840f82f2b565238c4c120e77ae69b3d";
     src = fetchFromGitHub {
       owner = "boratanrikulu";
       repo = "gecit";
-      rev = "6bf56b060e4e2d70f4e7af693aa36d1f7aa33066";
+      rev = "c35311483840f82f2b565238c4c120e77ae69b3d";
       fetchSubmodules = false;
-      sha256 = "sha256-82sS98WyMMeIZL4Bhq85goAnxo1xCBfqcvgaXXAG0B4=";
+      sha256 = "sha256-aFcBV7a2Oe7TP+e5UTj/wof/fVGzOfOVFwBkjx7ccXo=";
     };
-    date = "2026-05-04";
+    date = "2026-05-13";
   };
   gobee = {
     pname = "gobee";
@@ -108,18 +108,18 @@
   };
   iloader = {
     pname = "iloader";
-    version = "v2.2.5";
+    version = "v2.2.6";
     src = fetchFromGitHub {
       owner = "nab138";
       repo = "iloader";
-      rev = "v2.2.5";
+      rev = "v2.2.6";
       fetchSubmodules = false;
-      sha256 = "sha256-cYG6nfY6liM+Ml4qDna+6c4ox4uBNHepKBP8obB/4Uw=";
+      sha256 = "sha256-zSl08bhJ/OrdcvvL1ciybxgnLqrg4IinmcGXrsPQYyQ=";
     };
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "11 May 2026 13:38:08 GMT";
+    version = "14 May 2026 14:45:57 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -159,13 +159,13 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.8.1";
+    version = "v3.8.2";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.8.1";
+      rev = "v3.8.2";
       fetchSubmodules = false;
-      sha256 = "sha256-/US3SFPGeWqekMmHHXjidVGqGAa4+Xju+X8Z3Ed6NyU=";
+      sha256 = "sha256-7wOmvOrs4/YiIjOGdp6pleUcUjNaXhZFvtwBTSn5BQI=";
     };
   };
   victus-control = {
