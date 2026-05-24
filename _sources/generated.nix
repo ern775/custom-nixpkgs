@@ -119,7 +119,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "22 May 2026 23:26:02 GMT";
+    version = "24 May 2026 15:47:38 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -159,13 +159,13 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.8.2";
+    version = "v3.8.3";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.8.2";
+      rev = "v3.8.3";
       fetchSubmodules = false;
-      sha256 = "sha256-7wOmvOrs4/YiIjOGdp6pleUcUjNaXhZFvtwBTSn5BQI=";
+      sha256 = "sha256-jD18xNgSKitgRzUjwJA2q79Me/qZzFb+fSLdycmAld0=";
     };
   };
   victus-control = {
