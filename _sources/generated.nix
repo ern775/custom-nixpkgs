@@ -119,7 +119,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "24 May 2026 15:47:38 GMT";
+    version = "26 May 2026 12:00:42 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -151,10 +151,10 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260506-slr";
+    version = "cachyos-11.0-20260519-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260506-slr/proton-cachyos-11.0-20260506-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-c7Zj46wubq3ZYqganMx4TfP4OgMiEBKoDRuR3KJMSY0=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260519-slr/proton-cachyos-11.0-20260519-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-wc74EgQpmRiCShAEKaGP2cPM83m/qMipnQTXFJmUwE0=";
     };
   };
   seanime = {
