@@ -42,7 +42,7 @@ rec {
     source = nvSources.jdownloader2;
   };
   nero-umu = pkgs.callPackage ./pkgs/nero-umu/package.nix { source = nvSources.nero-umu; };
-  omenrgb = pkgs.callPackage ./pkgs/omenrgb/package.nix { source = nvSources.omenrgb; };
+  # omenrgb = pkgs.callPackage ./pkgs/omenrgb/package.nix { source = nvSources.omenrgb; };
   proton-cachyos = mkCachyProton "proton-cachyos-x86_64-v3" "x86_64-v3";
   # proton-ge-bin = pkgs.callPackage ./pkgs/proton-ge-bin/package.nix {
   #   source = nvSources.proton-ge-bin;
