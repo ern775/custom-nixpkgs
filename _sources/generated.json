@@ -65,11 +65,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-h8agHudNEYccm55l2M2TN6YvRvQHEqnEdj+NVxUXlds=",
+            "sha256": "sha256-w72OsYk/M+FeMMVy/166SqEERqGoh1Ax6NDnp+Dw9iQ=",
             "type": "url",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-2/dwproton-11.0-2-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz"
         },
-        "version": "dwproton-11.0-2"
+        "version": "dwproton-11.0-3"
     },
     "excalibur-wmi": {
         "cargoLock": null,
@@ -210,7 +210,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "28 May 2026 23:29:07 GMT"
+        "version": "31 May 2026 04:01:30 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -235,7 +235,7 @@
     },
     "omenrgb": {
         "cargoLock": null,
-        "date": "2026-05-03",
+        "date": "2026-05-30",
         "extract": null,
         "name": "omenrgb",
         "passthru": null,
@@ -247,12 +247,12 @@
             "name": null,
             "owner": "lemogne",
             "repo": "omenrgb",
-            "rev": "278d313b738bdfaca7bbcfcb546618f72144e2ef",
-            "sha256": "sha256-4TRSKpysGBmtViDlQQ3NnrZ0Bs+T9JMfApOohicoJNk=",
+            "rev": "6598abc06bed187055b92c6dd2ea7f72265dab70",
+            "sha256": "sha256-jF2VEMLw+cyTt8OPAueye3JRYhZRfnCqz/SR6pcW1+A=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "278d313b738bdfaca7bbcfcb546618f72144e2ef"
+        "version": "6598abc06bed187055b92c6dd2ea7f72265dab70"
     },
     "proton-cachyos-x86_64-v3": {
         "cargoLock": null,
@@ -263,11 +263,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-YSDaUcoYYfT/UMkxpULfq7fVvELAhi8b/wIrpSv4yJQ=",
+            "sha256": "sha256-hWkZ+22va9Icx8DEj80k3lZId/jv/ETxXmB8UdwIz6U=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260520-slr/proton-cachyos-11.0-20260520-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-11.0-20260520-slr"
+        "version": "cachyos-11.0-20260521-slr"
     },
     "seanime": {
         "cargoLock": null,

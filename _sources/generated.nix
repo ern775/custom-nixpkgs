@@ -40,10 +40,10 @@
   };
   dw-proton = {
     pname = "dw-proton";
-    version = "dwproton-11.0-2";
+    version = "dwproton-11.0-3";
     src = fetchurl {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-2/dwproton-11.0-2-x86_64.tar.xz";
-      sha256 = "sha256-h8agHudNEYccm55l2M2TN6YvRvQHEqnEdj+NVxUXlds=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz";
+      sha256 = "sha256-w72OsYk/M+FeMMVy/166SqEERqGoh1Ax6NDnp+Dw9iQ=";
     };
   };
   excalibur-wmi = {
@@ -119,7 +119,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "28 May 2026 23:29:07 GMT";
+    version = "31 May 2026 04:01:30 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -139,22 +139,22 @@
   };
   omenrgb = {
     pname = "omenrgb";
-    version = "278d313b738bdfaca7bbcfcb546618f72144e2ef";
+    version = "6598abc06bed187055b92c6dd2ea7f72265dab70";
     src = fetchFromGitHub {
       owner = "lemogne";
       repo = "omenrgb";
-      rev = "278d313b738bdfaca7bbcfcb546618f72144e2ef";
+      rev = "6598abc06bed187055b92c6dd2ea7f72265dab70";
       fetchSubmodules = false;
-      sha256 = "sha256-4TRSKpysGBmtViDlQQ3NnrZ0Bs+T9JMfApOohicoJNk=";
+      sha256 = "sha256-jF2VEMLw+cyTt8OPAueye3JRYhZRfnCqz/SR6pcW1+A=";
     };
-    date = "2026-05-03";
+    date = "2026-05-30";
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260520-slr";
+    version = "cachyos-11.0-20260521-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260520-slr/proton-cachyos-11.0-20260520-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-YSDaUcoYYfT/UMkxpULfq7fVvELAhi8b/wIrpSv4yJQ=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-hWkZ+22va9Icx8DEj80k3lZId/jv/ETxXmB8UdwIz6U=";
     };
   };
   seanime = {
