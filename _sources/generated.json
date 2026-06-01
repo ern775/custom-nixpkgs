@@ -49,12 +49,18 @@
         "passthru": null,
         "pinned": false,
         "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
             "name": null,
-            "sha256": "sha256-sm8/ZzSqa1CsQJ7XfQ67yAKX5rR9E8J/Z6v1rLVhNwI=",
-            "type": "url",
-            "url": "https://github.com/digimezzo/dopamine/releases/download/v3.0.4/Dopamine-3.0.4.AppImage"
+            "owner": "digimezzo",
+            "repo": "dopamine",
+            "rev": "v3.0.5",
+            "sha256": "sha256-DfDH+6kIKbdz2pF7/3GixJdSWHAdUY2FhkG2GZRMyrY=",
+            "sparseCheckout": [],
+            "type": "github"
         },
-        "version": "3.0.4"
+        "version": "v3.0.5"
     },
     "dw-proton": {
         "cargoLock": null,
@@ -210,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "31 May 2026 04:01:30 GMT"
+        "version": "01 Jun 2026 12:07:33 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -235,7 +241,7 @@
     },
     "omenrgb": {
         "cargoLock": null,
-        "date": "2026-05-30",
+        "date": "2026-05-31",
         "extract": null,
         "name": "omenrgb",
         "passthru": null,
@@ -247,12 +253,12 @@
             "name": null,
             "owner": "lemogne",
             "repo": "omenrgb",
-            "rev": "6598abc06bed187055b92c6dd2ea7f72265dab70",
-            "sha256": "sha256-jF2VEMLw+cyTt8OPAueye3JRYhZRfnCqz/SR6pcW1+A=",
+            "rev": "40bdae9ba0eaa7d2b9bb830a70b1bb55888b461b",
+            "sha256": "sha256-cpZvGLIPu4+a+z1n86ULJvLy/m7Wq+14L4kNHxFgC58=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6598abc06bed187055b92c6dd2ea7f72265dab70"
+        "version": "40bdae9ba0eaa7d2b9bb830a70b1bb55888b461b"
     },
     "proton-cachyos-x86_64-v3": {
         "cargoLock": null,

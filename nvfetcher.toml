@@ -47,8 +47,7 @@ fetch.github = "nab138/iloader"
 
 [dopamine]
 src.github = "digimezzo/dopamine"
-src.prefix = "v"
-fetch.url = "https://github.com/digimezzo/dopamine/releases/download/v$ver/Dopamine-$ver.AppImage"
+fetch.github = "digimezzo/dopamine"
 
 # [seanime-denshi]
 # src.github = "5rahim/seanime"

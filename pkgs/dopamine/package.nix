@@ -1,7 +1,7 @@
 {
   lib,
   stdenv,
-  fetchFromGitHub,
+  source,
   buildNpmPackage,
   electron_39,
   python3,
@@ -10,14 +10,8 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "dopamine";
-  version = "3.0.4";
-
-  src = fetchFromGitHub {
-    owner = "digimezzo";
-    repo = "dopamine";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-/qgzlbaV0JdKD3UT9Kr5QD3RPMF0ZvO3VIdHokGAFic=";
-  };
+  inherit (source) src;
+  version = lib.replaceStrings [ "v" ] [ "" ] source.version;
 
   npmDeps = importNpmLock { npmRoot = finalAttrs.src; };
 
@@ -110,7 +104,7 @@ buildNpmPackage (finalAttrs: {
             install -Dm644 "build/icons/"$size"x"$size".png" "$out/share/icons/hicolor/"$size"x"$size"/apps/dopamine.png"
           done
 
-          install -Dm644 deployment/AUR/dopamine.desktop $out/share/applications/dopamine.desktop
+          install -Dm644 deployment/AUR/Dopamine.desktop $out/share/applications/dopamine.desktop
         ''
     }
 

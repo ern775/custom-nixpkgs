@@ -32,10 +32,13 @@
   };
   dopamine = {
     pname = "dopamine";
-    version = "3.0.4";
-    src = fetchurl {
-      url = "https://github.com/digimezzo/dopamine/releases/download/v3.0.4/Dopamine-3.0.4.AppImage";
-      sha256 = "sha256-sm8/ZzSqa1CsQJ7XfQ67yAKX5rR9E8J/Z6v1rLVhNwI=";
+    version = "v3.0.5";
+    src = fetchFromGitHub {
+      owner = "digimezzo";
+      repo = "dopamine";
+      rev = "v3.0.5";
+      fetchSubmodules = false;
+      sha256 = "sha256-DfDH+6kIKbdz2pF7/3GixJdSWHAdUY2FhkG2GZRMyrY=";
     };
   };
   dw-proton = {
@@ -119,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "31 May 2026 04:01:30 GMT";
+    version = "01 Jun 2026 12:07:33 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -139,15 +142,15 @@
   };
   omenrgb = {
     pname = "omenrgb";
-    version = "6598abc06bed187055b92c6dd2ea7f72265dab70";
+    version = "40bdae9ba0eaa7d2b9bb830a70b1bb55888b461b";
     src = fetchFromGitHub {
       owner = "lemogne";
       repo = "omenrgb";
-      rev = "6598abc06bed187055b92c6dd2ea7f72265dab70";
+      rev = "40bdae9ba0eaa7d2b9bb830a70b1bb55888b461b";
       fetchSubmodules = false;
-      sha256 = "sha256-jF2VEMLw+cyTt8OPAueye3JRYhZRfnCqz/SR6pcW1+A=";
+      sha256 = "sha256-cpZvGLIPu4+a+z1n86ULJvLy/m7Wq+14L4kNHxFgC58=";
     };
-    date = "2026-05-30";
+    date = "2026-05-31";
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";

@@ -27,7 +27,7 @@ rec {
   # modules = import ./modules; # NixOS modules
   # overlays = import ./overlays; # nixpkgs overlays
 
-  dopamine = pkgs.callPackage ./pkgs/dopamine/package.nix { };
+  dopamine = pkgs.callPackage ./pkgs/dopamine/package.nix { source = nvSources.dopamine; };
   gecit = pkgs.callPackage ./pkgs/gecit/package.nix {
     source = nvSources.gecit;
     vendorHash = vendorHashes.gecit;
