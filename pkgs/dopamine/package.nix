@@ -3,7 +3,7 @@
   stdenv,
   source,
   buildNpmPackage,
-  electron_39,
+  electron_40,
   python3,
   xcodebuild,
   importNpmLock,
@@ -36,8 +36,8 @@ buildNpmPackage (finalAttrs: {
     runHook preBuild
 
     # needed for better-sqlite3 rebuild
-    export npm_config_nodedir="${electron_39.headers}"
-    export npm_config_target="${electron_39.version}"
+    export npm_config_nodedir="${electron_40.headers}"
+    export npm_config_target="${electron_40.version}"
 
     npm rebuild --verbose --no-progress --offline
 
@@ -54,7 +54,7 @@ buildNpmPackage (finalAttrs: {
     ${
       if stdenv.hostPlatform.isDarwin then
         ''
-          cp -r ${electron_39.dist}/Electron.app ./
+          cp -r ${electron_40.dist}/Electron.app ./
           find ./Electron.app -name 'Info.plist' -exec chmod +rw {} \;
 
           npm exec electron-builder -- \
@@ -62,7 +62,7 @@ buildNpmPackage (finalAttrs: {
             -c.npmRebuild=false \
             -c.mac.identity=null \
             -c.electronDist=./ \
-            -c.electronVersion=${electron_39.version} \
+            -c.electronVersion=${electron_40.version} \
             -c.extraMetadata.version=v${finalAttrs.version} \
             --config electron-builder.config.js
         ''
@@ -71,8 +71,8 @@ buildNpmPackage (finalAttrs: {
           npm exec electron-builder -- \
             --dir \
             -c.npmRebuild=false \
-            -c.electronDist=${electron_39.dist} \
-            -c.electronVersion=${electron_39.version} \
+            -c.electronDist=${electron_40.dist} \
+            -c.electronVersion=${electron_40.version} \
             -c.extraMetadata.version=v${finalAttrs.version} \
             --config electron-builder.config.js
         ''
@@ -96,7 +96,7 @@ buildNpmPackage (finalAttrs: {
           mkdir -p $out/share/dopamine
           cp -r release/linux*unpacked/{locales,resources{,.pak}} $out/share/dopamine
 
-          makeWrapper ${lib.getExe electron_39} $out/bin/dopamine \
+          makeWrapper ${lib.getExe electron_40} $out/bin/dopamine \
             --add-flags $out/share/dopamine/resources/app.asar \
             --inherit-argv0
 
