@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "01 Jun 2026 12:07:33 GMT";
+    version = "08 Jun 2026 06:44:44 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -142,15 +142,15 @@
   };
   omenrgb = {
     pname = "omenrgb";
-    version = "40bdae9ba0eaa7d2b9bb830a70b1bb55888b461b";
+    version = "5b735ab3724aa6c9b88f82755f5e8a69ae908c32";
     src = fetchFromGitHub {
       owner = "lemogne";
       repo = "omenrgb";
-      rev = "40bdae9ba0eaa7d2b9bb830a70b1bb55888b461b";
+      rev = "5b735ab3724aa6c9b88f82755f5e8a69ae908c32";
       fetchSubmodules = false;
-      sha256 = "sha256-cpZvGLIPu4+a+z1n86ULJvLy/m7Wq+14L4kNHxFgC58=";
+      sha256 = "sha256-Eo2ovH5JB2eWWdfQg0O9clB7e/PxIjbuCxCm9gG0aiQ=";
     };
-    date = "2026-05-31";
+    date = "2026-06-07";
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
@@ -162,13 +162,13 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.8.3";
+    version = "v3.8.4";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.8.3";
+      rev = "v3.8.4";
       fetchSubmodules = false;
-      sha256 = "sha256-jD18xNgSKitgRzUjwJA2q79Me/qZzFb+fSLdycmAld0=";
+      sha256 = "sha256-Sfd+HF+Of+dDFmK7v2D05ZxffEzu/m6N31ScEklA2ZM=";
     };
   };
   victus-control = {
