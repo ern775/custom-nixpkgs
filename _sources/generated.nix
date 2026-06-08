@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "08 Jun 2026 06:44:44 GMT";
+    version = "08 Jun 2026 15:33:33 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
