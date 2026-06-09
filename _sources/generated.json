@@ -216,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "08 Jun 2026 15:33:33 GMT"
+        "version": "09 Jun 2026 10:01:43 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -289,12 +289,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.8.4",
-            "sha256": "sha256-Sfd+HF+Of+dDFmK7v2D05ZxffEzu/m6N31ScEklA2ZM=",
+            "rev": "v3.8.5",
+            "sha256": "sha256-tGzKhZt8t+hWW2r5PVNnKdNgbc2QP8e8iPw5azr6eqo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.8.4"
+        "version": "v3.8.5"
     },
     "victus-control": {
         "cargoLock": null,
