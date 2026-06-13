@@ -19,7 +19,7 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "nero-umu";
 
   inherit (source) date src;
-  version = "1-unstable-${finalAttrs.date}";
+  version = "2-unstable-${finalAttrs.date}";
 
   #Replace quazip git submodule with pre-packaged quazip
   postUnpack = ''
