@@ -32,21 +32,21 @@
   };
   dopamine = {
     pname = "dopamine";
-    version = "v3.0.5";
+    version = "v3.0.6";
     src = fetchFromGitHub {
       owner = "digimezzo";
       repo = "dopamine";
-      rev = "v3.0.5";
+      rev = "v3.0.6";
       fetchSubmodules = false;
-      sha256 = "sha256-DfDH+6kIKbdz2pF7/3GixJdSWHAdUY2FhkG2GZRMyrY=";
+      sha256 = "sha256-HTPWejm5Wi6yGJyS/f1RhjIluTz01ue8lAsnAcQY3IY=";
     };
   };
   dw-proton = {
     pname = "dw-proton";
-    version = "dwproton-11.0-3";
+    version = "dwproton-11.0-4";
     src = fetchurl {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz";
-      sha256 = "sha256-w72OsYk/M+FeMMVy/166SqEERqGoh1Ax6NDnp+Dw9iQ=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-4/dwproton-11.0-4-x86_64.tar.xz";
+      sha256 = "sha256-ac8PeN8DZ1nqSOVKyjbQcla28uGI/2SomJmboTyQXSM=";
     };
   };
   excalibur-wmi = {
@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "09 Jun 2026 14:17:27 GMT";
+    version = "13 Jun 2026 05:21:44 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -130,15 +130,15 @@
   };
   nero-umu = {
     pname = "nero-umu";
-    version = "6246d8d2d01426c55311d5e02bd55b34d5818524";
+    version = "f7f6d2b33d79f66deb942e6acfb1a225bdbc2ef8";
     src = fetchFromGitHub {
       owner = "SeongGino";
       repo = "Nero-umu";
-      rev = "6246d8d2d01426c55311d5e02bd55b34d5818524";
+      rev = "f7f6d2b33d79f66deb942e6acfb1a225bdbc2ef8";
       fetchSubmodules = false;
-      sha256 = "sha256-j6JS1r7LrhYBuENpuJQxgW8PPME2XmJveTb57svYdEs=";
+      sha256 = "sha256-HSKCILSuNxzK6UZX7bS5zms6b6iq9/+Fq7+D/qN3kXE=";
     };
-    date = "2026-02-23";
+    date = "2026-06-12";
   };
   omenrgb = {
     pname = "omenrgb";
@@ -154,10 +154,10 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260521-slr";
+    version = "cachyos-11.0-20260601-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-hWkZ+22va9Icx8DEj80k3lZId/jv/ETxXmB8UdwIz6U=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260601-slr/proton-cachyos-11.0-20260601-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-bxGB0L/MZ0TwZ//rffW52LeD1nWeF4ZK4fIjPPNuAIE=";
     };
   };
   seanime = {

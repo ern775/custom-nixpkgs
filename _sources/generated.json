@@ -55,12 +55,12 @@
             "name": null,
             "owner": "digimezzo",
             "repo": "dopamine",
-            "rev": "v3.0.5",
-            "sha256": "sha256-DfDH+6kIKbdz2pF7/3GixJdSWHAdUY2FhkG2GZRMyrY=",
+            "rev": "v3.0.6",
+            "sha256": "sha256-HTPWejm5Wi6yGJyS/f1RhjIluTz01ue8lAsnAcQY3IY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.0.5"
+        "version": "v3.0.6"
     },
     "dw-proton": {
         "cargoLock": null,
@@ -71,11 +71,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-w72OsYk/M+FeMMVy/166SqEERqGoh1Ax6NDnp+Dw9iQ=",
+            "sha256": "sha256-ac8PeN8DZ1nqSOVKyjbQcla28uGI/2SomJmboTyQXSM=",
             "type": "url",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-4/dwproton-11.0-4-x86_64.tar.xz"
         },
-        "version": "dwproton-11.0-3"
+        "version": "dwproton-11.0-4"
     },
     "excalibur-wmi": {
         "cargoLock": null,
@@ -216,11 +216,11 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "09 Jun 2026 14:17:27 GMT"
+        "version": "13 Jun 2026 05:21:44 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
-        "date": "2026-02-23",
+        "date": "2026-06-12",
         "extract": null,
         "name": "nero-umu",
         "passthru": null,
@@ -232,12 +232,12 @@
             "name": null,
             "owner": "SeongGino",
             "repo": "Nero-umu",
-            "rev": "6246d8d2d01426c55311d5e02bd55b34d5818524",
-            "sha256": "sha256-j6JS1r7LrhYBuENpuJQxgW8PPME2XmJveTb57svYdEs=",
+            "rev": "f7f6d2b33d79f66deb942e6acfb1a225bdbc2ef8",
+            "sha256": "sha256-HSKCILSuNxzK6UZX7bS5zms6b6iq9/+Fq7+D/qN3kXE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6246d8d2d01426c55311d5e02bd55b34d5818524"
+        "version": "f7f6d2b33d79f66deb942e6acfb1a225bdbc2ef8"
     },
     "omenrgb": {
         "cargoLock": null,
@@ -269,11 +269,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-hWkZ+22va9Icx8DEj80k3lZId/jv/ETxXmB8UdwIz6U=",
+            "sha256": "sha256-bxGB0L/MZ0TwZ//rffW52LeD1nWeF4ZK4fIjPPNuAIE=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260601-slr/proton-cachyos-11.0-20260601-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-11.0-20260521-slr"
+        "version": "cachyos-11.0-20260601-slr"
     },
     "seanime": {
         "cargoLock": null,
