@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "13 Jun 2026 05:21:44 GMT";
+    version = "14 Jun 2026 17:31:31 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -142,15 +142,15 @@
   };
   omenrgb = {
     pname = "omenrgb";
-    version = "5b735ab3724aa6c9b88f82755f5e8a69ae908c32";
+    version = "94987b53d6cd6a715dcded68090d0e3692143e41";
     src = fetchFromGitHub {
       owner = "lemogne";
       repo = "omenrgb";
-      rev = "5b735ab3724aa6c9b88f82755f5e8a69ae908c32";
+      rev = "94987b53d6cd6a715dcded68090d0e3692143e41";
       fetchSubmodules = false;
-      sha256 = "sha256-Eo2ovH5JB2eWWdfQg0O9clB7e/PxIjbuCxCm9gG0aiQ=";
+      sha256 = "sha256-3aWTvHR0wS9Wwd7gaKKj5lb1lGmNXEPvmUxP3zieRx0=";
     };
-    date = "2026-06-07";
+    date = "2026-06-14";
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
