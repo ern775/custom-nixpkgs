@@ -216,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "14 Jun 2026 17:31:31 GMT"
+        "version": "15 Jun 2026 17:17:53 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -253,12 +253,12 @@
             "name": null,
             "owner": "lemogne",
             "repo": "omenrgb",
-            "rev": "94987b53d6cd6a715dcded68090d0e3692143e41",
-            "sha256": "sha256-3aWTvHR0wS9Wwd7gaKKj5lb1lGmNXEPvmUxP3zieRx0=",
+            "rev": "26f82078f9eb1483957d6eecb1daa7e81047395f",
+            "sha256": "sha256-R/2R2MVNbyL7slvLaHCbSWynoR6FvJP/bzSA84qc5ME=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "94987b53d6cd6a715dcded68090d0e3692143e41"
+        "version": "26f82078f9eb1483957d6eecb1daa7e81047395f"
     },
     "proton-cachyos-x86_64-v3": {
         "cargoLock": null,
@@ -289,12 +289,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.8.6",
-            "sha256": "sha256-k3bUytIJPyCXjo6/6JbOg7WB6b26Uqj7HKrAzjmWmPU=",
+            "rev": "v3.8.7",
+            "sha256": "sha256-4UNGx63le0xLXraop7IsYezwAIQiBJKCrRps9L7rUw8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.8.6"
+        "version": "v3.8.7"
     },
     "victus-control": {
         "cargoLock": null,

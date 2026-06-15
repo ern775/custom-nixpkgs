@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "14 Jun 2026 17:31:31 GMT";
+    version = "15 Jun 2026 17:17:53 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -142,13 +142,13 @@
   };
   omenrgb = {
     pname = "omenrgb";
-    version = "94987b53d6cd6a715dcded68090d0e3692143e41";
+    version = "26f82078f9eb1483957d6eecb1daa7e81047395f";
     src = fetchFromGitHub {
       owner = "lemogne";
       repo = "omenrgb";
-      rev = "94987b53d6cd6a715dcded68090d0e3692143e41";
+      rev = "26f82078f9eb1483957d6eecb1daa7e81047395f";
       fetchSubmodules = false;
-      sha256 = "sha256-3aWTvHR0wS9Wwd7gaKKj5lb1lGmNXEPvmUxP3zieRx0=";
+      sha256 = "sha256-R/2R2MVNbyL7slvLaHCbSWynoR6FvJP/bzSA84qc5ME=";
     };
     date = "2026-06-14";
   };
@@ -162,13 +162,13 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.8.6";
+    version = "v3.8.7";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.8.6";
+      rev = "v3.8.7";
       fetchSubmodules = false;
-      sha256 = "sha256-k3bUytIJPyCXjo6/6JbOg7WB6b26Uqj7HKrAzjmWmPU=";
+      sha256 = "sha256-4UNGx63le0xLXraop7IsYezwAIQiBJKCrRps9L7rUw8=";
     };
   };
   victus-control = {
