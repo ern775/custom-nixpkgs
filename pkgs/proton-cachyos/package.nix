@@ -29,9 +29,6 @@ stdenv.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    # fix dangling symlinks for this version specifically
-    rm protonfixes/gamefixes-steam/{1201400,2730350,2552410}.py
-
     # Create the steamcompat directory
     mkdir -p $steamcompattool
     cp -r ./* $steamcompattool/
