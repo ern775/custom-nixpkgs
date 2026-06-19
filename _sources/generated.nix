@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "15 Jun 2026 17:17:53 GMT";
+    version = "19 Jun 2026 14:47:37 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -142,22 +142,22 @@
   };
   omenrgb = {
     pname = "omenrgb";
-    version = "26f82078f9eb1483957d6eecb1daa7e81047395f";
+    version = "f5041e1e357caaf3eb24030757e58066ea28725e";
     src = fetchFromGitHub {
       owner = "lemogne";
       repo = "omenrgb";
-      rev = "26f82078f9eb1483957d6eecb1daa7e81047395f";
+      rev = "f5041e1e357caaf3eb24030757e58066ea28725e";
       fetchSubmodules = false;
-      sha256 = "sha256-R/2R2MVNbyL7slvLaHCbSWynoR6FvJP/bzSA84qc5ME=";
+      sha256 = "sha256-4Pynz0QBixMfnFaYeYD2k9pZzwbqx6iBzUTW/M9eOaE=";
     };
-    date = "2026-06-14";
+    date = "2026-06-16";
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260601-slr";
+    version = "cachyos-11.0-20260602-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260601-slr/proton-cachyos-11.0-20260601-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-bxGB0L/MZ0TwZ//rffW52LeD1nWeF4ZK4fIjPPNuAIE=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-HZmTHTziUU2nfmSTinG8qJntTweI5Xtk8SZ3BnHgpmI=";
     };
   };
   seanime = {
