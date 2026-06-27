@@ -71,11 +71,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ac8PeN8DZ1nqSOVKyjbQcla28uGI/2SomJmboTyQXSM=",
+            "sha256": "sha256-GLXwUswB/uJEFWlij5KN9MUE483QOdvkTbKvEtk8VZI=",
             "type": "url",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-4/dwproton-11.0-4-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-5/dwproton-11.0-5-x86_64.tar.xz"
         },
-        "version": "dwproton-11.0-4"
+        "version": "dwproton-11.0-5"
     },
     "excalibur-wmi": {
         "cargoLock": null,
@@ -216,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "19 Jun 2026 14:47:37 GMT"
+        "version": "27 Jun 2026 07:04:42 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
