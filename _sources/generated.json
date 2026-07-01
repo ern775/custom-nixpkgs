@@ -1,7 +1,7 @@
 {
     "acer-predator-turbo-and-rgb-keyboard-linux-module": {
         "cargoLock": null,
-        "date": "2026-01-27",
+        "date": "2026-06-30",
         "extract": null,
         "name": "acer-predator-turbo-and-rgb-keyboard-linux-module",
         "passthru": null,
@@ -13,16 +13,16 @@
             "name": null,
             "owner": "JafarAkhondali",
             "repo": "acer-predator-turbo-and-rgb-keyboard-linux-module",
-            "rev": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d",
-            "sha256": "sha256-1yZVnN/Sru8qRNf1MN1Jt8PcjxYl8MOYxAFvpgZWj4E=",
+            "rev": "01fc147f92171d9948b40895b71ed66174fd8da9",
+            "sha256": "sha256-wBnD/v42TZ69cdy0isEV0BVCWIjsfYLcDgbnQjRFnU0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d"
+        "version": "01fc147f92171d9948b40895b71ed66174fd8da9"
     },
     "acer-predator-turbo-rgb": {
         "cargoLock": null,
-        "date": "2026-01-27",
+        "date": "2026-06-30",
         "extract": null,
         "name": "acer-predator-turbo-rgb",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "JafarAkhondali",
             "repo": "acer-predator-turbo-and-rgb-keyboard-linux-module",
-            "rev": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d",
-            "sha256": "sha256-1yZVnN/Sru8qRNf1MN1Jt8PcjxYl8MOYxAFvpgZWj4E=",
+            "rev": "01fc147f92171d9948b40895b71ed66174fd8da9",
+            "sha256": "sha256-wBnD/v42TZ69cdy0isEV0BVCWIjsfYLcDgbnQjRFnU0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d"
+        "version": "01fc147f92171d9948b40895b71ed66174fd8da9"
     },
     "dopamine": {
         "cargoLock": null,

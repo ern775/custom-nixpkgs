@@ -8,27 +8,27 @@
 {
   acer-predator-turbo-and-rgb-keyboard-linux-module = {
     pname = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-    version = "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d";
+    version = "01fc147f92171d9948b40895b71ed66174fd8da9";
     src = fetchFromGitHub {
       owner = "JafarAkhondali";
       repo = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-      rev = "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d";
+      rev = "01fc147f92171d9948b40895b71ed66174fd8da9";
       fetchSubmodules = false;
-      sha256 = "sha256-1yZVnN/Sru8qRNf1MN1Jt8PcjxYl8MOYxAFvpgZWj4E=";
+      sha256 = "sha256-wBnD/v42TZ69cdy0isEV0BVCWIjsfYLcDgbnQjRFnU0=";
     };
-    date = "2026-01-27";
+    date = "2026-06-30";
   };
   acer-predator-turbo-rgb = {
     pname = "acer-predator-turbo-rgb";
-    version = "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d";
+    version = "01fc147f92171d9948b40895b71ed66174fd8da9";
     src = fetchFromGitHub {
       owner = "JafarAkhondali";
       repo = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-      rev = "49d1d7d1e45755d3cf57e6b438620ec5bfdf0e4d";
+      rev = "01fc147f92171d9948b40895b71ed66174fd8da9";
       fetchSubmodules = false;
-      sha256 = "sha256-1yZVnN/Sru8qRNf1MN1Jt8PcjxYl8MOYxAFvpgZWj4E=";
+      sha256 = "sha256-wBnD/v42TZ69cdy0isEV0BVCWIjsfYLcDgbnQjRFnU0=";
     };
-    date = "2026-01-27";
+    date = "2026-06-30";
   };
   dopamine = {
     pname = "dopamine";
