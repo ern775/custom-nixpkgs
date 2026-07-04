@@ -55,12 +55,12 @@
             "name": null,
             "owner": "digimezzo",
             "repo": "dopamine",
-            "rev": "v3.0.6",
-            "sha256": "sha256-HTPWejm5Wi6yGJyS/f1RhjIluTz01ue8lAsnAcQY3IY=",
+            "rev": "v3.0.7",
+            "sha256": "sha256-zYuf5BIQaxTqHBXWX1PLghGR5WmwtnSxTYrNosVFebc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.0.6"
+        "version": "v3.0.7"
     },
     "dw-proton": {
         "cargoLock": null,
@@ -216,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "27 Jun 2026 07:04:42 GMT"
+        "version": "04 Jul 2026 12:43:57 GMT"
     },
     "nero-umu": {
         "cargoLock": null,

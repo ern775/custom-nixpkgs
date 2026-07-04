@@ -32,13 +32,13 @@
   };
   dopamine = {
     pname = "dopamine";
-    version = "v3.0.6";
+    version = "v3.0.7";
     src = fetchFromGitHub {
       owner = "digimezzo";
       repo = "dopamine";
-      rev = "v3.0.6";
+      rev = "v3.0.7";
       fetchSubmodules = false;
-      sha256 = "sha256-HTPWejm5Wi6yGJyS/f1RhjIluTz01ue8lAsnAcQY3IY=";
+      sha256 = "sha256-zYuf5BIQaxTqHBXWX1PLghGR5WmwtnSxTYrNosVFebc=";
     };
   };
   dw-proton = {
@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "27 Jun 2026 07:04:42 GMT";
+    version = "04 Jul 2026 12:43:57 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
