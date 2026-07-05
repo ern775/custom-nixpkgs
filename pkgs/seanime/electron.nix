@@ -39,14 +39,15 @@
   libsecret,
   libpulseaudio,
   speechd-minimal,
+  addDriverRunpath,
 }:
 let
   pname = "electron";
 
-  version = "39.2.7";
+  version = "42.4.0";
   hashes = {
-    x86_64-linux = "sha256-nfnY7bgX+aNMZpyNnZV0cBhE6x1jSqS1LtcQgswve3M=";
-    aarch64-darwin = "sha256-+2sSKp0xF6TiPL8wNu53/4IYAmfWxLbgtBELqIPTP98=";
+    x86_64-linux = "sha256-6RtRWvTBhwzPGTvSGbKwtmwkgPExVkja8py/B+lRPhY=";
+    aarch64-darwin = "sha256-ye2vp/aDfX1at1emnH+t59JwRDRJa+lgktfkyXX3pJ8=";
   };
 
   meta = {
@@ -129,6 +130,7 @@ let
       unzip
       makeWrapper
       wrapGAppsHook3
+      addDriverRunpath
     ];
 
     dontUnpack = true;
@@ -155,6 +157,8 @@ let
         $out/libexec/electron/electron \
         $out/libexec/electron/chrome_crashpad_handler
 
+      addDriverRunpath $out/libexec/electron/electron
+
       # patch libANGLE
       patchelf \
         --set-rpath "${
@@ -172,6 +176,9 @@ let
     '';
 
     passthru.dist = finalAttrs.finalPackage + "/libexec/electron";
+
+    __structuredAttrs = true;
+    strictDeps = true;
   };
 
   darwin = finalAttrs: {

@@ -14,10 +14,13 @@
   callPackage,
   # we use the same electron as upstream
   denshi-electron ? callPackage ./electron.nix { },
+  mpv-prism ? callPackage ./mpv-prism.nix { },
 }:
 let
   inherit (source) src;
   version = lib.replaceStrings [ "v" ] [ "" ] source.version;
+
+  mpvPrismTarget = if stdenv.hostPlatform.isDarwin then "darwin-arm64" else "linux-x64";
 
   seanime-web =
     {
@@ -102,6 +105,10 @@ buildGoModule (finalAttrs: {
 
     postPatch = ''
       substituteInPlace src/main.js --replace-fail SEANIME_BIN ${lib.getExe finalAttrs.finalPackage}
+
+      substituteInPlace package.json \
+        --replace-fail '"asar": true,' '"asar": true,
+      "asarUnpack": [ "node_modules/@mpv-prism/electron/native-builds/**" ],'
     '';
 
     preBuild = ''
@@ -118,6 +125,9 @@ buildGoModule (finalAttrs: {
           '';
         }
       }/web-denshi .
+
+      mkdir -p "node_modules/@mpv-prism/electron/native-builds/${mpvPrismTarget}"
+      cp -r ${mpv-prism}/. "node_modules/@mpv-prism/electron/native-builds/${mpvPrismTarget}/"
     '';
 
     env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
