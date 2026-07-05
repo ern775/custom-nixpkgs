@@ -8,27 +8,27 @@
 {
   acer-predator-turbo-and-rgb-keyboard-linux-module = {
     pname = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-    version = "01fc147f92171d9948b40895b71ed66174fd8da9";
+    version = "6eafee25668cf2ffb8a79fd376a638e9ca4dc6db";
     src = fetchFromGitHub {
       owner = "JafarAkhondali";
       repo = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-      rev = "01fc147f92171d9948b40895b71ed66174fd8da9";
+      rev = "6eafee25668cf2ffb8a79fd376a638e9ca4dc6db";
       fetchSubmodules = false;
-      sha256 = "sha256-wBnD/v42TZ69cdy0isEV0BVCWIjsfYLcDgbnQjRFnU0=";
+      sha256 = "sha256-TGBo9GxVJ74mOnqpkjZRFk0e7XiT6iZbVyMeDmRXLyk=";
     };
-    date = "2026-06-30";
+    date = "2026-07-05";
   };
   acer-predator-turbo-rgb = {
     pname = "acer-predator-turbo-rgb";
-    version = "01fc147f92171d9948b40895b71ed66174fd8da9";
+    version = "6eafee25668cf2ffb8a79fd376a638e9ca4dc6db";
     src = fetchFromGitHub {
       owner = "JafarAkhondali";
       repo = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-      rev = "01fc147f92171d9948b40895b71ed66174fd8da9";
+      rev = "6eafee25668cf2ffb8a79fd376a638e9ca4dc6db";
       fetchSubmodules = false;
-      sha256 = "sha256-wBnD/v42TZ69cdy0isEV0BVCWIjsfYLcDgbnQjRFnU0=";
+      sha256 = "sha256-TGBo9GxVJ74mOnqpkjZRFk0e7XiT6iZbVyMeDmRXLyk=";
     };
-    date = "2026-06-30";
+    date = "2026-07-05";
   };
   dopamine = {
     pname = "dopamine";
@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "04 Jul 2026 12:43:57 GMT";
+    version = "05 Jul 2026 02:49:26 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -162,13 +162,13 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.8.7";
+    version = "v3.9.0";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.8.7";
+      rev = "v3.9.0";
       fetchSubmodules = false;
-      sha256 = "sha256-4UNGx63le0xLXraop7IsYezwAIQiBJKCrRps9L7rUw8=";
+      sha256 = "sha256-S2r2YqHhLSHMBKMiWK2S9SUqP0IRAgCCmrnGehRqD4Y=";
     };
   };
   victus-control = {
