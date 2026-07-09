@@ -109,6 +109,11 @@ buildGoModule (finalAttrs: {
       substituteInPlace package.json \
         --replace-fail '"asar": true,' '"asar": true,
       "asarUnpack": [ "node_modules/@mpv-prism/electron/native-builds/**" ],'
+
+      substituteInPlace src/main.js \
+        --replace-fail \
+        'process.env.MPV_PRISM_HIGH_PERFORMANCE_GPU ||= "1"' \
+        'process.env.MPV_PRISM_HIGH_PERFORMANCE_GPU ||= "0"'
     '';
 
     preBuild = ''
