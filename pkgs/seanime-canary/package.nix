@@ -2,7 +2,6 @@
   lib,
   stdenv,
   source,
-  fetchFromGitHub,
   vendorHash,
   buildGoModule,
   ffmpeg,
@@ -18,16 +17,9 @@
   mpv-prism ? callPackage ./mpv-prism.nix { },
 }:
 let
-  # inherit (source) src;
+  inherit (source) src;
   # version = lib.replaceStrings [ "v" ] [ "" ] source.version;
-
-  version = "3.9.0";
-  src = fetchFromGitHub {
-    owner = "5rahim";
-    repo = "seanime";
-    tag = "v${version}";
-    hash = "sha256-S2r2YqHhLSHMBKMiWK2S9SUqP0IRAgCCmrnGehRqD4Y=";
-  };
+  version = "3.9.2-alpha.1";
 
   mpvPrismTarget = if stdenv.hostPlatform.isDarwin then "darwin-arm64" else "linux-x64";
 
@@ -113,13 +105,11 @@ buildGoModule (finalAttrs: {
     patches = [ ./fix-paths.patch ];
 
     postPatch = ''
-        substituteInPlace src/main.js --replace-fail SEANIME_BIN ${lib.getExe finalAttrs.finalPackage}
+      substituteInPlace src/main/index.ts --replace-fail SEANIME_BIN ${lib.getExe finalAttrs.finalPackage}
 
-        substituteInPlace package.json \
-          --replace-fail '"asar": true,' '"asar": true,
-      "asarUnpack": [
-        "node_modules/@mpv-prism/electron/native-builds/**"
-      ],'
+      substituteInPlace package.json \
+        --replace-fail '"asar": true,' '"asar": true,
+      "asarUnpack": [ "node_modules/@mpv-prism/electron/native-builds/**" ],'
     '';
 
     preBuild = ''
@@ -147,6 +137,8 @@ buildGoModule (finalAttrs: {
 
     buildPhase = ''
       runHook preBuild
+
+      npm run build:main
 
       ${
         if stdenv.hostPlatform.isDarwin then

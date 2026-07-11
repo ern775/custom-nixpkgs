@@ -49,14 +49,20 @@ fetch.github = "nab138/iloader"
 src.github = "digimezzo/dopamine"
 fetch.github = "digimezzo/dopamine"
 
-# [seanime-denshi]
-# src.github = "5rahim/seanime"
-# src.prefix = "v"
-# fetch.url = "https://github.com/5rahim/seanime/releases/download/v$ver/seanime-denshi-$ver_Linux_x86_64.AppImage"
-
 [seanime]
 src.github_tag = "5rahim/seanime"
 fetch.github = "5rahim/seanime"
+
+[seanime-canary]
+src.git = "https://github.com/5rahim/seanime.git"
+src.branch = "next"
+fetch.github = "5rahim/seanime"
+fetch.branch = "next"
+
+[seanime-bin-canary]
+src.cmd = "curl -sL https://seanime.app/api/updates/nightly/nightly_server.json | jq -r '.release.version'"
+fetch.url = "https://seanime.app/api/updates/nightly/seanime-denshi-$ver_Linux_x86_64.AppImage"
+x.binary = true
 
 [proton-cachyos-x86_64-v3]
 src.github = "CachyOS/proton-cachyos"

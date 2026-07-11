@@ -55,9 +55,13 @@ rec {
     source = nvSources.seanime;
     vendorHash = vendorHashes.seanime;
   };
-  # seanime-denshi = pkgs.callPackage ./pkgs/seanime-denshi/package.nix {
-  #   source = nvSources.seanime-denshi;
-  # };
+  seanime-canary = pkgs.callPackage ./pkgs/seanime-canary/package.nix {
+    source = nvSources.seanime-canary;
+    vendorHash = vendorHashes.seanime-canary;
+  };
+  seanime-bin-canary = pkgs.callPackage ./pkgs/seanime-bin-canary/package.nix {
+    source = nvSources.seanime-bin-canary;
+  };
   wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
   visual-paradigm-ce = pkgs.callPackage ./pkgs/visual-paradigm-ce/package.nix { };
   solidtime-desktop = pkgs.callPackage ./pkgs/solidtime-desktop/package.nix { };

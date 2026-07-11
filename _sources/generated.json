@@ -216,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "09 Jul 2026 05:20:15 GMT"
+        "version": "12 Jul 2026 17:41:20 GMT"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -269,11 +269,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-HZmTHTziUU2nfmSTinG8qJntTweI5Xtk8SZ3BnHgpmI=",
+            "sha256": "sha256-ETl4U+uV+PtEhTXOviZVRxMGyAw0VsRrUs1Whwik/lw=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-11.0-20260602-slr"
+        "version": "cachyos-11.0-20260702-slr"
     },
     "seanime": {
         "cargoLock": null,
@@ -295,6 +295,42 @@
             "type": "github"
         },
         "version": "v3.9.1"
+    },
+    "seanime-bin-canary": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "seanime-bin-canary",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-hm4w6AIIS8WsNwa3Lo8gCAJMlysC0Xrqc4ZdzDrCRbA=",
+            "type": "url",
+            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.9.2-alpha.11_Linux_x86_64.AppImage"
+        },
+        "version": "3.9.2-alpha.11"
+    },
+    "seanime-canary": {
+        "cargoLock": null,
+        "date": "2026-07-11",
+        "extract": null,
+        "name": "seanime-canary",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "5rahim",
+            "repo": "seanime",
+            "rev": "6b07e3a777e3fd49fb13258f0f01ddd0135cf5ff",
+            "sha256": "sha256-FG9qlx5wWarO+u9fxvrXLCdXj1kv1rxUAWhMP7ukB+0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "6b07e3a777e3fd49fb13258f0f01ddd0135cf5ff"
     },
     "victus-control": {
         "cargoLock": null,
