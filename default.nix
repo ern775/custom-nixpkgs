@@ -55,10 +55,10 @@ rec {
     source = nvSources.seanime;
     vendorHash = vendorHashes.seanime;
   };
-  seanime-canary = pkgs.callPackage ./pkgs/seanime-canary/package.nix {
-    source = nvSources.seanime-canary;
-    vendorHash = vendorHashes.seanime-canary;
-  };
+  # seanime-canary = pkgs.callPackage ./pkgs/seanime-canary/package.nix {
+  #   source = nvSources.seanime-canary;
+  #   vendorHash = vendorHashes.seanime-canary;
+  # };
   seanime-bin-canary = pkgs.callPackage ./pkgs/seanime-bin-canary/package.nix {
     source = nvSources.seanime-bin-canary;
   };

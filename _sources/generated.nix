@@ -173,10 +173,10 @@
   };
   seanime-bin-canary = {
     pname = "seanime-bin-canary";
-    version = "3.9.2-alpha.11";
+    version = "3.9.2-alpha.15";
     src = fetchurl {
-      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.9.2-alpha.11_Linux_x86_64.AppImage";
-      sha256 = "sha256-hm4w6AIIS8WsNwa3Lo8gCAJMlysC0Xrqc4ZdzDrCRbA=";
+      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.9.2-alpha.15_Linux_x86_64.AppImage";
+      sha256 = "sha256-ezMGERVYze0YozzRGXKI7md/Dfz9sYMyRDfgiRHyXVM=";
     };
   };
   seanime-canary = {

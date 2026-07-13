@@ -305,11 +305,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-hm4w6AIIS8WsNwa3Lo8gCAJMlysC0Xrqc4ZdzDrCRbA=",
+            "sha256": "sha256-ezMGERVYze0YozzRGXKI7md/Dfz9sYMyRDfgiRHyXVM=",
             "type": "url",
-            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.9.2-alpha.11_Linux_x86_64.AppImage"
+            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.9.2-alpha.15_Linux_x86_64.AppImage"
         },
-        "version": "3.9.2-alpha.11"
+        "version": "3.9.2-alpha.15"
     },
     "seanime-canary": {
         "cargoLock": null,

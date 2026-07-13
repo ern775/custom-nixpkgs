@@ -13,32 +13,7 @@ appimageTools.wrapType2 rec {
 
   extraPkgs =
     pkgs: with pkgs; [
-      stdenv.cc.cc.lib
-      glib
-      libGL
-      libgbm
       libva
-      libx11
-      libxext
-      libxcb
-
-      # Other dependencies
-      intel-media-driver
-      intel-vaapi-driver
-      nvidia-vaapi-driver
-      mesa
-      libgpg-error
-      fontconfig
-      wayland
-      pipewire
-      fribidi
-      harfbuzz
-      freetype
-      libthai
-      e2fsprogs
-      zlib
-      libp11
-      libsm
     ];
 
   extraInstallCommands =
