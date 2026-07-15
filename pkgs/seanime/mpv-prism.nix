@@ -10,17 +10,17 @@
 }:
 
 let
-  version = "0.1.0"; # pinned in mpv-prism.lock.json at repo root, bump alongside seanime
+  version = "0.1.1"; # pinned in mpv-prism.lock.json at repo root, bump alongside seanime
 
   sources = {
     x86_64-linux = fetchzip {
       url = "https://seanime.app/assets/mpv-prism/${version}/native/linux-x64.tar.gz";
-      hash = "sha256-Y0ANNgWjCqWsazWfXJhHEqfTxQ+tiVLqd4wQjmnI008=";
+      hash = "sha256-Tn0kFRAk6WocAwSNLwv/MT9ctRkr+CgDvg7vYMpZIms=";
       stripRoot = false;
     };
     aarch64-darwin = fetchzip {
       url = "https://seanime.app/assets/mpv-prism/${version}/native/darwin-arm64.tar.gz";
-      hash = "sha256-XdOd6lbakMhvTyGqaA1mZOB560f5tdZrMCOfrDVe2Ds=";
+      hash = "sha256-EPaciex5T5AiPMBk792Dq/5q/WW2kHCFoldEa3+qRIA=";
       stripRoot = false;
     };
   };
@@ -53,7 +53,7 @@ stdenv.mkDerivation {
   '';
 
   postFixup = lib.optionalString stdenv.hostPlatform.isLinux ''
-    rm -f "$out"/{libglib-2.0.so.0,libEGL.so.1,libGLESv2.so.2,libgbm.so.1,libva.so.2,libva-drm.so.2,libva-x11.so.2}
+    rm -f "$out"/{libglib-2.0.so.0}
   '';
 
   meta = {

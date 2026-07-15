@@ -2,7 +2,6 @@
   lib,
   stdenv,
   source,
-  fetchFromGitHub,
   vendorHash,
   buildGoModule,
   ffmpeg,
@@ -18,16 +17,8 @@
   mpv-prism ? callPackage ./mpv-prism.nix { },
 }:
 let
-  # inherit (source) src;
-  # version = lib.replaceStrings [ "v" ] [ "" ] source.version;
-
-  version = "3.9.0";
-  src = fetchFromGitHub {
-    owner = "5rahim";
-    repo = "seanime";
-    tag = "v${version}";
-    hash = "sha256-S2r2YqHhLSHMBKMiWK2S9SUqP0IRAgCCmrnGehRqD4Y=";
-  };
+  inherit (source) src;
+  version = lib.replaceStrings [ "v" ] [ "" ] source.version;
 
   mpvPrismTarget = if stdenv.hostPlatform.isDarwin then "darwin-arm64" else "linux-x64";
 
