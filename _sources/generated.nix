@@ -43,10 +43,10 @@
   };
   dw-proton = {
     pname = "dw-proton";
-    version = "dwproton-11.0-5";
+    version = "dwproton-11.0-7";
     src = fetchurl {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-5/dwproton-11.0-5-x86_64.tar.xz";
-      sha256 = "sha256-GLXwUswB/uJEFWlij5KN9MUE483QOdvkTbKvEtk8VZI=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-7/dwproton-11.0-7-x86_64.tar.xz";
+      sha256 = "sha256-PDja/hYK4BC8AnEb76L76ksaHRBk1yW/2XAX4ZjJTVo=";
     };
   };
   excalibur-wmi = {
@@ -122,10 +122,26 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "12 Jul 2026 17:41:20 GMT";
+    version = "16 Jul 2026 12:49:43 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
+    };
+  };
+  mpv-prism-darwin-arm64 = {
+    pname = "mpv-prism-darwin-arm64";
+    version = "0.1.8";
+    src = fetchTarball {
+      url = "https://seanime.app/assets/mpv-prism/0.1.8/native/darwin-arm64.tar.gz";
+      sha256 = "sha256-33YEt2ExXaOplxkNJztxb/cX+ssKrYAF7Tp6GIIDaHM=";
+    };
+  };
+  mpv-prism-linux-x64 = {
+    pname = "mpv-prism-linux-x64";
+    version = "0.1.8";
+    src = fetchTarball {
+      url = "https://seanime.app/assets/mpv-prism/0.1.8/native/linux-x64.tar.gz";
+      sha256 = "sha256-tIRCNDEfMukJRpny52PG409w8LzklSnW5AEjvuMJZpE=";
     };
   };
   nero-umu = {
@@ -162,34 +178,34 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.9.1";
+    version = "v3.10.0";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.9.1";
+      rev = "v3.10.0";
       fetchSubmodules = false;
-      sha256 = "sha256-T4TLQ3wMvUFURu5rDfUDWfnhSsmYWq4GGQBZvAd2ivs=";
+      sha256 = "sha256-Rm4xlRk8Yc5bsFKZNBNbf+qXgV86U8XTBR6QcXN2N4M=";
     };
   };
   seanime-bin-canary = {
     pname = "seanime-bin-canary";
-    version = "3.9.2-alpha.15";
+    version = "3.10.0";
     src = fetchurl {
-      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.9.2-alpha.15_Linux_x86_64.AppImage";
-      sha256 = "sha256-ezMGERVYze0YozzRGXKI7md/Dfz9sYMyRDfgiRHyXVM=";
+      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.0_Linux_x86_64.AppImage";
+      sha256 = "sha256-67khmDfB5MyNYfupo1TmCn2XLbcEdGJvH7aiTjdPv3o=";
     };
   };
   seanime-canary = {
     pname = "seanime-canary";
-    version = "6b07e3a777e3fd49fb13258f0f01ddd0135cf5ff";
+    version = "09ab9d5ffa175cb211e73fd591a470f334bb9b85";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "6b07e3a777e3fd49fb13258f0f01ddd0135cf5ff";
+      rev = "09ab9d5ffa175cb211e73fd591a470f334bb9b85";
       fetchSubmodules = false;
-      sha256 = "sha256-FG9qlx5wWarO+u9fxvrXLCdXj1kv1rxUAWhMP7ukB+0=";
+      sha256 = "sha256-Ac36HtzudinnLoAhc2T1PmHaAC0/L6LN2N77EWWUT20=";
     };
-    date = "2026-07-11";
+    date = "2026-07-15";
   };
   victus-control = {
     pname = "victus-control";

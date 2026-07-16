@@ -1,29 +1,17 @@
 {
   lib,
   stdenv,
-  fetchzip,
   autoPatchelfHook,
   glib,
   libGL,
   libgbm,
   libva,
+  mpv-prism-native-sources,
 }:
 
 let
-  version = "0.1.1"; # pinned in mpv-prism.lock.json at repo root, bump alongside seanime
-
-  sources = {
-    x86_64-linux = fetchzip {
-      url = "https://seanime.app/assets/mpv-prism/${version}/native/linux-x64.tar.gz";
-      hash = "sha256-Tn0kFRAk6WocAwSNLwv/MT9ctRkr+CgDvg7vYMpZIms=";
-      stripRoot = false;
-    };
-    aarch64-darwin = fetchzip {
-      url = "https://seanime.app/assets/mpv-prism/${version}/native/darwin-arm64.tar.gz";
-      hash = "sha256-EPaciex5T5AiPMBk792Dq/5q/WW2kHCFoldEa3+qRIA=";
-      stripRoot = false;
-    };
-  };
+  version = (lib.head (lib.attrValues mpv-prism-native-sources)).version;
+  sources = lib.mapAttrs (_: v: v.src) mpv-prism-native-sources;
 in
 stdenv.mkDerivation {
   pname = "mpv-prism-electron-native";

@@ -54,6 +54,13 @@ rec {
   seanime = pkgs.callPackage ./pkgs/seanime/package.nix {
     source = nvSources.seanime;
     vendorHash = vendorHashes.seanime;
+    mpv-prism = mpv-prism-native;
+  };
+  mpv-prism-native = pkgs.callPackage ./pkgs/seanime/mpv-prism.nix {
+    mpv-prism-native-sources = {
+      x86_64-linux = nvSources.mpv-prism-linux-x64;
+      aarch64-darwin = nvSources.mpv-prism-darwin-arm64;
+    };
   };
   # seanime-canary = pkgs.callPackage ./pkgs/seanime-canary/package.nix {
   #   source = nvSources.seanime-canary;

@@ -71,11 +71,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-GLXwUswB/uJEFWlij5KN9MUE483QOdvkTbKvEtk8VZI=",
+            "sha256": "sha256-PDja/hYK4BC8AnEb76L76ksaHRBk1yW/2XAX4ZjJTVo=",
             "type": "url",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-5/dwproton-11.0-5-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-7/dwproton-11.0-7-x86_64.tar.xz"
         },
-        "version": "dwproton-11.0-5"
+        "version": "dwproton-11.0-7"
     },
     "excalibur-wmi": {
         "cargoLock": null,
@@ -216,7 +216,35 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "12 Jul 2026 17:41:20 GMT"
+        "version": "16 Jul 2026 12:49:43 GMT"
+    },
+    "mpv-prism-darwin-arm64": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "mpv-prism-darwin-arm64",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-33YEt2ExXaOplxkNJztxb/cX+ssKrYAF7Tp6GIIDaHM=",
+            "type": "tarball",
+            "url": "https://seanime.app/assets/mpv-prism/0.1.8/native/darwin-arm64.tar.gz"
+        },
+        "version": "0.1.8"
+    },
+    "mpv-prism-linux-x64": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "mpv-prism-linux-x64",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-tIRCNDEfMukJRpny52PG409w8LzklSnW5AEjvuMJZpE=",
+            "type": "tarball",
+            "url": "https://seanime.app/assets/mpv-prism/0.1.8/native/linux-x64.tar.gz"
+        },
+        "version": "0.1.8"
     },
     "nero-umu": {
         "cargoLock": null,
@@ -289,12 +317,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.9.1",
-            "sha256": "sha256-T4TLQ3wMvUFURu5rDfUDWfnhSsmYWq4GGQBZvAd2ivs=",
+            "rev": "v3.10.0",
+            "sha256": "sha256-Rm4xlRk8Yc5bsFKZNBNbf+qXgV86U8XTBR6QcXN2N4M=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.9.1"
+        "version": "v3.10.0"
     },
     "seanime-bin-canary": {
         "cargoLock": null,
@@ -305,15 +333,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ezMGERVYze0YozzRGXKI7md/Dfz9sYMyRDfgiRHyXVM=",
+            "sha256": "sha256-67khmDfB5MyNYfupo1TmCn2XLbcEdGJvH7aiTjdPv3o=",
             "type": "url",
-            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.9.2-alpha.15_Linux_x86_64.AppImage"
+            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.0_Linux_x86_64.AppImage"
         },
-        "version": "3.9.2-alpha.15"
+        "version": "3.10.0"
     },
     "seanime-canary": {
         "cargoLock": null,
-        "date": "2026-07-11",
+        "date": "2026-07-15",
         "extract": null,
         "name": "seanime-canary",
         "passthru": null,
@@ -325,12 +353,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "6b07e3a777e3fd49fb13258f0f01ddd0135cf5ff",
-            "sha256": "sha256-FG9qlx5wWarO+u9fxvrXLCdXj1kv1rxUAWhMP7ukB+0=",
+            "rev": "09ab9d5ffa175cb211e73fd591a470f334bb9b85",
+            "sha256": "sha256-Ac36HtzudinnLoAhc2T1PmHaAC0/L6LN2N77EWWUT20=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6b07e3a777e3fd49fb13258f0f01ddd0135cf5ff"
+        "version": "09ab9d5ffa175cb211e73fd591a470f334bb9b85"
     },
     "victus-control": {
         "cargoLock": null,

@@ -14,7 +14,7 @@
   callPackage,
   # we use the same electron as upstream
   denshi-electron ? callPackage ./electron.nix { },
-  mpv-prism ? callPackage ./mpv-prism.nix { },
+  mpv-prism,
 }:
 let
   inherit (source) src;
@@ -55,6 +55,20 @@ let
       npmDeps = importNpmLock { npmRoot = "${src}/seanime-web"; };
 
       npmConfigHook = importNpmLock.npmConfigHook;
+
+      preBuild = ''
+        pushd seanime-web/node_modules/@mpv-prism
+
+        target=$(readlink -f core)
+        rm core && mkdir core
+        tar -xzf "$target" -C core --strip-components=1
+
+        target=$(readlink -f react)
+        rm react && mkdir react
+        tar -xzf "$target" -C react --strip-components=1
+
+        popd
+      '';
     };
 in
 buildGoModule (finalAttrs: {
@@ -104,13 +118,7 @@ buildGoModule (finalAttrs: {
     patches = [ ./fix-paths.patch ];
 
     postPatch = ''
-        substituteInPlace src/main.js --replace-fail SEANIME_BIN ${lib.getExe finalAttrs.finalPackage}
-
-        substituteInPlace package.json \
-          --replace-fail '"asar": true,' '"asar": true,
-      "asarUnpack": [
-        "node_modules/@mpv-prism/electron/native-builds/**"
-      ],'
+      substituteInPlace src/main/index.ts --replace-fail SEANIME_BIN ${lib.getExe finalAttrs.finalPackage}
     '';
 
     preBuild = ''
@@ -128,8 +136,11 @@ buildGoModule (finalAttrs: {
         }
       }/web-denshi .
 
-      mkdir -p "node_modules/@mpv-prism/electron/native-builds/${mpvPrismTarget}"
-      cp -r ${mpv-prism}/. "node_modules/@mpv-prism/electron/native-builds/${mpvPrismTarget}/"
+      pushd node_modules/@mpv-prism
+      target=$(readlink -f electron)
+      rm electron && mkdir electron
+      tar -xzf "$target" -C electron --strip-components=1
+      popd
     '';
 
     env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
@@ -138,6 +149,11 @@ buildGoModule (finalAttrs: {
 
     buildPhase = ''
       runHook preBuild
+
+      npm run build:main
+
+      mkdir native-builds
+      cp -r ${mpv-prism}/. native-builds/${mpvPrismTarget}/
 
       ${
         if stdenv.hostPlatform.isDarwin then
@@ -182,6 +198,7 @@ buildGoModule (finalAttrs: {
 
             makeWrapper ${lib.getExe denshi-electron} $out/bin/seanime-denshi \
               --add-flags $out/share/seanime-denshi/resources/app.asar \
+              --chdir "$out/share/seanime-denshi/resources" \
               --inherit-argv0
 
             for size in 16 18 24 32 48 64 128 256 512 1024; do

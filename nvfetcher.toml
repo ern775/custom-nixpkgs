@@ -75,3 +75,13 @@ fetch.url = "https://dawn.wine/dawn-winery/dwproton/releases/download/$ver/$ver-
 [jdownloader2]
 src.cmd = "curl -sI https://installer.jdownloader.org/JDownloader.jar | grep -w date: | sed 's/^.*, //'"
 fetch.url = "https://installer.jdownloader.org/JDownloader.jar"
+
+[mpv-prism-linux-x64]
+src.webpage = "https://seanime.app/assets/mpv-prism/"
+src.regex = "(\\d+\\.\\d+\\.\\d+)"
+fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/linux-x64.tar.gz"
+
+[mpv-prism-darwin-arm64]
+src.webpage = "https://seanime.app/assets/mpv-prism/"
+src.regex = "(\\d+\\.\\d+\\.\\d+)"
+fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/darwin-arm64.tar.gz"
