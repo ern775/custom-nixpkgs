@@ -7,24 +7,89 @@ on:
   workflow_dispatch:
 
 jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.detect.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed packages
+        id: detect
+        run: |
+          set -euo pipefail
+          ALL_PACKAGES='["dopamine","dw-proton","gecit","iloader","jdownloader2","nero-umu","proton-cachyos","seanime","seanime.denshi","seanime-bin-canary","victus-control"]'
+
+          declare -A KEY_TO_PACKAGES=(
+            ["seanime"]="seanime seanime.denshi"
+          )
+
+          build_all() {
+            echo "packages=$ALL_PACKAGES" >> "$GITHUB_OUTPUT"
+            exit 0
+          }
+
+          diff_keys() {
+            local path=$1
+            git show "$BASE_SHA:$path" 2>/dev/null > /tmp/old.json || echo '{}' > /tmp/old.json
+            git show "HEAD:$path" > /tmp/new.json
+            jq -n --slurpfile old /tmp/old.json --slurpfile new /tmp/new.json '
+              ($old[0] // {}) as $o | ($new[0] // {}) as $n
+              | (($o|keys) + ($n|keys)) | unique[] as $k
+              | select($o[$k] != $n[$k]) | $k' -r
+          }
+
+          [ "${{ github.event_name }}" = "workflow_dispatch" ] && build_all
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+
+          [ -z "${BASE_SHA:-}" ] && build_all
+          git cat-file -e "$BASE_SHA" 2>/dev/null || build_all
+
+          CHANGED_FILES=$(git diff --name-only "$BASE_SHA" HEAD)
+          echo "$CHANGED_FILES"
+
+          echo "$CHANGED_FILES" | grep -qE '^(flake\.nix|flake\.lock)$' && build_all
+
+          CHANGED_KEYS=""
+          echo "$CHANGED_FILES" | grep -qE '^_sources/generated\.json$' && \
+            CHANGED_KEYS+=$(diff_keys _sources/generated.json)$'\n'
+          echo "$CHANGED_FILES" | grep -qE '^pkgs/vendorHashes\.json$' && \
+            CHANGED_KEYS+=$(diff_keys pkgs/vendorHashes.json)$'\n'
+
+          MATCHED=()
+          for key in $CHANGED_KEYS; do
+            for p in ${KEY_TO_PACKAGES[$key]:-$key}; do
+              MATCHED+=("\"$p\"")
+            done
+          done
+
+          while IFS= read -r pkg; do
+            echo "$CHANGED_FILES" | grep -qE "^pkgs/${pkg}/" && MATCHED+=("\"$pkg\"")
+          done < <(echo "$ALL_PACKAGES" | jq -r '.[]')
+
+          if [ "${#MATCHED[@]}" -eq 0 ]; then
+            PACKAGES="$ALL_PACKAGES"
+          else
+            PACKAGES=$(printf '%s\n' "${MATCHED[@]}" | jq -s -c 'unique')
+          fi
+
+          echo "packages=$PACKAGES" >> "$GITHUB_OUTPUT"
+
   build:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.packages != '[]'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        package: [
-          dopamine,
-          dw-proton,
-          gecit,
-          iloader,
-          jdownloader2,
-          nero-umu,
-          proton-cachyos,
-          seanime,
-          seanime.denshi,
-          seanime-bin-canary,
-          victus-control,
-        ]
+        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
     steps:
       - uses: actions/checkout@v7
 
