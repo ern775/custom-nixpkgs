@@ -153,7 +153,7 @@ buildGoModule (finalAttrs: {
       npm run build:main
 
       mkdir native-builds
-      cp -r ${mpv-prism}/. native-builds/${mpvPrismTarget}/
+      cp -r ${mpv-prism}/. native-builds/${mpvPrismTarget}
 
       ${
         if stdenv.hostPlatform.isDarwin then

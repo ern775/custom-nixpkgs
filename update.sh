@@ -8,7 +8,7 @@ setHash () {
 declare -a APP_NAMES=()
 while read -r line; do
     APP_NAMES+=("${line%:*}")
-done < tmp/nvfetcher-changes
+done < /tmp/nvfetcher-changes
 
 for APP_NAME in "${APP_NAMES[@]}"; do
     if ! jq -e --arg app "${APP_NAME}" 'has($app)' pkgs/vendorHashes.json > /dev/null; then
@@ -22,7 +22,7 @@ for APP_NAME in "${APP_NAMES[@]}"; do
     while true; do
         tmp_log=$(mktemp)
 
-        script --quiet --return --command "nix build -L --no-link .#${APP_NAME}" /dev/null \
+        script --quiet --return --command "nix build -L --no-link .#${APP_NAME}" \
             | tee "$tmp_log"
         nix_exit=${PIPESTATUS[0]}
 

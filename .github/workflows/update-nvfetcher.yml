@@ -1,0 +1,56 @@
+name: Update nvfetcher
+
+on:
+  schedule:
+    - cron: 0 3 * * *
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          extra-conf: |
+            experimental-features = nix-command 
+
+      - name: Run nvfetcher
+        id: run-nvfetcher
+        run: |
+          nix run nixpkgs#nvfetcher -- -l /tmp/nvfetcher-changes
+          {
+            echo 'changes<<EOF'
+            cat /tmp/nvfetcher-changes
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Update flake inputs
+        run: |
+          nix flake update
+
+      - name: Update vendor hashes
+        id: update-vendorhash
+        run: |
+          ./update.sh
+
+      - name: Create Pull Request
+        id: create-pull-request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: nvfetcher-update
+          title: "chore: update packages"
+          commit-message: "chore: update packages"
+          body: |
+            ## Changes:
+            ${{ steps.run-nvfetcher.outputs.changes }}
+          add-paths: |
+            _sources/generated.nix
+            _sources/generated.json
+            pkgs/vendorHashes.json
+            flake.lock
+          delete-branch: true
