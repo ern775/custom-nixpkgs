@@ -73,7 +73,7 @@ src.cmd = "curl -s 'https://dawn.wine/api/v1/repos/dawn-winery/dwproton/releases
 fetch.url = "https://dawn.wine/dawn-winery/dwproton/releases/download/$ver/$ver-x86_64.tar.xz"
 
 [jdownloader2]
-src.cmd = "curl -sI https://installer.jdownloader.org/JDownloader.jar | grep -w date: | sed 's/^.*, //'"
+src.cmd = "curl -s https://svn.jdownloader.org/build.php | grep -oP 'Latest Revision:</b></td><td >\\K[0-9]+'"
 fetch.url = "https://installer.jdownloader.org/JDownloader.jar"
 
 [mpv-prism-linux-x64]
