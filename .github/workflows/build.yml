@@ -1,8 +1,7 @@
-name: build and upload to cachix
+name: build
 
 on:
-  push:
-    branches: [master]
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -42,7 +41,7 @@ jobs:
 
           [ "${{ github.event_name }}" = "workflow_dispatch" ] && build_all
 
-          BASE_SHA="${{ github.event.before }}"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
 
           [ -z "${BASE_SHA:-}" ] && build_all
           git cat-file -e "$BASE_SHA" 2>/dev/null || build_all
@@ -101,6 +100,3 @@ jobs:
 
       - name: Build ${{ matrix.package }}
         run: nix build .#${{ matrix.package }} --print-build-logs
-
-      - name: Push result to Cachix
-        run: cachix push ern775-nixpkgs ./result
