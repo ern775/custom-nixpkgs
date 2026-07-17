@@ -5,7 +5,7 @@
   makeWrapper,
 }:
 appimageTools.wrapType2 rec {
-  pname = "seanime-denshi";
+  pname = "seanime-denshi-bin";
 
   inherit (source) version src;
 
