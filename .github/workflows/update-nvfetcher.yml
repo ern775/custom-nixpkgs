@@ -44,7 +44,8 @@ jobs:
         with:
           branch: nvfetcher-update
           title: "chore: update packages"
-          commit-message: "chore: update packages"
+          commit-message: |
+            ${{ steps.run-nvfetcher.outputs.changes }}
           body: |
             ## Changes:
             ${{ steps.run-nvfetcher.outputs.changes }}
