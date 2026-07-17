@@ -216,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "17 Jul 2026 06:44:03 GMT"
+        "version": "17 Jul 2026 07:35:37 GMT"
     },
     "mpv-prism-darwin-arm64": {
         "cargoLock": null,
