@@ -17,7 +17,6 @@ for APP_NAME in "${APP_NAMES[@]}"; do
     fi
 
     echo "Updating vendor hash for ${APP_NAME}..."
-    setHash "${APP_NAME}" ""
 
     while true; do
         tmp_log=$(mktemp)
