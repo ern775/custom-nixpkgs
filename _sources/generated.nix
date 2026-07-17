@@ -122,7 +122,7 @@
   };
   jdownloader2 = {
     pname = "jdownloader2";
-    version = "17 Jul 2026 07:35:37 GMT";
+    version = "17 Jul 2026 10:10:24 GMT";
     src = fetchurl {
       url = "https://installer.jdownloader.org/JDownloader.jar";
       sha256 = "sha256-OIodAo5ly8Y5M6d43bySZ8FOfnhYOJzjGhC+cwit60A=";
@@ -178,21 +178,21 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.10.0";
+    version = "v3.10.1";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.10.0";
+      rev = "v3.10.1";
       fetchSubmodules = false;
-      sha256 = "sha256-Rm4xlRk8Yc5bsFKZNBNbf+qXgV86U8XTBR6QcXN2N4M=";
+      sha256 = "sha256-4BXb+9eTzH23pNyatFyhbfmt2tCqEF8K+iLlwXCxAeQ=";
     };
   };
   seanime-bin-canary = {
     pname = "seanime-bin-canary";
-    version = "3.10.0";
+    version = "3.10.1";
     src = fetchurl {
-      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.0_Linux_x86_64.AppImage";
-      sha256 = "sha256-67khmDfB5MyNYfupo1TmCn2XLbcEdGJvH7aiTjdPv3o=";
+      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.1_Linux_x86_64.AppImage";
+      sha256 = "sha256-QuASPByr/Z/aK9W2noxnHyl8PEGxMStkXctqcw/wW/A=";
     };
   };
   seanime-canary = {
