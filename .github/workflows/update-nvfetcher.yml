@@ -1,4 +1,4 @@
-name: Update nvfetcher
+name: update nvfetcher
 
 on:
   schedule:
