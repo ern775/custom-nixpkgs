@@ -104,3 +104,7 @@ jobs:
 
       - name: Push result to Cachix
         run: cachix push ern775-nixpkgs ./result
+
+      - name: Pin and prune old versions
+        run: |
+          cachix pin ern775-nixpkgs ${{ matrix.package }} ./result --keep-revisions 2
