@@ -12,7 +12,8 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "jdownloader2";
   dontUnpack = true;
 
-  inherit (source) version src;
+  inherit (source) src;
+  version = "2-unstable-r${source.version}";
 
   nativeBuildInputs = [ makeWrapper ];
 
