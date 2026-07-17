@@ -216,7 +216,7 @@
             "type": "url",
             "url": "https://installer.jdownloader.org/JDownloader.jar"
         },
-        "version": "17 Jul 2026 07:35:37 GMT"
+        "version": "17 Jul 2026 10:10:24 GMT"
     },
     "mpv-prism-darwin-arm64": {
         "cargoLock": null,
@@ -317,12 +317,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.10.0",
-            "sha256": "sha256-Rm4xlRk8Yc5bsFKZNBNbf+qXgV86U8XTBR6QcXN2N4M=",
+            "rev": "v3.10.1",
+            "sha256": "sha256-4BXb+9eTzH23pNyatFyhbfmt2tCqEF8K+iLlwXCxAeQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.10.0"
+        "version": "v3.10.1"
     },
     "seanime-bin-canary": {
         "cargoLock": null,
@@ -333,11 +333,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-67khmDfB5MyNYfupo1TmCn2XLbcEdGJvH7aiTjdPv3o=",
+            "sha256": "sha256-QuASPByr/Z/aK9W2noxnHyl8PEGxMStkXctqcw/wW/A=",
             "type": "url",
-            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.0_Linux_x86_64.AppImage"
+            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.1_Linux_x86_64.AppImage"
         },
-        "version": "3.10.0"
+        "version": "3.10.1"
     },
     "seanime-canary": {
         "cargoLock": null,
