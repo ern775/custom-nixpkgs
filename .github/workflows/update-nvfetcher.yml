@@ -30,8 +30,16 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Update flake inputs
+        id: update-flake
         run: |
-          nix flake update
+          nix flake update 2> /tmp/flake-changes
+          tail -n +2 /tmp/flake-changes > /tmp/flake-changes.tmp
+          mv /tmp/flake-changes.tmp /tmp/flake-changes
+          {
+            echo 'flake-changes<<EOF'
+            cat /tmp/flake-changes
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
 
       - name: Update vendor hashes
         id: update-vendorhash
@@ -46,9 +54,11 @@ jobs:
           title: "chore: update packages"
           commit-message: |
             ${{ steps.run-nvfetcher.outputs.changes }}
+            ${{ steps.update-flake.outputs.flake-changes }}
           body: |
             ## Changes:
             ${{ steps.run-nvfetcher.outputs.changes }}
+            ${{ steps.update-flake.outputs.flake-changes }}
           add-paths: |
             _sources/generated.nix
             _sources/generated.json
