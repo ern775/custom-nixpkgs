@@ -32,8 +32,8 @@ jobs:
       - name: Update flake inputs
         id: update-flake
         run: |
-          nix flake update 2> /tmp/flake-changes
-          grep -A 2 '^•' /tmp/flake-changes > /tmp/flake-changes.tmp
+          nix flake update 2> /tmp/flake-changes || { cat /tmp/flake-changes; exit 1; }
+          grep -A 2 '^•' /tmp/flake-changes > /tmp/flake-changes.tmp || true
           mv /tmp/flake-changes.tmp /tmp/flake-changes
           {
             echo 'flake-changes<<EOF'
