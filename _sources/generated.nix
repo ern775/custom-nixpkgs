@@ -43,10 +43,10 @@
   };
   dw-proton = {
     pname = "dw-proton";
-    version = "dwproton-11.0-7";
+    version = "dwproton-11.0-8";
     src = fetchurl {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-7/dwproton-11.0-7-x86_64.tar.xz";
-      sha256 = "sha256-PDja/hYK4BC8AnEb76L76ksaHRBk1yW/2XAX4ZjJTVo=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-8/dwproton-11.0-8-x86_64.tar.xz";
+      sha256 = "sha256-C8wIc7WX2ujO+4mTYt8vrDqyF6vQBnc/Dx7F1sAJkvo=";
     };
   };
   excalibur-wmi = {
@@ -167,6 +167,17 @@
       sha256 = "sha256-4Pynz0QBixMfnFaYeYD2k9pZzwbqx6iBzUTW/M9eOaE=";
     };
     date = "2026-06-16";
+  };
+  prismlauncher = {
+    pname = "prismlauncher";
+    version = "11.0.3";
+    src = fetchFromGitHub {
+      owner = "PrismLauncher";
+      repo = "PrismLauncher";
+      rev = "11.0.3";
+      fetchSubmodules = false;
+      sha256 = "sha256-0o31pLKnYY0mulLrZKzZtaTPzCviGsgCnEcBt0Y/aG4=";
+    };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";

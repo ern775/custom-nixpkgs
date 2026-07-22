@@ -72,4 +72,11 @@ rec {
   wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
   visual-paradigm-ce = pkgs.callPackage ./pkgs/visual-paradigm-ce/package.nix { };
   solidtime-desktop = pkgs.callPackage ./pkgs/solidtime-desktop/package.nix { };
+
+  prismlauncher-unwrapped = pkgs.callPackage ./pkgs/prismlauncher/unwrapped.nix {
+    source = nvSources.prismlauncher;
+  };
+  prismlauncher = pkgs.callPackage ./pkgs/prismlauncher/package.nix {
+    prismlauncher-unwrapped = prismlauncher-unwrapped;
+  };
 }

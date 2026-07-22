@@ -49,6 +49,10 @@ fetch.github = "nab138/iloader"
 src.github = "digimezzo/dopamine"
 fetch.github = "digimezzo/dopamine"
 
+[prismlauncher]
+src.github = "PrismLauncher/PrismLauncher"
+fetch.github = "PrismLauncher/PrismLauncher"
+
 [seanime]
 src.github_tag = "5rahim/seanime"
 fetch.github = "5rahim/seanime"
