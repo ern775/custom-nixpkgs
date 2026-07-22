@@ -18,7 +18,7 @@ jobs:
         id: detect
         run: |
           set -euo pipefail
-          ALL_PACKAGES='["dopamine","dw-proton","gecit","iloader","jdownloader2","nero-umu","prismlauncher","proton-cachyos","seanime","seanime.denshi","seanime-bin-canary","victus-control"]'
+          ALL_PACKAGES='["dopamine","gecit","iloader","jdownloader2","nero-umu","prismlauncher","seanime","seanime.denshi","seanime-bin-canary","victus-control"]'
 
           declare -A KEY_TO_PACKAGES=(
             ["seanime"]="seanime seanime.denshi"
