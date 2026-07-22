@@ -140,6 +140,48 @@
         },
         "version": "1a66b6012aa6996471e831b4e991bbea98d26f5f"
     },
+    "handbrake": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "handbrake",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "HandBrake",
+            "repo": "HandBrake",
+            "rev": "1.11.2",
+            "sha256": "sha256-f4kBFeW1yVFLlXGAimWsZx+9PKlgR6xrXUZG+CBh28A=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.11.2"
+    },
+    "handbrake-rev": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "handbrake-rev",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "HandBrake",
+            "repo": "HandBrake",
+            "rev": "9eb6c936803e8b071035b1a77662cb0db58441ea",
+            "sha256": "sha256-f4kBFeW1yVFLlXGAimWsZx+9PKlgR6xrXUZG+CBh28A=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "9eb6c936803e8b071035b1a77662cb0db58441ea"
+    },
     "hp-omen-wmi": {
         "cargoLock": null,
         "date": "2024-05-04",

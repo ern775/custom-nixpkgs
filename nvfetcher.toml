@@ -89,3 +89,14 @@ fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/linux-x64.tar.
 src.webpage = "https://seanime.app/assets/mpv-prism/"
 src.regex = "(\\d+\\.\\d+\\.\\d+)"
 fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/darwin-arm64.tar.gz"
+
+[handbrake]
+src.github = "HandBrake/HandBrake"
+fetch.github = "HandBrake/HandBrake"
+
+[handbrake-rev]
+src.cmd = '''
+tag=$(curl -s https://api.github.com/repos/HandBrake/HandBrake/releases/latest | jq -r .tag_name)
+git ls-remote https://github.com/HandBrake/HandBrake.git "refs/tags/$tag" "refs/tags/$tag^{}" | tail -1 | cut -f1
+'''
+fetch.github = "HandBrake/HandBrake"

@@ -85,6 +85,28 @@
     };
     date = "2026-05-04";
   };
+  handbrake = {
+    pname = "handbrake";
+    version = "1.11.2";
+    src = fetchFromGitHub {
+      owner = "HandBrake";
+      repo = "HandBrake";
+      rev = "1.11.2";
+      fetchSubmodules = false;
+      sha256 = "sha256-f4kBFeW1yVFLlXGAimWsZx+9PKlgR6xrXUZG+CBh28A=";
+    };
+  };
+  handbrake-rev = {
+    pname = "handbrake-rev";
+    version = "9eb6c936803e8b071035b1a77662cb0db58441ea";
+    src = fetchFromGitHub {
+      owner = "HandBrake";
+      repo = "HandBrake";
+      rev = "9eb6c936803e8b071035b1a77662cb0db58441ea";
+      fetchSubmodules = false;
+      sha256 = "sha256-f4kBFeW1yVFLlXGAimWsZx+9PKlgR6xrXUZG+CBh28A=";
+    };
+  };
   hp-omen-wmi = {
     pname = "hp-omen-wmi";
     version = "a2d79368bf981a3f241a36941aaa4a7fe657d924";

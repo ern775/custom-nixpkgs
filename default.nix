@@ -79,4 +79,8 @@ rec {
   prismlauncher = pkgs.callPackage ./pkgs/prismlauncher/package.nix {
     prismlauncher-unwrapped = prismlauncher-unwrapped;
   };
+  handbrake = pkgs.callPackage ./pkgs/handbrake/package.nix {
+    source = nvSources.handbrake;
+    rev = nvSources.handbrake-rev.version;
+  };
 }
