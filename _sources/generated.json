@@ -71,11 +71,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-C8wIc7WX2ujO+4mTYt8vrDqyF6vQBnc/Dx7F1sAJkvo=",
+            "sha256": "sha256-Tym1Qv+wW9cDwfNtRBk5hquH7FG4NsFNHjwQbbNGya8=",
             "type": "url",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-8/dwproton-11.0-8-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-9/dwproton-11.0-9-x86_64.tar.xz"
         },
-        "version": "dwproton-11.0-8"
+        "version": "dwproton-11.0-9"
     },
     "excalibur-wmi": {
         "cargoLock": null,
