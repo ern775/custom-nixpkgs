@@ -211,21 +211,21 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.10.1";
+    version = "v3.10.2";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.10.1";
+      rev = "v3.10.2";
       fetchSubmodules = false;
-      sha256 = "sha256-4BXb+9eTzH23pNyatFyhbfmt2tCqEF8K+iLlwXCxAeQ=";
+      sha256 = "sha256-YLpMsvOOqr1wrdE3buqR0DP1GFhMvIkp9+WhpfGTgTk=";
     };
   };
   seanime-bin-canary = {
     pname = "seanime-bin-canary";
-    version = "3.10.1";
+    version = "3.10.2";
     src = fetchurl {
-      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.1_Linux_x86_64.AppImage";
-      sha256 = "sha256-QuASPByr/Z/aK9W2noxnHyl8PEGxMStkXctqcw/wW/A=";
+      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.2_Linux_x86_64.AppImage";
+      sha256 = "sha256-q4R1GgaBDJciLQRaxJmL7uQ4IYE+9xCZig1pqRcTJaY=";
     };
   };
   seanime-canary = {

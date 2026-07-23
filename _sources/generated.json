@@ -380,12 +380,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.10.1",
-            "sha256": "sha256-4BXb+9eTzH23pNyatFyhbfmt2tCqEF8K+iLlwXCxAeQ=",
+            "rev": "v3.10.2",
+            "sha256": "sha256-YLpMsvOOqr1wrdE3buqR0DP1GFhMvIkp9+WhpfGTgTk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.10.1"
+        "version": "v3.10.2"
     },
     "seanime-bin-canary": {
         "cargoLock": null,
@@ -396,11 +396,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-QuASPByr/Z/aK9W2noxnHyl8PEGxMStkXctqcw/wW/A=",
+            "sha256": "sha256-q4R1GgaBDJciLQRaxJmL7uQ4IYE+9xCZig1pqRcTJaY=",
             "type": "url",
-            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.1_Linux_x86_64.AppImage"
+            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.2_Linux_x86_64.AppImage"
         },
-        "version": "3.10.1"
+        "version": "3.10.2"
     },
     "seanime-canary": {
         "cargoLock": null,
