@@ -52,6 +52,7 @@ jobs:
         with:
           branch: nvfetcher-update
           title: "chore: update packages"
+          token: ${{ secrets.CI_BOT_TOKEN }} 
           commit-message: |
             ${{ steps.run-nvfetcher.outputs.changes }}
             ${{ steps.update-flake.outputs.flake-changes }}

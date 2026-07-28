@@ -18,11 +18,11 @@ jobs:
         id: detect
         run: |
           set -euo pipefail
-          ALL_PACKAGES='["dopamine","gecit","handbrake","iloader","jdownloader2","nero-umu","prismlauncher","seanime","seanime.denshi","seanime-bin-canary","victus-control"]'
+          EXCLUDED_PACKAGES='["dw-proton","gobee","mpv-prism-native","proton-cachyos","solidtime-desktop","visual-paradigm-ce","wire-desktop"]'
+          ALL_PACKAGES=$(nix eval --json .#packages.x86_64-linux --apply builtins.attrNames | jq -c --argjson excluded "$EXCLUDED_PACKAGES" '. - $excluded')
 
           declare -A KEY_TO_PACKAGES=(
             ["seanime"]="seanime seanime.denshi"
-            ["proton-cachyos-x86_64-v3"]="proton-cachyos"
           )
 
           build_all() {
