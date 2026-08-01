@@ -133,13 +133,13 @@
   };
   iloader = {
     pname = "iloader";
-    version = "v2.2.10";
+    version = "v2.3.0";
     src = fetchFromGitHub {
       owner = "nab138";
       repo = "iloader";
-      rev = "v2.2.10";
+      rev = "v2.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-qqHjBtdJZlaKExJdg/WMrgXjgMDqvNjDgFZAke3/Uag=";
+      sha256 = "sha256-CzwsXRqekIZsXcBH9EA77TAfwUwI7E+R78L4oYUaJzI=";
     };
   };
   jdownloader2 = {
