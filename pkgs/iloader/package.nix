@@ -2,6 +2,7 @@
   lib,
   stdenv,
   source,
+  bunOutputHash,
 
   rustPlatform,
   nodejs,
@@ -57,15 +58,17 @@ rustPlatform.buildRustPackage (finalAttrs: {
       runHook postInstall
     '';
 
-    outputHash = "sha256-zB0BJrQuoIu7Y67WMfrVRsPPnJ6mhd5srL2M3zW6+1Q=";
+    outputHash = bunOutputHash;
     outputHashAlgo = "sha256";
     outputHashMode = "recursive";
   };
 
   cargoRoot = "src-tauri";
   buildAndTestSubdir = finalAttrs.cargoRoot;
-  cargoLock.lockFile = "${finalAttrs.src}/src-tauri/Cargo.lock";
-
+  cargoLock = {
+    lockFile = "${finalAttrs.src}/src-tauri/Cargo.lock";
+    allowBuiltinFetchGit = true;
+  };
   doCheck = false;
 
   patches = [ ./disable-update.patch ];

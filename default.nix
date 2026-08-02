@@ -37,7 +37,10 @@ rec {
     source = nvSources.gobee;
     vendorHash = vendorHashes.gobee;
   };
-  iloader = pkgs.callPackage ./pkgs/iloader/package.nix { source = nvSources.iloader; };
+  iloader = pkgs.callPackage ./pkgs/iloader/package.nix {
+    source = nvSources.iloader;
+    bunOutputHash = vendorHashes.iloader;
+  };
   jdownloader2 = pkgs.callPackage ./pkgs/jdownloader2/package.nix {
     source = nvSources.jdownloader2;
   };
