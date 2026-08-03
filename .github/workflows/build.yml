@@ -24,11 +24,21 @@ jobs:
         run: |
           set -euo pipefail
           EXCLUDED_PACKAGES='["dw-proton","gobee","mpv-prism-native","proton-cachyos","solidtime-desktop","visual-paradigm-ce","wire-desktop"]'
-          ALL_PACKAGES=$(nix eval --json .#packages.x86_64-linux --apply builtins.attrNames | jq -c --argjson excluded "$EXCLUDED_PACKAGES" '. - $excluded')
 
-          declare -A KEY_TO_PACKAGES=(
-            ["seanime"]="seanime seanime.denshi"
+          declare -A SUB_PACKAGES=(
+            ["seanime"]="denshi"
           )
+
+          ALL_PACKAGES=$(nix eval --json .#packages.x86_64-linux --apply 'builtins.attrNames' \
+            | jq -c --argjson excluded "$EXCLUDED_PACKAGES" '
+                map(select(. as $b | ($excluded | index($b)) | not))
+              ')
+
+          for base in "${!SUB_PACKAGES[@]}"; do
+            for sub in ${SUB_PACKAGES[$base]}; do
+              ALL_PACKAGES=$(echo "$ALL_PACKAGES" | jq -c --arg p "${base}.${sub}" '. + [$p]')
+            done
+          done
 
           build_all() {
             echo "packages=$ALL_PACKAGES" >> "$GITHUB_OUTPUT"
