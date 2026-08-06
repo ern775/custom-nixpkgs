@@ -19,34 +19,58 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@v21
         with:
           extra-conf: |
-            experimental-features = nix-command 
+            experimental-features = nix-command
 
-      - name: Run nvfetcher
-        id: run-nvfetcher
+      - name: Configure git
         run: |
-          nix run nixpkgs#nvfetcher -- -l /tmp/nvfetcher-changes
-          {
-            echo 'changes<<EOF'
-            cat /tmp/nvfetcher-changes
-            echo 'EOF'
-          } >> "$GITHUB_OUTPUT"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update each package as its own commit
+        run: |
+          mkdir -p /tmp/nvfetcher-changes
+          mapfile -t PACKAGES < <(grep -oP '^\[\K[^\]]+' nvfetcher.toml)
+
+          for pkg in "${PACKAGES[@]}"; do
+            changes_file="/tmp/nvfetcher-changes/${pkg}"
+
+            nix run nixpkgs#nvfetcher -- -f "^${pkg}\$" -l "$changes_file"
+
+            if [ ! -s "$changes_file" ]; then
+              continue
+            fi
+
+            ./update.sh "$changes_file"
+
+            git add _sources/generated.nix _sources/generated.json pkgs/vendorHashes.json
+            if ! git diff --cached --quiet; then
+              git commit -F "$changes_file"
+            fi
+          done
+
+          cat /tmp/nvfetcher-changes/* > /tmp/nvfetcher-changes-all 2>/dev/null || true
+          touch /tmp/nvfetcher-changes-all
 
       - name: Update flake inputs
-        id: update-flake
         run: |
           nix flake update 2> /tmp/flake-changes || { cat /tmp/flake-changes; exit 1; }
           grep -A 2 '^•' /tmp/flake-changes > /tmp/flake-changes.tmp || true
           mv /tmp/flake-changes.tmp /tmp/flake-changes
-          {
-            echo 'flake-changes<<EOF'
-            cat /tmp/flake-changes
-            echo 'EOF'
-          } >> "$GITHUB_OUTPUT"
 
-      - name: Update vendor hashes
-        id: update-vendorhash
+      - name: Commit flake changes
         run: |
-          ./update.sh
+          git add flake.lock
+          if [ -s /tmp/flake-changes ] && ! git diff --cached --quiet; then
+            git commit -F /tmp/flake-changes
+          fi
+
+      - name: Build PR body
+        run: |
+          {
+            echo '## Changes:'
+            cat /tmp/nvfetcher-changes-all
+            cat /tmp/flake-changes
+          } > /tmp/pr-body
 
       - name: Create Pull Request
         id: create-pull-request
@@ -54,17 +78,5 @@ jobs:
         with:
           branch: nvfetcher-update
           title: "chore: update packages"
-          token: ${{ secrets.CI_BOT_TOKEN }} 
-          commit-message: |
-            ${{ steps.run-nvfetcher.outputs.changes }}
-            ${{ steps.update-flake.outputs.flake-changes }}
-          body: |
-            ## Changes:
-            ${{ steps.run-nvfetcher.outputs.changes }}
-            ${{ steps.update-flake.outputs.flake-changes }}
-          add-paths: |
-            _sources/generated.nix
-            _sources/generated.json
-            pkgs/vendorHashes.json
-            flake.lock
+          body-path: /tmp/pr-body
           delete-branch: true

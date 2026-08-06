@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+CHANGES_FILE="${1:-/tmp/nvfetcher-changes}"
+
 setHash () {
     jq --arg app "${1}" --arg hash "${2}" '.[$app] = $hash' pkgs/vendorHashes.json > tmp.json
     mv tmp.json pkgs/vendorHashes.json
@@ -8,7 +10,7 @@ setHash () {
 declare -a APP_NAMES=()
 while read -r line; do
     APP_NAMES+=("${line%:*}")
-done < /tmp/nvfetcher-changes
+done < "$CHANGES_FILE"
 
 for APP_NAME in "${APP_NAMES[@]}"; do
     if ! jq -e --arg app "${APP_NAME}" 'has($app)' pkgs/vendorHashes.json > /dev/null; then

@@ -75,9 +75,7 @@ jobs:
 
           MATCHED=()
           for key in $CHANGED_KEYS; do
-            for p in ${KEY_TO_PACKAGES[$key]:-$key}; do
-              MATCHED+=("\"$p\"")
-            done
+            MATCHED+=("\"$key\"")
           done
 
           while IFS= read -r pkg; do

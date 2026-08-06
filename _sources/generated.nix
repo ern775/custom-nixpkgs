@@ -43,7 +43,7 @@
   };
   dw-proton = {
     pname = "dw-proton";
-    version = "dwproton-11.0-10";
+    version = "11.0-10";
     src = fetchurl {
       url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-10/dwproton-11.0-10-x86_64.tar.xz";
       sha256 = "sha256-lgJI+nSKsvSl78osSsg19mCEXmiAGeTgXIAY4U3d0SA=";

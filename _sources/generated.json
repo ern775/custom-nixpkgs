@@ -75,7 +75,7 @@
             "type": "url",
             "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-10/dwproton-11.0-10-x86_64.tar.xz"
         },
-        "version": "dwproton-11.0-10"
+        "version": "11.0-10"
     },
     "excalibur-wmi": {
         "cargoLock": null,
