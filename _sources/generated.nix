@@ -43,10 +43,10 @@
   };
   dw-proton = {
     pname = "dw-proton";
-    version = "11.0-9";
+    version = "11.0-10";
     src = fetchurl {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-9/dwproton-11.0-9-x86_64.tar.xz";
-      sha256 = "sha256-Tym1Qv+wW9cDwfNtRBk5hquH7FG4NsFNHjwQbbNGya8=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-10/dwproton-11.0-10-x86_64.tar.xz";
+      sha256 = "sha256-lgJI+nSKsvSl78osSsg19mCEXmiAGeTgXIAY4U3d0SA=";
     };
   };
   excalibur-wmi = {
