@@ -55,12 +55,12 @@
             "name": null,
             "owner": "digimezzo",
             "repo": "dopamine",
-            "rev": "v3.0.7",
-            "sha256": "sha256-zYuf5BIQaxTqHBXWX1PLghGR5WmwtnSxTYrNosVFebc=",
+            "rev": "v3.0.8",
+            "sha256": "sha256-L+BSUnbIJgThF98DNMuwBaQ3U4tfxaxkeKbDhYCqzlg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.0.7"
+        "version": "v3.0.8"
     },
     "dw-proton": {
         "cargoLock": null,
