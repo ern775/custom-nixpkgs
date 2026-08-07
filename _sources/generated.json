@@ -55,12 +55,12 @@
             "name": null,
             "owner": "digimezzo",
             "repo": "dopamine",
-            "rev": "v3.0.8",
-            "sha256": "sha256-L+BSUnbIJgThF98DNMuwBaQ3U4tfxaxkeKbDhYCqzlg=",
+            "rev": "v3.0.7",
+            "sha256": "sha256-zYuf5BIQaxTqHBXWX1PLghGR5WmwtnSxTYrNosVFebc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.0.8"
+        "version": "v3.0.7"
     },
     "dw-proton": {
         "cargoLock": null,
@@ -71,11 +71,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-lgJI+nSKsvSl78osSsg19mCEXmiAGeTgXIAY4U3d0SA=",
+            "sha256": "sha256-Tym1Qv+wW9cDwfNtRBk5hquH7FG4NsFNHjwQbbNGya8=",
             "type": "url",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-10/dwproton-11.0-10-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-9/dwproton-11.0-9-x86_64.tar.xz"
         },
-        "version": "11.0-10"
+        "version": "11.0-9"
     },
     "excalibur-wmi": {
         "cargoLock": null,
@@ -238,12 +238,12 @@
             "name": null,
             "owner": "nab138",
             "repo": "iloader",
-            "rev": "v2.3.1",
-            "sha256": "sha256-OgSDkFaOwhsEhFLceV0FxcZ8jEG9vy5fKQf9gSyUpNA=",
+            "rev": "v2.2.6",
+            "sha256": "sha256-zSl08bhJ/OrdcvvL1ciybxgnLqrg4IinmcGXrsPQYyQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.3.1"
+        "version": "v2.2.6"
     },
     "jdownloader2": {
         "cargoLock": null,

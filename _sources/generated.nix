@@ -32,21 +32,21 @@
   };
   dopamine = {
     pname = "dopamine";
-    version = "v3.0.8";
+    version = "v3.0.7";
     src = fetchFromGitHub {
       owner = "digimezzo";
       repo = "dopamine";
-      rev = "v3.0.8";
+      rev = "v3.0.7";
       fetchSubmodules = false;
-      sha256 = "sha256-L+BSUnbIJgThF98DNMuwBaQ3U4tfxaxkeKbDhYCqzlg=";
+      sha256 = "sha256-zYuf5BIQaxTqHBXWX1PLghGR5WmwtnSxTYrNosVFebc=";
     };
   };
   dw-proton = {
     pname = "dw-proton";
-    version = "11.0-10";
+    version = "11.0-9";
     src = fetchurl {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-10/dwproton-11.0-10-x86_64.tar.xz";
-      sha256 = "sha256-lgJI+nSKsvSl78osSsg19mCEXmiAGeTgXIAY4U3d0SA=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-9/dwproton-11.0-9-x86_64.tar.xz";
+      sha256 = "sha256-Tym1Qv+wW9cDwfNtRBk5hquH7FG4NsFNHjwQbbNGya8=";
     };
   };
   excalibur-wmi = {
@@ -133,13 +133,13 @@
   };
   iloader = {
     pname = "iloader";
-    version = "v2.3.1";
+    version = "v2.2.6";
     src = fetchFromGitHub {
       owner = "nab138";
       repo = "iloader";
-      rev = "v2.3.1";
+      rev = "v2.2.6";
       fetchSubmodules = false;
-      sha256 = "sha256-OgSDkFaOwhsEhFLceV0FxcZ8jEG9vy5fKQf9gSyUpNA=";
+      sha256 = "sha256-zSl08bhJ/OrdcvvL1ciybxgnLqrg4IinmcGXrsPQYyQ=";
     };
   };
   jdownloader2 = {
