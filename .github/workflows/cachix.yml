@@ -84,9 +84,10 @@ jobs:
           done < <(echo "$ALL_PACKAGES" | jq -r '.[]')
 
           if [ "${#MATCHED[@]}" -eq 0 ]; then
-            PACKAGES="$ALL_PACKAGES"
+            PACKAGES="[]"
           else
-            PACKAGES=$(printf '%s\n' "${MATCHED[@]}" | jq -s -c 'unique')
+            PACKAGES=$(printf '%s\n' "${MATCHED[@]}" | jq -s -c --argjson excluded "$EXCLUDED_PACKAGES" \
+              'unique | map(select(. as $b | ($excluded | index($b)) | not))')
           fi
 
           echo "packages=$PACKAGES" | tee -a "$GITHUB_OUTPUT"
