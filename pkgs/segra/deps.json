@@ -1,0 +1,97 @@
+[
+  {
+    "pname": "Microsoft.Extensions.FileProviders.Abstractions",
+    "version": "10.0.10",
+    "hash": "sha256-u3nTCZpqqn6HIVm0O24ZmmyyNlbmUjmq8ADeKMu4JyU="
+  },
+  {
+    "pname": "Microsoft.Extensions.FileProviders.Embedded",
+    "version": "10.0.10",
+    "hash": "sha256-BZebymLQEBKJknZFQbyNLXVSOUx44zqkw0e/0mBSJ2M="
+  },
+  {
+    "pname": "Microsoft.Extensions.Primitives",
+    "version": "10.0.10",
+    "hash": "sha256-qOKbxamHl3b+fbpLQs3Ajnga4cz1e50SzQQCrXyo8cc="
+  },
+  {
+    "pname": "Microsoft.Win32.SystemEvents",
+    "version": "10.0.0",
+    "hash": "sha256-p0rfcBwM6pkVY+G49ujVcHwwFgrEq46FGPpGFOg0H5w="
+  },
+  {
+    "pname": "Microsoft.WindowsDesktop.App.Ref",
+    "version": "10.0.10",
+    "hash": "sha256-KQbtUwT1MMhjHTWFpwW6DSgXYYGPZfjQvOlpNd/+pdA="
+  },
+  {
+    "pname": "NuGet.Versioning",
+    "version": "7.6.0",
+    "hash": "sha256-HmQBQ808F5jGNQ1We6Ry16G98kPnBVoyoZ8oTyOGoiQ="
+  },
+  {
+    "pname": "ObsKit.NET",
+    "version": "1.5.4",
+    "hash": "sha256-9+qDiODXHd5qwtK4cbeGcD2YM0+CWtYOjCHCkeSodW4="
+  },
+  {
+    "pname": "Photino.Native",
+    "version": "4.0.22",
+    "hash": "sha256-owM7RGwFd6X5bw1ttMgaQ6qf+157d2OHv5IJp+VlYXs="
+  },
+  {
+    "pname": "Photino.NET",
+    "version": "4.0.16",
+    "hash": "sha256-cbxDN4nuuwYF4kYoXeZr2HGFwB0GTu8QXrED7Hzz6ps="
+  },
+  {
+    "pname": "Photino.NET.Server",
+    "version": "4.0.12",
+    "hash": "sha256-g+Ax9UhtgHA0JH9N9gWEK0yXQuHCB6LaPmou4FoC+Zg="
+  },
+  {
+    "pname": "Serilog",
+    "version": "4.4.0",
+    "hash": "sha256-tP4X06ThcDVL6XXtYIhdJyxn4uL9jLL0s3DRO6HNQk8="
+  },
+  {
+    "pname": "Serilog.Sinks.Debug",
+    "version": "3.0.0",
+    "hash": "sha256-7/LmoRF1rUDFhJ47bTRQQFRgSHnZDO8484r3sCGqYvE="
+  },
+  {
+    "pname": "System.Configuration.ConfigurationManager",
+    "version": "10.0.0",
+    "hash": "sha256-wiKDcpzYRM2Qsb9EE5luJYpjeItQXJT8LvdruqeqZtg="
+  },
+  {
+    "pname": "System.Diagnostics.EventLog",
+    "version": "10.0.0",
+    "hash": "sha256-pN3tld926Fp0n5ZNjjzIJviUQrynlOAB0vhc1aoso6E="
+  },
+  {
+    "pname": "System.Drawing.Common",
+    "version": "10.0.0",
+    "hash": "sha256-ZFneSifHbDj3O+IbwHSSs5YpDEunTeu9Hnz9APZKOA8="
+  },
+  {
+    "pname": "System.Formats.Nrbf",
+    "version": "10.0.0",
+    "hash": "sha256-Xrk/o4aTL2ZbSMPIl7xg1zr0Jd7JJwk2uc5RagPkLaM="
+  },
+  {
+    "pname": "System.Resources.Extensions",
+    "version": "10.0.0",
+    "hash": "sha256-2oQ9reKRZbKFPn19cH0wR34BydguTsvSCGxbL7XTX1Y="
+  },
+  {
+    "pname": "System.Security.Cryptography.ProtectedData",
+    "version": "10.0.0",
+    "hash": "sha256-hoR1lVXVEUXfItNzJ23/SRybLBqaf4ZYzJBjlWgHpSM="
+  },
+  {
+    "pname": "Velopack",
+    "version": "1.2.0",
+    "hash": "sha256-uXoogUk4tY5KNMR+9uhLqj5Daw/JsfQXCJ8oyL5SIZM="
+  }
+]
