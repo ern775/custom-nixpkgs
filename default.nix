@@ -86,4 +86,5 @@ rec {
     source = nvSources.handbrake;
     rev = nvSources.handbrake-rev.version;
   };
+  jellyfin-desktop = pkgs.callPackage ./pkgs/jellyfin-desktop/package.nix { };
 }
