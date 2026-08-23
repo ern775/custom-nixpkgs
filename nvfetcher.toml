@@ -9,29 +9,22 @@ fetch.github = "JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module
 src.git = "https://github.com/JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
 fetch.github = "JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
 
+[bevy-gamestation]
+src.git = "https://github.com/Hakkology/Bevy-Gamestation"
+fetch.github = "Hakkology/Bevy-Gamestation"
+
+[dopamine]
+src.github = "digimezzo/dopamine"
+fetch.github = "digimezzo/dopamine"
+
+[dw-proton]
+src.cmd = "curl -s 'https://dawn.wine/api/v1/repos/dawn-winery/dwproton/releases' | jq -r '.[] | select(.tag_name | startswith(\"dwproton-\")) | .tag_name' | head -n 1"
+src.prefix = "dwproton-"
+fetch.url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-$ver/dwproton-$ver-x86_64.tar.xz"
+
 [excalibur-wmi]
 src.git = "https://github.com/betelqeyza/excalibur-wmi"
 fetch.github = "betelqeyza/excalibur-wmi"
-
-[hp-omen-wmi]
-src.git = "https://github.com/ranisalt/hp-omen-linux-module"
-fetch.github = "ranisalt/hp-omen-linux-module"
-
-[hp-wmi-fan-and-backlight-control]
-src.git = "https://github.com/TUXOV/hp-wmi-fan-and-backlight-control"
-fetch.github = "TUXOV/hp-wmi-fan-and-backlight-control"
-
-[nero-umu]
-src.git = "https://github.com/SeongGino/Nero-umu"
-fetch.github = "SeongGino/Nero-umu"
-
-[omenrgb]
-src.git = "https://github.com/lemogne/omenrgb"
-fetch.github = "lemogne/omenrgb"
-
-[victus-control]
-src.git = "https://github.com/Vilez0/victus-control"
-fetch.github = "Vilez0/victus-control"
 
 [gecit]
 src.git = "https://github.com/boratanrikulu/gecit"
@@ -40,56 +33,6 @@ fetch.github = "boratanrikulu/gecit"
 [gobee]
 src.git = "https://github.com/boratanrikulu/gobee"
 fetch.github = "boratanrikulu/gobee"
-
-[iloader]
-src.github_tag = "nab138/iloader"
-fetch.github = "nab138/iloader"
-
-[dopamine]
-src.github = "digimezzo/dopamine"
-fetch.github = "digimezzo/dopamine"
-
-[prismlauncher]
-src.github = "PrismLauncher/PrismLauncher"
-fetch.github = "PrismLauncher/PrismLauncher"
-
-[seanime]
-src.github_tag = "5rahim/seanime"
-fetch.github = "5rahim/seanime"
-
-[seanime-canary]
-src.git = "https://github.com/5rahim/seanime.git"
-src.branch = "next"
-fetch.github = "5rahim/seanime"
-fetch.branch = "next"
-
-[seanime-bin-canary]
-src.cmd = "curl -sL https://seanime.app/api/updates/nightly/nightly_server.json | jq -r '.release.version'"
-fetch.url = "https://seanime.app/api/updates/nightly/seanime-denshi-$ver_Linux_x86_64.AppImage"
-x.binary = true
-
-[proton-cachyos-x86_64-v3]
-src.github = "CachyOS/proton-cachyos"
-fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
-
-[dw-proton]
-src.cmd = "curl -s 'https://dawn.wine/api/v1/repos/dawn-winery/dwproton/releases' | jq -r '.[] | select(.tag_name | startswith(\"dwproton-\")) | .tag_name' | head -n 1"
-src.prefix = "dwproton-"
-fetch.url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-$ver/dwproton-$ver-x86_64.tar.xz"
-
-[jdownloader2]
-src.cmd = "curl -s https://svn.jdownloader.org/build.php | grep -oP 'Latest Revision:</b></td><td >\\K[0-9]+'"
-fetch.url = "https://installer.jdownloader.org/JDownloader.jar"
-
-[mpv-prism-linux-x64]
-src.webpage = "https://seanime.app/assets/mpv-prism/"
-src.regex = "(\\d+\\.\\d+\\.\\d+)"
-fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/linux-x64.tar.gz"
-
-[mpv-prism-darwin-arm64]
-src.webpage = "https://seanime.app/assets/mpv-prism/"
-src.regex = "(\\d+\\.\\d+\\.\\d+)"
-fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/darwin-arm64.tar.gz"
 
 [handbrake]
 src.github = "HandBrake/HandBrake"
@@ -101,3 +44,64 @@ tag=$(curl -s https://api.github.com/repos/HandBrake/HandBrake/releases/latest |
 git ls-remote https://github.com/HandBrake/HandBrake.git "refs/tags/$tag" "refs/tags/$tag^{}" | tail -1 | cut -f1
 '''
 fetch.github = "HandBrake/HandBrake"
+
+[hp-omen-wmi]
+src.git = "https://github.com/ranisalt/hp-omen-linux-module"
+fetch.github = "ranisalt/hp-omen-linux-module"
+
+[hp-wmi-fan-and-backlight-control]
+src.git = "https://github.com/TUXOV/hp-wmi-fan-and-backlight-control"
+fetch.github = "TUXOV/hp-wmi-fan-and-backlight-control"
+
+[iloader]
+src.github_tag = "nab138/iloader"
+fetch.github = "nab138/iloader"
+
+[jdownloader2]
+src.cmd = "curl -s https://svn.jdownloader.org/build.php | grep -oP 'Latest Revision:</b></td><td >\\K[0-9]+'"
+fetch.url = "https://installer.jdownloader.org/JDownloader.jar"
+
+[nero-umu]
+src.git = "https://github.com/SeongGino/Nero-umu"
+fetch.github = "SeongGino/Nero-umu"
+
+[omenrgb]
+src.git = "https://github.com/lemogne/omenrgb"
+fetch.github = "lemogne/omenrgb"
+
+[prismlauncher]
+src.github = "PrismLauncher/PrismLauncher"
+fetch.github = "PrismLauncher/PrismLauncher"
+
+[proton-cachyos-x86_64-v3]
+src.github = "CachyOS/proton-cachyos"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
+
+[mpv-prism-darwin-arm64]
+src.webpage = "https://seanime.app/assets/mpv-prism/"
+src.regex = "(\\d+\\.\\d+\\.\\d+)"
+fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/darwin-arm64.tar.gz"
+
+[mpv-prism-linux-x64]
+src.webpage = "https://seanime.app/assets/mpv-prism/"
+src.regex = "(\\d+\\.\\d+\\.\\d+)"
+fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/linux-x64.tar.gz"
+
+[seanime]
+src.github_tag = "5rahim/seanime"
+fetch.github = "5rahim/seanime"
+
+[seanime-bin-canary]
+src.cmd = "curl -sL https://seanime.app/api/updates/nightly/nightly_server.json | jq -r '.release.version'"
+fetch.url = "https://seanime.app/api/updates/nightly/seanime-denshi-$ver_Linux_x86_64.AppImage"
+x.binary = true
+
+[seanime-canary]
+src.git = "https://github.com/5rahim/seanime.git"
+src.branch = "next"
+fetch.github = "5rahim/seanime"
+fetch.branch = "next"
+
+[victus-control]
+src.git = "https://github.com/Vilez0/victus-control"
+fetch.github = "Vilez0/victus-control"

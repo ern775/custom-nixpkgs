@@ -1,4 +1,25 @@
 {
+    "Bevy-Gamestation": {
+        "cargoLock": null,
+        "date": "2026-05-19",
+        "extract": null,
+        "name": "Bevy-Gamestation",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Hakkology",
+            "repo": "Bevy-Gamestation",
+            "rev": "c74ec0ed3954bdc80e1ea92ed9b72a650742d533",
+            "sha256": "sha256-x7ihaP25OQ5fnx+LsQA0qfBZSJpfLCphoTpENHc54Ys=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "c74ec0ed3954bdc80e1ea92ed9b72a650742d533"
+    },
     "acer-predator-turbo-and-rgb-keyboard-linux-module": {
         "cargoLock": null,
         "date": "2026-07-05",

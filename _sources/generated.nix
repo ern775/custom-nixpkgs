@@ -6,6 +6,18 @@
   dockerTools,
 }:
 {
+  Bevy-Gamestation = {
+    pname = "Bevy-Gamestation";
+    version = "c74ec0ed3954bdc80e1ea92ed9b72a650742d533";
+    src = fetchFromGitHub {
+      owner = "Hakkology";
+      repo = "Bevy-Gamestation";
+      rev = "c74ec0ed3954bdc80e1ea92ed9b72a650742d533";
+      fetchSubmodules = false;
+      sha256 = "sha256-x7ihaP25OQ5fnx+LsQA0qfBZSJpfLCphoTpENHc54Ys=";
+    };
+    date = "2026-05-19";
+  };
   acer-predator-turbo-and-rgb-keyboard-linux-module = {
     pname = "acer-predator-turbo-and-rgb-keyboard-linux-module";
     version = "6eafee25668cf2ffb8a79fd376a638e9ca4dc6db";
