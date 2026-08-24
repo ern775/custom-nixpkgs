@@ -77,6 +77,7 @@ rec {
   #   vendorHash = vendorHashes.seanime-canary;
   # };
   solidtime-desktop = pkgs.callPackage ./pkgs/solidtime-desktop/package.nix { };
+  stoat-desktop = pkgs.callPackage ./pkgs/stoat-desktop/package.nix { };
   victus-control = pkgs.callPackage ./pkgs/victus-control/package.nix {
     source = nvSources.victus-control;
   };
