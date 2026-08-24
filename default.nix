@@ -22,12 +22,9 @@ let
     };
 in
 rec {
-  # The `lib`, `modules`, and `overlays` names are special
-  # lib = import ./lib { inherit pkgs; }; # functions
-  # modules = import ./modules; # NixOS modules
-  # overlays = import ./overlays; # nixpkgs overlays
-
+  bevy-gamestation = pkgs.callPackage ./pkgs/bevy-gamestation/package.nix { };
   dopamine = pkgs.callPackage ./pkgs/dopamine/package.nix { source = nvSources.dopamine; };
+  dw-proton = pkgs.callPackage ./pkgs/dw-proton/package.nix { source = nvSources.dw-proton; };
   gecit = pkgs.callPackage ./pkgs/gecit/package.nix {
     source = nvSources.gecit;
     vendorHash = vendorHashes.gecit;
@@ -37,6 +34,10 @@ rec {
     source = nvSources.gobee;
     vendorHash = vendorHashes.gobee;
   };
+  handbrake = pkgs.callPackage ./pkgs/handbrake/package.nix {
+    source = nvSources.handbrake;
+    rev = nvSources.handbrake-rev.version;
+  };
   iloader = pkgs.callPackage ./pkgs/iloader/package.nix {
     source = nvSources.iloader;
     bunOutputHash = vendorHashes.iloader;
@@ -44,47 +45,41 @@ rec {
   jdownloader2 = pkgs.callPackage ./pkgs/jdownloader2/package.nix {
     source = nvSources.jdownloader2;
   };
-  nero-umu = pkgs.callPackage ./pkgs/nero-umu/package.nix { source = nvSources.nero-umu; };
-  # omenrgb = pkgs.callPackage ./pkgs/omenrgb/package.nix { source = nvSources.omenrgb; };
-  proton-cachyos = mkCachyProton "proton-cachyos-x86_64-v3" "x86_64-v3";
-  # proton-ge-bin = pkgs.callPackage ./pkgs/proton-ge-bin/package.nix {
-  #   source = nvSources.proton-ge-bin;
-  # };
-  dw-proton = pkgs.callPackage ./pkgs/dw-proton/package.nix { source = nvSources.dw-proton; };
-  victus-control = pkgs.callPackage ./pkgs/victus-control/package.nix {
-    source = nvSources.victus-control;
-  };
-  seanime = pkgs.callPackage ./pkgs/seanime/package.nix {
-    source = nvSources.seanime;
-    vendorHash = vendorHashes.seanime;
-    mpv-prism = mpv-prism-native;
-  };
+  jellyfin-desktop = pkgs.callPackage ./pkgs/jellyfin-desktop/package.nix { };
   mpv-prism-native = pkgs.callPackage ./pkgs/seanime/mpv-prism.nix {
     mpv-prism-native-sources = {
       x86_64-linux = nvSources.mpv-prism-linux-x64;
       aarch64-darwin = nvSources.mpv-prism-darwin-arm64;
     };
   };
+  nero-umu = pkgs.callPackage ./pkgs/nero-umu/package.nix { source = nvSources.nero-umu; };
+  # omenrgb = pkgs.callPackage ./pkgs/omenrgb/package.nix { source = nvSources.omenrgb; };
+  prismlauncher = pkgs.callPackage ./pkgs/prismlauncher/package.nix {
+    prismlauncher-unwrapped = prismlauncher-unwrapped;
+  };
+  prismlauncher-unwrapped = pkgs.callPackage ./pkgs/prismlauncher/unwrapped.nix {
+    source = nvSources.prismlauncher;
+  };
+  proton-cachyos = mkCachyProton "proton-cachyos-x86_64-v3" "x86_64-v3";
+  # proton-ge-bin = pkgs.callPackage ./pkgs/proton-ge-bin/package.nix {
+  #   source = nvSources.proton-ge-bin;
+  # };
+  seanime = pkgs.callPackage ./pkgs/seanime/package.nix {
+    source = nvSources.seanime;
+    vendorHash = vendorHashes.seanime;
+    mpv-prism = mpv-prism-native;
+  };
+  seanime-bin-canary = pkgs.callPackage ./pkgs/seanime-bin-canary/package.nix {
+    source = nvSources.seanime-bin-canary;
+  };
   # seanime-canary = pkgs.callPackage ./pkgs/seanime-canary/package.nix {
   #   source = nvSources.seanime-canary;
   #   vendorHash = vendorHashes.seanime-canary;
   # };
-  seanime-bin-canary = pkgs.callPackage ./pkgs/seanime-bin-canary/package.nix {
-    source = nvSources.seanime-bin-canary;
-  };
-  wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
-  visual-paradigm-ce = pkgs.callPackage ./pkgs/visual-paradigm-ce/package.nix { };
   solidtime-desktop = pkgs.callPackage ./pkgs/solidtime-desktop/package.nix { };
-
-  prismlauncher-unwrapped = pkgs.callPackage ./pkgs/prismlauncher/unwrapped.nix {
-    source = nvSources.prismlauncher;
+  victus-control = pkgs.callPackage ./pkgs/victus-control/package.nix {
+    source = nvSources.victus-control;
   };
-  prismlauncher = pkgs.callPackage ./pkgs/prismlauncher/package.nix {
-    prismlauncher-unwrapped = prismlauncher-unwrapped;
-  };
-  handbrake = pkgs.callPackage ./pkgs/handbrake/package.nix {
-    source = nvSources.handbrake;
-    rev = nvSources.handbrake-rev.version;
-  };
-  jellyfin-desktop = pkgs.callPackage ./pkgs/jellyfin-desktop/package.nix { };
+  visual-paradigm-ce = pkgs.callPackage ./pkgs/visual-paradigm-ce/package.nix { };
+  wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
 }

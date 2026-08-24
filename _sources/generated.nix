@@ -30,6 +30,18 @@
     };
     date = "2026-07-05";
   };
+  bevy-gamestation = {
+    pname = "bevy-gamestation";
+    version = "c74ec0ed3954bdc80e1ea92ed9b72a650742d533";
+    src = fetchFromGitHub {
+      owner = "Hakkology";
+      repo = "Bevy-Gamestation";
+      rev = "c74ec0ed3954bdc80e1ea92ed9b72a650742d533";
+      fetchSubmodules = false;
+      sha256 = "sha256-x7ihaP25OQ5fnx+LsQA0qfBZSJpfLCphoTpENHc54Ys=";
+    };
+    date = "2026-05-19";
+  };
   dopamine = {
     pname = "dopamine";
     version = "v3.0.9";
