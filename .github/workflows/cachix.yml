@@ -75,9 +75,10 @@ jobs:
             CHANGED_KEYS+=$(diff_keys pkgs/vendorHashes.json)$'\n'
 
           MATCHED=()
-          for key in $CHANGED_KEYS; do
-            MATCHED+=("\"$key\"")
-          done
+          while IFS= read -r key; do
+            [ -z "$key" ] && continue
+            echo "$ALL_PACKAGES" | jq -e --arg k "$key" 'index($k)' >/dev/null && MATCHED+=("\"$key\"")
+          done <<< "$CHANGED_KEYS"
 
           while IFS= read -r pkg; do
             echo "$CHANGED_FILES" | grep -qE "^pkgs/${pkg}/" && MATCHED+=("\"$pkg\"")
