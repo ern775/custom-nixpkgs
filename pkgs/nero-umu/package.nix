@@ -29,6 +29,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   patches = [
     ./custom-proton.patch
+    ./dont-set-gameid.patch
     ./main.cpp.patch
   ];
 

@@ -1,0 +1,32 @@
+diff --git a/src/neromanager.cpp b/src/neromanager.cpp
+index 4b0d07b..3cc5ec9 100644
+--- a/src/neromanager.cpp
++++ b/src/neromanager.cpp
+@@ -294,11 +294,6 @@ void NeroManagerWindow::CreatePrefix(const QString &newPrefix, const QString &ru
+ 
+     env.insert("WINEPREFIX", NeroFS::GetPrefixesPath()->path() + '/' + newPrefix);
+ 
+-    // Only explicit set GAMEID when not already declared by user for (their) testing purposes
+-    // (may or may not cause issues if user also selects tricks verbs, but since it needs to be expressly set by user, they assume all responsibility)
+-    // See SeongGino/Nero-umu#66 for more info
+-    if(!env.contains("GAMEID")) env.insert("GAMEID", "0");
+-
+     env.insert("PROTONPATH", NeroFS::GetProtonsPath()->path() + '/' + runner);
+     // for Proton 10+. this shit gets real annoying
+     env.insert("PROTON_USE_XALIA", "0");
+diff --git a/src/nerorunner.cpp b/src/nerorunner.cpp
+index 1493e54..c87ca63 100644
+--- a/src/nerorunner.cpp
++++ b/src/nerorunner.cpp
+@@ -67,11 +67,6 @@ int NeroRunner::StartShortcut(const QString &hash, const bool &prefixAlreadyRunn
+     env = QProcessEnvironment::systemEnvironment();
+     env.insert(CliArgs::Wine::prefix, prefixPath);
+ 
+-    // Only explicit set GAMEID when not already declared by user
+-    // See SeongGino/Nero-umu#66 for more info
+-    if(!env.contains(CliArgs::gameId)) {
+-        env.insert(CliArgs::gameId, "0");
+-    }
+     QString protonRunner = CombinedSetting(NeroConfig::currentRunner, *this).toString();
+     QString runnerPath = NeroFS::GetProtonsPath()->path() % '/' % protonRunner;
+     if(!QFile::exists(runnerPath)) {
