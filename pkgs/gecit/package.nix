@@ -9,7 +9,8 @@
   gobee,
 }:
 buildGoModule (finalAttrs: {
-  inherit (source) pname version src;
+  inherit (source) pname date src;
+  version = "0.1.4-unstable-${finalAttrs.date}";
 
   inherit vendorHash;
 
