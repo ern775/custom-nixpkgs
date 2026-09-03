@@ -204,13 +204,13 @@
   };
   prismlauncher = {
     pname = "prismlauncher";
-    version = "11.0.3";
+    version = "11.1.0";
     src = fetchFromGitHub {
       owner = "PrismLauncher";
       repo = "PrismLauncher";
-      rev = "11.0.3";
+      rev = "11.1.0";
       fetchSubmodules = false;
-      sha256 = "sha256-0o31pLKnYY0mulLrZKzZtaTPzCviGsgCnEcBt0Y/aG4=";
+      sha256 = "sha256-bt2ofUj4PXWKNmdACMpXtbVWdNz1aBOUTrPnOsM7NCA=";
     };
   };
   proton-cachyos-x86_64-v3 = {
