@@ -24,7 +24,7 @@ jobs:
         id: detect
         run: |
           set -euo pipefail
-          EXCLUDED_PACKAGES='["dw-proton","gobee","jellyfin-desktop","mpv-prism-native","proton-cachyos","solidtime-desktop","visual-paradigm-ce","wire-desktop"]'
+          EXCLUDED_PACKAGES='["dw-proton","gobee","jellyfin-desktop","mpv-prism-native","prismlauncher-unwrapped","proton-cachyos","solidtime-desktop","visual-paradigm-ce","wire-desktop"]'
 
           declare -A SUB_PACKAGES=(
             ["seanime"]="denshi"
