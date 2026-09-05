@@ -96,11 +96,11 @@ src.cmd = "curl -sL https://seanime.app/api/updates/nightly/nightly_server.json 
 fetch.url = "https://seanime.app/api/updates/nightly/seanime-denshi-$ver_Linux_x86_64.AppImage"
 x.binary = true
 
-[seanime-canary]
-src.git = "https://github.com/5rahim/seanime.git"
-src.branch = "next"
-fetch.github = "5rahim/seanime"
-fetch.branch = "next"
+# [seanime-canary]
+# src.git = "https://github.com/5rahim/seanime.git"
+# src.branch = "next-mpv-prism"
+# fetch.github = "5rahim/seanime"
+# fetch.branch = "next-mpv-prism"
 
 [victus-control]
 src.git = "https://github.com/Vilez0/victus-control"
