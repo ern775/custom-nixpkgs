@@ -240,18 +240,6 @@
       sha256 = "sha256-q4R1GgaBDJciLQRaxJmL7uQ4IYE+9xCZig1pqRcTJaY=";
     };
   };
-  seanime-canary = {
-    pname = "seanime-canary";
-    version = "09ab9d5ffa175cb211e73fd591a470f334bb9b85";
-    src = fetchFromGitHub {
-      owner = "5rahim";
-      repo = "seanime";
-      rev = "09ab9d5ffa175cb211e73fd591a470f334bb9b85";
-      fetchSubmodules = false;
-      sha256 = "sha256-Ac36HtzudinnLoAhc2T1PmHaAC0/L6LN2N77EWWUT20=";
-    };
-    date = "2026-07-15";
-  };
   victus-control = {
     pname = "victus-control";
     version = "3cf7d22921a24adb7fe6e806c912679ef81f8c77";
