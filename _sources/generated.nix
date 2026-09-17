@@ -75,15 +75,15 @@
   };
   gecit = {
     pname = "gecit";
-    version = "c35311483840f82f2b565238c4c120e77ae69b3d";
+    version = "36f8e9f2eae6882dd335dc6b83eb3cc454ec701a";
     src = fetchFromGitHub {
       owner = "boratanrikulu";
       repo = "gecit";
-      rev = "c35311483840f82f2b565238c4c120e77ae69b3d";
+      rev = "36f8e9f2eae6882dd335dc6b83eb3cc454ec701a";
       fetchSubmodules = false;
-      sha256 = "sha256-aFcBV7a2Oe7TP+e5UTj/wof/fVGzOfOVFwBkjx7ccXo=";
+      sha256 = "sha256-eKq3yma2KxUaz/UeF0rxbUYHKVeA0/rwyoxOFU5OzUU=";
     };
-    date = "2026-05-13";
+    date = "2026-09-17";
   };
   gobee = {
     pname = "gobee";
