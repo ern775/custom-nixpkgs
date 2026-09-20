@@ -303,11 +303,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-tIRCNDEfMukJRpny52PG409w8LzklSnW5AEjvuMJZpE=",
+            "sha256": "sha256-jYFTXI03VBBGGk/bRVOYYBazFZYyifKtOZdW1Xs+Ubk=",
             "type": "tarball",
-            "url": "https://seanime.app/assets/mpv-prism/0.1.8/native/linux-x64.tar.gz"
+            "url": "https://seanime.app/assets/mpv-prism/0.1.9/native/linux-x64.tar.gz"
         },
-        "version": "0.1.8"
+        "version": "0.1.9"
     },
     "nero-umu": {
         "cargoLock": null,
