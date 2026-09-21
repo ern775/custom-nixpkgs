@@ -3,7 +3,7 @@
   stdenv,
   source,
   vendorHash,
-  buildGoModule,
+  buildGo127Module,
   ffmpeg,
   importNpmLock,
   nix-update-script,
@@ -71,7 +71,7 @@ let
       '';
     };
 in
-buildGoModule (finalAttrs: {
+buildGo127Module (finalAttrs: {
   pname = "seanime";
   inherit src version vendorHash;
 
