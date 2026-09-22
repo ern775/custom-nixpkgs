@@ -121,7 +121,7 @@
     },
     "gecit": {
         "cargoLock": null,
-        "date": "2026-09-17",
+        "date": "2026-09-22",
         "extract": null,
         "name": "gecit",
         "passthru": null,
@@ -133,12 +133,12 @@
             "name": null,
             "owner": "boratanrikulu",
             "repo": "gecit",
-            "rev": "36f8e9f2eae6882dd335dc6b83eb3cc454ec701a",
-            "sha256": "sha256-eKq3yma2KxUaz/UeF0rxbUYHKVeA0/rwyoxOFU5OzUU=",
+            "rev": "d7b3b85436331413e71c95e4f6e8e734ddd81408",
+            "sha256": "sha256-OGUlz/yLsjOQeHo3WRNgbrNMNTJTzXCq83SvX/52yYE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "36f8e9f2eae6882dd335dc6b83eb3cc454ec701a"
+        "version": "d7b3b85436331413e71c95e4f6e8e734ddd81408"
     },
     "gobee": {
         "cargoLock": null,
