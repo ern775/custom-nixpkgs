@@ -44,13 +44,13 @@
   };
   dopamine = {
     pname = "dopamine";
-    version = "v3.0.10";
+    version = "v3.0.11";
     src = fetchFromGitHub {
       owner = "digimezzo";
       repo = "dopamine";
-      rev = "v3.0.10";
+      rev = "v3.0.11";
       fetchSubmodules = false;
-      sha256 = "sha256-b76+/7yb8soyzXTiDIjw9NY/oSdjp5oOblBXH1ugqJY=";
+      sha256 = "sha256-ix67KxJSqLxC67VK3mrvxDRamUTj9AFUvAKMDiOLsCA=";
     };
   };
   dw-proton = {
