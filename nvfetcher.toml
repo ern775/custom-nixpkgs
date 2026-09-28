@@ -54,7 +54,7 @@ src.git = "https://github.com/TUXOV/hp-wmi-fan-and-backlight-control"
 fetch.github = "TUXOV/hp-wmi-fan-and-backlight-control"
 
 [iloader]
-src.github_tag = "nab138/iloader"
+src.git = "https://github.com/nab138/iloader"
 fetch.github = "nab138/iloader"
 
 [jdownloader2]

@@ -67,7 +67,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
   buildAndTestSubdir = finalAttrs.cargoRoot;
   cargoLock = {
     lockFile = "${finalAttrs.src}/src-tauri/Cargo.lock";
-    allowBuiltinFetchGit = true;
   };
   doCheck = false;
 
