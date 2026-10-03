@@ -2,13 +2,17 @@
   description = "nixon pkgs";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    niri-icc = {
+      url = "github:gonzalezerik/niri/erikg-hdr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
       self,
       nixpkgs,
       ...
-    }:
+    }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
@@ -23,6 +27,7 @@
             };
           };
           lib = nixpkgs.lib;
+          inherit inputs system;
         }
       );
       packages = forAllSystems (
