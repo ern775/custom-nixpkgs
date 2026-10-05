@@ -145,15 +145,15 @@
   };
   iloader = {
     pname = "iloader";
-    version = "26558bc43ca08970c21bed79bee843636961cf43";
+    version = "514560876218d284f30029405c5352b75236ece9";
     src = fetchFromGitHub {
       owner = "nab138";
       repo = "iloader";
-      rev = "26558bc43ca08970c21bed79bee843636961cf43";
+      rev = "514560876218d284f30029405c5352b75236ece9";
       fetchSubmodules = false;
-      sha256 = "sha256-B/JTZALQ4sw0h9c252bGKMpnJgxQB6k+u3nGt0HjQWw=";
+      sha256 = "sha256-DnD1dEbw4l0CghAi5JadQMRPWRb+hSFb/uRemEL1GLw=";
     };
-    date = "2026-10-03";
+    date = "2026-10-04";
   };
   jdownloader2 = {
     pname = "jdownloader2";
