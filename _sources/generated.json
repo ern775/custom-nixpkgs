@@ -247,7 +247,7 @@
     },
     "iloader": {
         "cargoLock": null,
-        "date": "2026-10-04",
+        "date": null,
         "extract": null,
         "name": "iloader",
         "passthru": null,
@@ -259,12 +259,12 @@
             "name": null,
             "owner": "nab138",
             "repo": "iloader",
-            "rev": "514560876218d284f30029405c5352b75236ece9",
-            "sha256": "sha256-DnD1dEbw4l0CghAi5JadQMRPWRb+hSFb/uRemEL1GLw=",
+            "rev": "v2.3.5",
+            "sha256": "sha256-B/JTZALQ4sw0h9c252bGKMpnJgxQB6k+u3nGt0HjQWw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "514560876218d284f30029405c5352b75236ece9"
+        "version": "v2.3.5"
     },
     "jdownloader2": {
         "cargoLock": null,
