@@ -7,7 +7,7 @@ My personal [NUR](https://github.com/nix-community/NUR) repository.
 
 It also provides a pre-compiled binary cache for NixOS unstable.
 
-To use it add the following to your NixOS configuration.nix:
+To use it permanently add the following to your NixOS configuration.nix:
 ```nix
   nix = {
     settings = {
@@ -20,8 +20,16 @@ To use it add the following to your NixOS configuration.nix:
     };
   };
 ```
-or simply add it to your nix.conf:
+or add it to your nix.conf:
 ```
 substituters = https://ern775-nixpkgs.cachix.org
 trusted-public-keys = ern775-nixpkgs.cachix.org-1:TurFfb4SY0Reec+lLRhtafxyCLS/p9mfvoDMwtAKXrw=
+```
+
+For one time use:
+```bash
+nix run github:ern775/custom-nixpkgs#<package> \
+  --extra-substituters "https://ern775-nixpkgs.cachix.org" \
+  --extra-trusted-public-keys "ern775-nixpkgs.cachix.org-1:TurFfb4SY0Reec+lLRhtafxyCLS/p9mfvoDMwtAKXrw=" \
+  --narinfo-cache-negative-ttl 0
 ```
