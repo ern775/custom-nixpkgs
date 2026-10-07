@@ -259,12 +259,12 @@
             "name": null,
             "owner": "nab138",
             "repo": "iloader",
-            "rev": "v2.3.5",
-            "sha256": "sha256-B/JTZALQ4sw0h9c252bGKMpnJgxQB6k+u3nGt0HjQWw=",
+            "rev": "v2.3.6",
+            "sha256": "sha256-k1uGHVdbfXtviaLNPQtaeK/Y5t0qUaz3N778CtjB2XI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.3.5"
+        "version": "v2.3.6"
     },
     "jdownloader2": {
         "cargoLock": null,
