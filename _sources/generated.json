@@ -417,11 +417,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-f1xGDQsktJGvA3V6hMZoTetdbK3hAf+4yJQ+ciwRrVE=",
+            "sha256": "sha256-Vsm91sdF+QPRcAZLrCE9QIlzUVMa7sogDuagydrDZms=",
             "type": "url",
-            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.3_Linux_x86_64.AppImage"
+            "url": "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.4-canary.1_Linux_x86_64.AppImage"
         },
-        "version": "3.10.3"
+        "version": "3.10.4-canary.1"
     },
     "victus-control": {
         "cargoLock": null,
