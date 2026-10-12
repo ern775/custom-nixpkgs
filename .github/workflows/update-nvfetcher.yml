@@ -26,6 +26,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Restore nvfetcher cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/nvfetcher
+          key: nvfetcher-${{ github.run_id }}
+          restore-keys: nvfetcher-
+
       - name: Update each package as its own commit
         run: |
           mkdir -p /tmp/nvfetcher-changes
