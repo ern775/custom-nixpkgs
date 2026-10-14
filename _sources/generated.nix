@@ -234,10 +234,10 @@
   };
   seanime-bin-canary = {
     pname = "seanime-bin-canary";
-    version = "3.10.4-canary.1";
+    version = "3.10.4";
     src = fetchurl {
-      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.4-canary.1_Linux_x86_64.AppImage";
-      sha256 = "sha256-Vsm91sdF+QPRcAZLrCE9QIlzUVMa7sogDuagydrDZms=";
+      url = "https://seanime.app/api/updates/nightly/seanime-denshi-3.10.4_Linux_x86_64.AppImage";
+      sha256 = "sha256-YBi/yayPW7XBC0yEFbyMI80Mj7Sf7WtqyT+JN2e8F1E=";
     };
   };
   victus-control = {
