@@ -401,12 +401,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.10.3",
-            "sha256": "sha256-WPxLcEFlhMgJyCB+bMB2cil9vK2XpsFlT8hMbwhMbrc=",
+            "rev": "v3.10.4",
+            "sha256": "sha256-3vJ3gtXa5RBpHCQikY+YEmyKRjThyzPyjTHuzOuUaS4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.10.3"
+        "version": "v3.10.4"
     },
     "seanime-bin-canary": {
         "cargoLock": null,
