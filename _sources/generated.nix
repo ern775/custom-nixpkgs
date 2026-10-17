@@ -164,9 +164,9 @@
   };
   mpv-prism-darwin-arm64 = {
     pname = "mpv-prism-darwin-arm64";
-    version = "0.1.9";
+    version = "0.1.10";
     src = fetchTarball {
-      url = "https://seanime.app/assets/mpv-prism/0.1.9/native/darwin-arm64.tar.gz";
+      url = "https://seanime.app/assets/mpv-prism/0.1.10/native/darwin-arm64.tar.gz";
       sha256 = "sha256-ftD1RLTmGRpqZk54d7162d4eMGGD1YbmRgoNQRka/YY=";
     };
   };
