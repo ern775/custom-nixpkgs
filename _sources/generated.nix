@@ -172,9 +172,9 @@
   };
   mpv-prism-linux-x64 = {
     pname = "mpv-prism-linux-x64";
-    version = "0.1.9";
+    version = "0.1.10";
     src = fetchTarball {
-      url = "https://seanime.app/assets/mpv-prism/0.1.9/native/linux-x64.tar.gz";
+      url = "https://seanime.app/assets/mpv-prism/0.1.10/native/linux-x64.tar.gz";
       sha256 = "sha256-jYFTXI03VBBGGk/bRVOYYBazFZYyifKtOZdW1Xs+Ubk=";
     };
   };
