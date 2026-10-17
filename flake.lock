@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790726850,
-        "narHash": "sha256-XTDSOxpEh9QvMJaHUJ2Pb3Enn18gQt3V9rn8Dj5WDO4=",
+        "lastModified": 1792231068,
+        "narHash": "sha256-3pOjyilH237qXMnKmem8u1Vs2IQ47W2g+WEvudqhxgI=",
         "owner": "gonzalezerik",
         "repo": "niri",
-        "rev": "cc9569694db3ca7c6f6cdf5bb39eca371fc5d37c",
+        "rev": "c177ac136f4b86d50c68a3e6d1e7f34b092b7b39",
         "type": "github"
       },
       "original": {
