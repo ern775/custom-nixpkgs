@@ -1,6 +1,3 @@
-# nvfetcher.toml - all sources managed declaratively
-# Run: nvfetcher -o _sources
-
 [acer-predator-turbo-and-rgb-keyboard-linux-module]
 src.git = "https://github.com/JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
 fetch.github = "JafarAkhondali/acer-predator-turbo-and-rgb-keyboard-linux-module"
