@@ -56,6 +56,7 @@ rec {
   };
   nero-umu = pkgs.callPackage ./pkgs/nero-umu/package.nix { source = nvSources.nero-umu; };
   niri-icc = inputs.niri-icc.packages.${system}.default;
+  niri-icclaude = inputs.niri-icclaude.packages.${system}.default;
   # omenrgb = pkgs.callPackage ./pkgs/omenrgb/package.nix { source = nvSources.omenrgb; };
   prismlauncher = pkgs.callPackage ./pkgs/prismlauncher/package.nix {
     prismlauncher-unwrapped = prismlauncher-unwrapped;

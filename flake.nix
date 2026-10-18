@@ -6,6 +6,10 @@
       url = "github:gonzalezerik/niri/erikg-hdr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-icclaude = {
+      url = "github:blghnks/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
