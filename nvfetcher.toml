@@ -78,13 +78,17 @@ src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 
 [mpv-prism-darwin-arm64]
-src.webpage = "https://seanime.app/assets/mpv-prism/"
-src.regex = "(\\d+\\.\\d+\\.\\d+)"
+src.cmd = '''
+tag=$(curl -s https://api.github.com/repos/5rahim/seanime/releases/latest | jq -r .tag_name)
+curl -s "https://raw.githubusercontent.com/5rahim/seanime/$tag/mpv-prism.lock.json" | jq -r .version
+'''
 fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/darwin-arm64.tar.gz"
 
 [mpv-prism-linux-x64]
-src.webpage = "https://seanime.app/assets/mpv-prism/"
-src.regex = "(\\d+\\.\\d+\\.\\d+)"
+src.cmd = '''
+tag=$(curl -s https://api.github.com/repos/5rahim/seanime/releases/latest | jq -r .tag_name)
+curl -s "https://raw.githubusercontent.com/5rahim/seanime/$tag/mpv-prism.lock.json" | jq -r .version
+'''
 fetch.tarball = "https://seanime.app/assets/mpv-prism/$ver/native/linux-x64.tar.gz"
 
 [seanime]
