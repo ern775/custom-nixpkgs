@@ -21,6 +21,26 @@
         "type": "github"
       }
     },
+    "niri-icclaude": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792063163,
+        "narHash": "sha256-682gtoiD9YW95dG9y+ATq6HkfmSuwTpABLV+2O4VrYs=",
+        "owner": "blghnks",
+        "repo": "niri",
+        "rev": "8dac8263ab062420b9ffc6906bf88b7a4aed7558",
+        "type": "github"
+      },
+      "original": {
+        "owner": "blghnks",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1792094642,
@@ -40,6 +60,7 @@
     "root": {
       "inputs": {
         "niri-icc": "niri-icc",
+        "niri-icclaude": "niri-icclaude",
         "nixpkgs": "nixpkgs"
       }
     }
