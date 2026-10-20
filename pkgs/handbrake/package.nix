@@ -8,6 +8,7 @@
 # requires invoking the Xcode build system, which is non-trivial for now.
 
 {
+  autoAddDriverRunpath,
   stdenv,
   lib,
   applyPatches,
@@ -77,14 +78,13 @@
   intltool,
   glib,
   gtk4,
-  libappindicator-gtk3,
+  libappindicator,
   libnotify,
   gst_all_1,
   dbus-glib,
   udev,
   libgudev,
   hicolor-icon-theme,
-  autoAddDriverRunpath,
   # FDK
   useFdk ? false,
   fdk_aac,
@@ -129,6 +129,11 @@ let
   # base ffmpeg version is specified in:
   # https://github.com/HandBrake/HandBrake/blob/master/contrib/ffmpeg/module.defs
   ffmpeg-hb = ffmpeg_8-full.overrideAttrs (old: {
+    version = "8.1.2";
+    src = fetchurl {
+      url = "https://ffmpeg.org/releases/ffmpeg-8.1.2.tar.bz2";
+      hash = "sha256-tJJb1EEeZUrTiEvI2hhgsNhgvWSpWhciDeSM/NXwqFk=";
+    };
     patches = (old.patches or [ ]) ++ [
       "${src}/contrib/ffmpeg/A01-mov-read-name-track-tag-written-by-movenc.patch"
       "${src}/contrib/ffmpeg/A02-movenc-write-3gpp-track-titl-tag.patch"
@@ -312,7 +317,7 @@ let
       gst_all_1.gstreamer
       gtk4
       hicolor-icon-theme
-      libappindicator-gtk3
+      libappindicator
       libgudev
       libnotify
       udev
