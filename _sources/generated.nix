@@ -8,15 +8,15 @@
 {
   acer-predator-turbo-and-rgb-keyboard-linux-module = {
     pname = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-    version = "22a5081e01fdde3e2813d6192bce32af9bdbb4ab";
+    version = "4aee692ffb043999b0e18b4f53d1a8d68f83d253";
     src = fetchFromGitHub {
       owner = "JafarAkhondali";
       repo = "acer-predator-turbo-and-rgb-keyboard-linux-module";
-      rev = "22a5081e01fdde3e2813d6192bce32af9bdbb4ab";
+      rev = "4aee692ffb043999b0e18b4f53d1a8d68f83d253";
       fetchSubmodules = false;
-      sha256 = "sha256-jEZW4yObsEoIJFAeKMfWFYVKTNy/LFyn+8Ja0WI1Fcg=";
+      sha256 = "sha256-XyLwSNB/dvykYGmB0C0vV2sJaGX09dQ9chygVtly1lM=";
     };
-    date = "2026-09-25";
+    date = "2026-10-19";
   };
   acer-predator-turbo-rgb = {
     pname = "acer-predator-turbo-rgb";
