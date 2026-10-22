@@ -15,6 +15,8 @@ stdenv.mkDerivation (finalAttrs: {
     sed -i -e '/depmod/d' ./Makefile
   '';
 
+  patches = [ ./add-8c2d-board.patch ];
+
   enableParallelBuilding = true;
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
