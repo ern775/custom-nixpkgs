@@ -133,15 +133,15 @@
   };
   hp-wmi-fan-and-backlight-control = {
     pname = "hp-wmi-fan-and-backlight-control";
-    version = "2816846199328da03f88dd8f3d1b852e5b999058";
+    version = "2ebddfbc5fefe60b9f67d0b2efafd45fb15b2602";
     src = fetchFromGitHub {
       owner = "TUXOV";
       repo = "hp-wmi-fan-and-backlight-control";
-      rev = "2816846199328da03f88dd8f3d1b852e5b999058";
+      rev = "2ebddfbc5fefe60b9f67d0b2efafd45fb15b2602";
       fetchSubmodules = false;
-      sha256 = "sha256-HjJM5ZXeegephhKwPXieUIy587iCPYVrVQAxl6y9GFE=";
+      sha256 = "sha256-HPYqmeh1fi6tkRg8OblRaSYUj/oAj7l6IXyfze8vL6Y=";
     };
-    date = "2026-09-06";
+    date = "2026-10-21";
   };
   iloader = {
     pname = "iloader";
