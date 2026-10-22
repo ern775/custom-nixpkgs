@@ -9,7 +9,6 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "proton-ge-bin";
-
   inherit (source) version src;
 
   nativeBuildInputs = [ gzip ];

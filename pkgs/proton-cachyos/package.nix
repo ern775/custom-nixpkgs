@@ -17,12 +17,7 @@ in
 stdenvNoCC.mkDerivation {
   pname = folderName;
   version = lib.removePrefix "cachyos-" source.version;
-
   inherit (source) src;
-
-  dontUnpack = true;
-  dontConfigure = true;
-  dontBuild = true;
 
   nativeBuildInputs = [ xz ];
   outputs = [
