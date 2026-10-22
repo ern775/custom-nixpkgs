@@ -119,6 +119,21 @@
         },
         "version": "99bd638f167a0f72f3a3a7a60fe3a252dd388402"
     },
+    "ge-proton": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "ge-proton",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-qoWYbK2lcJqou/qK3X87+5JcvhVxDJiZWJjTCP8so8E=",
+            "type": "url",
+            "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-11/GE-Proton11-11-x86_64.tar.gz"
+        },
+        "version": "11-11"
+    },
     "gecit": {
         "cargoLock": null,
         "date": "2026-09-24",

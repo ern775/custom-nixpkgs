@@ -32,6 +32,7 @@ rec {
     vendorHash = vendorHashes.gecit;
     gobee = gobee;
   };
+  ge-proton = pkgs.callPackage ./pkgs/ge-proton/package.nix { source = nvSources.ge-proton; };
   gobee = pkgs.callPackage ./pkgs/gobee/package.nix {
     source = nvSources.gobee;
     vendorHash = vendorHashes.gobee;

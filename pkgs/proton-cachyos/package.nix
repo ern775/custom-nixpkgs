@@ -1,6 +1,6 @@
 {
   source,
-  stdenv,
+  stdenvNoCC,
   lib,
   xz,
   variant,
@@ -14,11 +14,15 @@ let
   steamName = if variant == "base" then "Proton CachyOS" else "Proton CachyOS ${variant}";
 
 in
-stdenv.mkDerivation {
+stdenvNoCC.mkDerivation {
   pname = folderName;
   version = lib.removePrefix "cachyos-" source.version;
 
   inherit (source) src;
+
+  dontUnpack = true;
+  dontConfigure = true;
+  dontBuild = true;
 
   nativeBuildInputs = [ xz ];
   outputs = [

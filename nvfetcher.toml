@@ -27,6 +27,11 @@ fetch.github = "betelqeyza/excalibur-wmi"
 src.git = "https://github.com/boratanrikulu/gecit"
 fetch.github = "boratanrikulu/gecit"
 
+[ge-proton]
+src.github = "GloriousEggroll/proton-ge-custom"
+src.prefix = "GE-Proton"
+fetch.url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton$ver/GE-Proton$ver-x86_64.tar.gz"
+
 [gobee]
 src.git = "https://github.com/boratanrikulu/gobee"
 fetch.github = "boratanrikulu/gobee"

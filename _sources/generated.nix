@@ -73,6 +73,14 @@
     };
     date = "2026-02-13";
   };
+  ge-proton = {
+    pname = "ge-proton";
+    version = "11-11";
+    src = fetchurl {
+      url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-11/GE-Proton11-11-x86_64.tar.gz";
+      sha256 = "sha256-qoWYbK2lcJqou/qK3X87+5JcvhVxDJiZWJjTCP8so8E=";
+    };
+  };
   gecit = {
     pname = "gecit";
     version = "8e05f38d7fa1867a66ee72281d181120c9161b45";
