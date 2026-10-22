@@ -1,23 +1,45 @@
 diff --git a/hp-wmi.c b/hp-wmi.c
-index f7cd75e..e7e07cd 100644
+index f7cd75e..72a06be 100644
 --- a/hp-wmi.c
 +++ b/hp-wmi.c
-@@ -272,6 +272,14 @@ static const struct hp_wmi_board_params omen_v1_no_ec_board_params = {
+@@ -238,6 +238,12 @@ static const struct thermal_profile_params omen_v1_no_ec_thermal_params = {
+ struct hp_wmi_fan_profile_params {
+ 	int (*get_fan_speed)(int fan);
+ 	bool fan_table;
++	/*
++	 * For boards without a usable firmware fan table: fixed RPM range, in
++	 * hundreds of RPM. Both zero means "read the range from the fan table".
++	 */
++	u8 fixed_min_rpm;
++	u8 fixed_max_rpm;
+ };
+ 
+ struct hp_wmi_board_params {
+@@ -272,6 +278,23 @@ static const struct hp_wmi_board_params omen_v1_no_ec_board_params = {
  	.fan_profile		= &victus_s_fan_profile_params,
  };
  
 +/*
-+ * Manual fan control only. No thermal profile data is provided, so platform
-+ * profile handling stays on the generic path used for unlisted boards.
++ * Manual fan control only, with a fixed RPM range because the firmware does
++ * not provide a usable fan table (Victus 15-fa1xxx). No thermal profile data
++ * is provided, so platform profile handling stays on the generic path used
++ * for unlisted boards.
 + */
++static const struct hp_wmi_fan_profile_params fixed_range_fan_profile_params = {
++	.get_fan_speed	= hp_wmi_get_fan_speed_victus_s,
++	.fan_table	= false,
++	.fixed_min_rpm	= 0,	/* no lower limit */
++	.fixed_max_rpm	= 60,	/* 6000 RPM */
++};
++
 +static const struct hp_wmi_board_params fan_only_board_params = {
-+	.fan_profile		= &victus_s_fan_profile_params,
++	.fan_profile		= &fixed_range_fan_profile_params,
 +};
 +
  static const struct hp_wmi_board_params *active_board_params;
  
  static const struct thermal_profile_params *hp_wmi_thermal_profile(void)
-@@ -404,6 +412,10 @@ static const struct dmi_system_id hp_wmi_feature_boards[] __initconst = {
+@@ -404,6 +427,10 @@ static const struct dmi_system_id hp_wmi_feature_boards[] __initconst = {
  		.matches = { DMI_MATCH(DMI_BOARD_NAME, "8C78") },
  		.driver_data = (void *)&omen_v1_board_params,
  	},
@@ -28,3 +50,44 @@ index f7cd75e..e7e07cd 100644
  	{
  		.matches = { DMI_MATCH(DMI_BOARD_NAME, "8C99") },
  		.driver_data = (void *)&victus_s_board_params,
+@@ -753,8 +780,15 @@ struct victus_s_fan_table {
+ 
+ static inline u8 rpm_to_pwm(u8 rpm, struct hp_wmi_hwmon_priv *priv)
+ {
+-	return fixp_linear_interpolate(0, 0, priv->max_rpm, U8_MAX,
+-				       clamp_val(rpm, 0, priv->max_rpm));
++	if (!priv->max_rpm)
++		return 0;
++
++	/*
++	 * Round up so that pwm_to_rpm(rpm_to_pwm(x)) == x. Truncating here made
++	 * the RPM sent to the firmware up to 100 lower than the one requested.
++	 */
++	return DIV_ROUND_UP(clamp_val(rpm, 0, priv->max_rpm) * U8_MAX,
++			    priv->max_rpm);
+ }
+ 
+ static inline u8 pwm_to_rpm(u8 pwm, struct hp_wmi_hwmon_priv *priv)
+@@ -3441,6 +3475,7 @@ static void hp_wmi_hwmon_keep_alive_handler(struct work_struct *work)
+ 
+ static int hp_wmi_setup_fan_settings(struct hp_wmi_hwmon_priv *priv)
+ {
++	const struct hp_wmi_fan_profile_params *params;
+ 	u8 fan_data[128] = { 0 };
+ 	struct victus_s_fan_table *fan_table;
+ 	u8 min_rpm, max_rpm;
+@@ -3451,6 +3486,14 @@ static int hp_wmi_setup_fan_settings(struct hp_wmi_hwmon_priv *priv)
+ 	/* Default behaviour on hwmon init is automatic mode */
+ 	priv->mode = PWM_MODE_AUTO;
+ 
++	/* Boards with a fixed, known RPM range don't need the firmware table. */
++	params = hp_wmi_fan_profile();
++	if (params && params->fixed_max_rpm) {
++		priv->min_rpm = params->fixed_min_rpm;
++		priv->max_rpm = params->fixed_max_rpm;
++		return 0;
++	}
++
+ 	/* Bypass devices without fan control support. */
+ 	if (!hp_wmi_fan_table_supported())
+ 		return 0;
