@@ -41,6 +41,11 @@ rec {
     source = nvSources.handbrake;
     rev = nvSources.handbrake-rev.version;
   };
+  hp-wmi-fan-and-backlight-control =
+    pkgs.linuxPackages.callPackage ./pkgs/hp-wmi-fan-and-backlight-control/package.nix
+      {
+        source = nvSources.hp-wmi-fan-and-backlight-control;
+      };
   iloader = pkgs.callPackage ./pkgs/iloader/package.nix {
     source = nvSources.iloader;
     bunOutputHash = vendorHashes.iloader;

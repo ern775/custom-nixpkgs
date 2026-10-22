@@ -11,26 +11,27 @@ stdenv.mkDerivation (finalAttrs: {
   inherit (source) date src;
   version = "0-unstable-${finalAttrs.date}";
 
-  setSourceRoot = ''
-    export sourceRoot=$(pwd)/source
+  preConfigure = ''
+    sed -i -e '/depmod/d' ./Makefile
   '';
+
+  enableParallelBuilding = true;
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
 
   makeFlags = kernelModuleMakeFlags ++ [
     "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
-    "-C"
-    "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
-    "M=$(sourceRoot)"
+    "INSTALL_MOD_PATH=${placeholder "out"}"
+    "INSTALL_MOD_DIR=extra"
+    "DEPMOD=true"
   ];
 
-  enableParallelBuilding = true;
-
-  buildFlags = [ "modules" ];
-
-  installFlags = [ "INSTALL_MOD_PATH=${placeholder "out"}" ];
-
   installTargets = [ "modules_install" ];
+  installFlags = [
+    "-C"
+    "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+    "M=$(PWD)"
+  ];
 
   meta = with lib; {
     description = "Linux kernel module for HP Laptops";
