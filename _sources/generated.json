@@ -226,7 +226,7 @@
     },
     "hp-wmi-fan-and-backlight-control": {
         "cargoLock": null,
-        "date": "2026-09-06",
+        "date": "2026-10-21",
         "extract": null,
         "name": "hp-wmi-fan-and-backlight-control",
         "passthru": null,
@@ -238,12 +238,12 @@
             "name": null,
             "owner": "TUXOV",
             "repo": "hp-wmi-fan-and-backlight-control",
-            "rev": "2816846199328da03f88dd8f3d1b852e5b999058",
-            "sha256": "sha256-HjJM5ZXeegephhKwPXieUIy587iCPYVrVQAxl6y9GFE=",
+            "rev": "2ebddfbc5fefe60b9f67d0b2efafd45fb15b2602",
+            "sha256": "sha256-HPYqmeh1fi6tkRg8OblRaSYUj/oAj7l6IXyfze8vL6Y=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2816846199328da03f88dd8f3d1b852e5b999058"
+        "version": "2ebddfbc5fefe60b9f67d0b2efafd45fb15b2602"
     },
     "iloader": {
         "cargoLock": null,
