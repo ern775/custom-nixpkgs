@@ -36,18 +36,30 @@ jobs:
       - name: Update each package as its own commit
         run: |
           mkdir -p /tmp/nvfetcher-changes
+          touch /tmp/nvfetcher-failures
           mapfile -t PACKAGES < <(grep -oP '^\[\K[^\]]+' nvfetcher.toml)
 
           for pkg in "${PACKAGES[@]}"; do
             changes_file="/tmp/nvfetcher-changes/${pkg}"
 
-            nix run nixpkgs#nvfetcher -- -f "^${pkg}\$" -l "$changes_file"
+            if ! nix run nixpkgs#nvfetcher -- -f "^${pkg}\$" -l "$changes_file"; then
+              echo "::warning::$pkg failed to update, skipping"
+              echo "- $pkg failed to update" >> /tmp/nvfetcher-failures
+              rm -f "$changes_file"
+              continue
+            fi
 
             if [ ! -s "$changes_file" ]; then
               continue
             fi
 
-            ./update.sh "$changes_file"
+            if ! ./update.sh "$changes_file"; then
+              echo "::warning::update.sh failed for $pkg, skipping"
+              echo "- $pkg: update.sh failed" >> /tmp/nvfetcher-failures
+              rm -f "$changes_file"
+              git checkout -- _sources pkgs/vendorHashes.json
+              continue
+            fi
 
             git add _sources/generated.nix _sources/generated.json pkgs/vendorHashes.json
             if ! git diff --cached --quiet; then
@@ -77,6 +89,10 @@ jobs:
             echo '## Changes:'
             cat /tmp/nvfetcher-changes-all
             cat /tmp/flake-changes
+            if [ -s /tmp/nvfetcher-failures ]; then
+              echo '## Warnings:'
+              cat /tmp/nvfetcher-failures
+            fi
           } > /tmp/pr-body
 
       - name: Create Pull Request
