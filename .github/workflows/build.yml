@@ -17,13 +17,13 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@v21
         with:
           extra-conf: |
-            experimental-features = nix-command 
+            experimental-features = nix-command
 
       - name: Detect changed packages
         id: detect
         run: |
           set -euo pipefail
-          EXCLUDED_PACKAGES='["dw-proton","gobee","jellyfin-desktop","mpv-prism-native","prismlauncher-unwrapped","proton-cachyos","solidtime-desktop","visual-paradigm-ce","wire-desktop"]'
+          EXCLUDED_PACKAGES='["dw-proton","ge-proton","gobee","jellyfin-desktop","mpv-prism-native","prismlauncher-unwrapped","proton-cachyos","solidtime-desktop","visual-paradigm-ce","wire-desktop"]'
 
           declare -A SUB_PACKAGES=(
             ["seanime"]="denshi"
