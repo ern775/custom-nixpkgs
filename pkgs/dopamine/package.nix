@@ -11,25 +11,23 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "dopamine";
-
-  # added due to better-sqlite3 patch being needed in the npmConfigHook 
-  src = applyPatches {
-    inherit (source) src;
-    patches = [
-      # register-scheme contains install scripts, but has no lockfile
-      ./remove-register-scheme.patch
-
-      # fixes node-addon-api errors with aarch64-darwin
-      ./update-node-addon-api.patch
-
-      # bump better-sqlite3 to work with electron 41
-      ./bump-better-sqlite3.patch
-    ];
-  };
-
+  inherit (source) src;
   version = lib.replaceStrings [ "v" ] [ "" ] source.version;
 
-  npmDeps = importNpmLock { npmRoot = finalAttrs.src; };
+  patches = [
+    # register-scheme contains install scripts, but has no lockfile
+    ./remove-register-scheme.patch
+
+    # fixes node-addon-api errors with aarch64-darwin
+    ./update-node-addon-api.patch
+
+    # bump better-sqlite3 to work with electron 41
+    ./bump-better-sqlite3.patch
+  ];
+
+  npmDeps = importNpmLock {
+    npmRoot = applyPatches { inherit (finalAttrs) src patches; };
+  };
 
   npmConfigHook = importNpmLock.npmConfigHook;
 
