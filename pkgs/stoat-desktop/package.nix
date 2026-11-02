@@ -11,12 +11,11 @@
   copyDesktopItems,
   pnpm_10,
   nodejs,
-  electron_42,
+  electron,
   zip,
   nix-update-script,
 }:
 let
-  electron = electron_42;
   stdenv = stdenvNoCC;
 in
 stdenv.mkDerivation (finalAttrs: {
