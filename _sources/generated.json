@@ -128,11 +128,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qoWYbK2lcJqou/qK3X87+5JcvhVxDJiZWJjTCP8so8E=",
+            "sha256": "sha256-BZUVnkF8Pbv7fMOuDT7RWmF8xgeqI+91bqeQKdevXXA=",
             "type": "url",
-            "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-11/GE-Proton11-11-x86_64.tar.gz"
+            "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-12/GE-Proton11-12-x86_64.tar.gz"
         },
-        "version": "11-11"
+        "version": "11-12"
     },
     "gecit": {
         "cargoLock": null,
