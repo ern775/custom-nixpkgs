@@ -38,5 +38,6 @@
         system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system}
       );
       nixosModules = import ./nixos-modules;
+      overlays = import ./overlays;
     };
 }

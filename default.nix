@@ -24,6 +24,8 @@ let
     };
 in
 rec {
+  overlays = import ./overlays;
+
   bevy-gamestation = pkgs.callPackage ./pkgs/bevy-gamestation/package.nix { };
   dopamine = pkgs.callPackage ./pkgs/dopamine/package.nix { source = nvSources.dopamine; };
   dw-proton = pkgs.callPackage ./pkgs/dw-proton/package.nix { source = nvSources.dw-proton; };
@@ -93,4 +95,8 @@ rec {
   };
   visual-paradigm-ce = pkgs.callPackage ./pkgs/visual-paradigm-ce/package.nix { };
   wire-desktop = pkgs.callPackage ./pkgs/wire-desktop/package.nix { };
+
+  freerdp = (pkgs.extend overlays.freerdp).freerdp;
+  krdc = (pkgs.extend overlays.freerdp).kdePackages.krdc;
+  krdp = (pkgs.extend overlays.freerdp).kdePackages.krdp;
 }
