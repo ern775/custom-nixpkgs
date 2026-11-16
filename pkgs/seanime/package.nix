@@ -5,6 +5,7 @@
   vendorHash,
   buildGo127Module,
   ffmpeg,
+  makeBinaryWrapper,
   importNpmLock,
   nix-update-script,
   buildNpmPackage,
@@ -75,6 +76,8 @@ buildGo127Module (finalAttrs: {
   pname = "seanime";
   inherit src version vendorHash;
 
+  nativeBuildInputs = [ makeBinaryWrapper ];
+
   preBuild = ''
     cp -r ${seanime-web { }}/web .
 
@@ -91,14 +94,11 @@ buildGo127Module (finalAttrs: {
     "-w"
   ];
 
-  # for transcoding
-  makeWrapperArgs = [
-    "--prefix PATH : ${
-      lib.makeBinPath [
-        ffmpeg
-      ]
-    }"
-  ];
+  postFixup = ''
+    # for transcoding
+    wrapProgram "$out/bin/seanime" \
+      --prefix PATH : ${lib.makeBinPath [ ffmpeg ]}
+  '';
 
   passthru.denshi = buildNpmPackage {
     pname = "seanime-denshi";
