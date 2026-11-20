@@ -26,7 +26,7 @@ substituters = https://ern775-nixpkgs.cachix.org
 trusted-public-keys = ern775-nixpkgs.cachix.org-1:TurFfb4SY0Reec+lLRhtafxyCLS/p9mfvoDMwtAKXrw=
 ```
 
-For one time use:
+or for one time use:
 ```bash
 nix run github:ern775/custom-nixpkgs#<package> \
   --extra-substituters "https://ern775-nixpkgs.cachix.org" \
