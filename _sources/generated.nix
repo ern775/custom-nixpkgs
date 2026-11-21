@@ -231,13 +231,13 @@
   };
   seanime = {
     pname = "seanime";
-    version = "v3.10.4";
+    version = "v3.10.5";
     src = fetchFromGitHub {
       owner = "5rahim";
       repo = "seanime";
-      rev = "v3.10.4";
+      rev = "v3.10.5";
       fetchSubmodules = false;
-      sha256 = "sha256-3vJ3gtXa5RBpHCQikY+YEmyKRjThyzPyjTHuzOuUaS4=";
+      sha256 = "sha256-UBHHFP64HFrTwf3rIxj+YZltUIPj+iTGaXXHFXZPMHU=";
     };
   };
   seanime-bin-canary = {

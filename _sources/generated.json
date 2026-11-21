@@ -416,12 +416,12 @@
             "name": null,
             "owner": "5rahim",
             "repo": "seanime",
-            "rev": "v3.10.4",
-            "sha256": "sha256-3vJ3gtXa5RBpHCQikY+YEmyKRjThyzPyjTHuzOuUaS4=",
+            "rev": "v3.10.5",
+            "sha256": "sha256-UBHHFP64HFrTwf3rIxj+YZltUIPj+iTGaXXHFXZPMHU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.10.4"
+        "version": "v3.10.5"
     },
     "seanime-bin-canary": {
         "cargoLock": null,
