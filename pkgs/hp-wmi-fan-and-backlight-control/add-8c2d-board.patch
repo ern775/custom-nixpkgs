@@ -1,11 +1,10 @@
 diff --git a/hp-wmi.c b/hp-wmi.c
-index f7cd75e..72a06be 100644
 --- a/hp-wmi.c
 +++ b/hp-wmi.c
-@@ -238,6 +238,12 @@ static const struct thermal_profile_params omen_v1_no_ec_thermal_params = {
- struct hp_wmi_fan_profile_params {
- 	int (*get_fan_speed)(int fan);
+@@ -248,6 +248,12 @@
  	bool fan_table;
+ 	/* Value of the fan speed set query that hands the fan back to the EC */
+ 	u8 auto_speed;
 +	/*
 +	 * For boards without a usable firmware fan table: fixed RPM range, in
 +	 * hundreds of RPM. Both zero means "read the range from the fan table".
@@ -15,8 +14,8 @@ index f7cd75e..72a06be 100644
  };
  
  struct hp_wmi_board_params {
-@@ -272,6 +278,23 @@ static const struct hp_wmi_board_params omen_v1_no_ec_board_params = {
- 	.fan_profile		= &victus_s_fan_profile_params,
+@@ -272,6 +278,23 @@
+ 	.auto_speed	= 0xFF,
  };
  
 +/*
@@ -29,28 +28,28 @@ index f7cd75e..72a06be 100644
 +	.get_fan_speed	= hp_wmi_get_fan_speed_victus_s,
 +	.fan_table	= false,
 +	.fixed_min_rpm	= 0,	/* no lower limit */
-+	.fixed_max_rpm	= 60,	/* 6000 RPM */
++	.fixed_max_rpm	= 52,	/* 5200 RPM */
 +};
 +
 +static const struct hp_wmi_board_params fan_only_board_params = {
 +	.fan_profile		= &fixed_range_fan_profile_params,
 +};
 +
- static const struct hp_wmi_board_params *active_board_params;
- 
- static const struct thermal_profile_params *hp_wmi_thermal_profile(void)
-@@ -404,6 +427,10 @@ static const struct dmi_system_id hp_wmi_feature_boards[] __initconst = {
- 		.matches = { DMI_MATCH(DMI_BOARD_NAME, "8C78") },
- 		.driver_data = (void *)&omen_v1_board_params,
+ static const struct hp_wmi_board_params victus_s_board_params = {
+ 	.thermal_profile	= &victus_s_thermal_params,
+ 	.fan_profile		= &victus_s_fan_profile_params,
+@@ -423,6 +446,10 @@
+ 		.driver_data = (void *)&victus_s_board_params,
  	},
-+	{
+ 	{
 +		.matches = { DMI_MATCH(DMI_BOARD_NAME, "8C2D") },
 +		.driver_data = (void *)&fan_only_board_params,
 +	},
- 	{
- 		.matches = { DMI_MATCH(DMI_BOARD_NAME, "8C99") },
- 		.driver_data = (void *)&victus_s_board_params,
-@@ -753,8 +780,15 @@ struct victus_s_fan_table {
++	{
+ 		.matches = { DMI_MATCH(DMI_BOARD_NAME, "8C2F") },
+ 		.driver_data = (void *)&victus_s_ff_board_params,
+ 	},
+@@ -791,8 +818,15 @@
  
  static inline u8 rpm_to_pwm(u8 rpm, struct hp_wmi_hwmon_priv *priv)
  {
@@ -68,7 +67,7 @@ index f7cd75e..72a06be 100644
  }
  
  static inline u8 pwm_to_rpm(u8 pwm, struct hp_wmi_hwmon_priv *priv)
-@@ -3441,6 +3475,7 @@ static void hp_wmi_hwmon_keep_alive_handler(struct work_struct *work)
+@@ -3483,6 +3517,7 @@
  
  static int hp_wmi_setup_fan_settings(struct hp_wmi_hwmon_priv *priv)
  {
@@ -76,7 +75,7 @@ index f7cd75e..72a06be 100644
  	u8 fan_data[128] = { 0 };
  	struct victus_s_fan_table *fan_table;
  	u8 min_rpm, max_rpm;
-@@ -3451,6 +3486,14 @@ static int hp_wmi_setup_fan_settings(struct hp_wmi_hwmon_priv *priv)
+@@ -3493,6 +3528,14 @@
  	/* Default behaviour on hwmon init is automatic mode */
  	priv->mode = PWM_MODE_AUTO;
  
