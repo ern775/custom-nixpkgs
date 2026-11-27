@@ -10,6 +10,10 @@
       url = "github:blghnks/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tack = {
+      url = "github:manic-systems/tack";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {

@@ -61,7 +61,23 @@
       "inputs": {
         "niri-icc": "niri-icc",
         "niri-icclaude": "niri-icclaude",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "tack": "tack"
+      }
+    },
+    "tack": {
+      "locked": {
+        "lastModified": 1795748364,
+        "narHash": "sha256-iRVnAKvQh5vC76QppovlxTklJf98EA+GYEY91loasy4=",
+        "owner": "manic-systems",
+        "repo": "tack",
+        "rev": "673997981720feebb3870645932b6cfe6657db9f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "manic-systems",
+        "repo": "tack",
+        "type": "github"
       }
     }
   },

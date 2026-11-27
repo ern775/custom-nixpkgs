@@ -90,6 +90,7 @@ rec {
   # };
   solidtime-desktop = pkgs.callPackage ./pkgs/solidtime-desktop/package.nix { };
   stoat-desktop = pkgs.callPackage ./pkgs/stoat-desktop/package.nix { };
+  tack = inputs.tack.packages.${system}.default;
   victus-control = pkgs.callPackage ./pkgs/victus-control/package.nix {
     source = nvSources.victus-control;
   };
